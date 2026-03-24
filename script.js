@@ -8,20 +8,20 @@ if (yearTarget) {
 
 if (menuToggle && siteNav) {
   menuToggle.addEventListener("click", () => {
-    const isOpen = siteNav.classList.toggle("open");
+    const isOpen = siteNav.classList.toggle("active");
     menuToggle.setAttribute("aria-expanded", String(isOpen));
   });
 
   siteNav.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
-      siteNav.classList.remove("open");
+      siteNav.classList.remove("active");
       menuToggle.setAttribute("aria-expanded", "false");
     });
   });
 
   window.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
-      siteNav.classList.remove("open");
+      siteNav.classList.remove("active");
       menuToggle.setAttribute("aria-expanded", "false");
     }
   });

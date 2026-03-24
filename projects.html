@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional case-study style overview of projects in AI, systems, and optimization.">
-    <title>Work | Harshey</title>
+    <meta name="description" content="Selected technical and research projects by Harshitha Inampudi.">
+    <title>Projects | Harshitha Inampudi</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -19,13 +19,13 @@
 
     <header class="site-header">
         <div class="container nav-wrap">
-            <a href="index.html" class="brand">Harshey</a>
+            <a href="index.html" class="brand">Portfolio</a>
             <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">Menu</button>
             <nav id="siteNav" class="site-nav">
                 <a href="index.html">Home</a>
-                <a class="active" href="projects.html">Work</a>
-                <a href="activities.html">Experience</a>
-                <a href="interests.html">Interests</a>
+                <a class="active" href="projects.html">Projects</a>
+                <a href="activities.html">Achievements</a>
+                <a href="interests.html">Skills</a>
                 <a href="contact.html">Contact</a>
             </nav>
         </div>
@@ -33,11 +33,11 @@
 
     <main class="container page-main">
         <section class="section-block compact">
-            <p class="eyebrow">Selected Work</p>
-            <h1>Case Studies and Technical Build Log</h1>
+            <p class="eyebrow">Projects</p>
+            <h1>Selected Technical Work</h1>
             <p class="lead">
-                This page is organized as project narratives instead of bullet resume points.
-                Each item highlights the problem space, method, and practical outcome.
+                A curated set of projects across reinforcement learning, machine learning,
+                systems, optimization, and algorithmic engineering.
             </p>
         </section>
 
@@ -48,22 +48,22 @@
             <div class="cards-grid projects-grid">
                 <article class="info-card project-card">
                     <h3>Learning to Forget: Machine Unlearning</h3>
-                    <p>Implemented machine unlearning on MNIST using entropy and logit suppression objectives for selective forgetting.</p>
-                    <p class="meta">Artificial Intelligence and Machine Learning | 2025</p>
+                    <p>Implemented machine unlearning on MNIST by fine-tuning additional layers using entropy and logit suppression, balancing retention with targeted forgetting.</p>
+                    <p class="meta">AI and ML | 2025</p>
                 </article>
                 <article class="info-card project-card">
                     <h3>RL Fine-Tuning for Diffusion Models</h3>
-                    <p>Built reward-driven denoising optimization with CLIP alignment and perceptual quality scoring to improve generated output quality.</p>
-                    <p class="meta">Advanced RL | 2025</p>
+                    <p>Developed PPO-based fine-tuning for text-to-image diffusion models, combining CLIP alignment and perceptual-quality rewards for better generations.</p>
+                    <p class="meta">Advanced Reinforcement Learning | 2025</p>
                 </article>
                 <article class="info-card project-card">
                     <h3>Markov Models for Word Tagging</h3>
-                    <p>Implemented a Hidden Markov Model POS tagger with Laplace smoothing and Viterbi decoding using Brown Corpus.</p>
-                    <p class="meta">Artificial Intelligence and Machine Learning | 2025</p>
+                    <p>Built a Hidden Markov Model POS tagger using Brown Corpus with Laplace smoothing, cross-validation, and Viterbi decoding.</p>
+                    <p class="meta">AI and ML | 2025</p>
                 </article>
                 <article class="info-card project-card">
                     <h3>Probabilistic Modeling and Inference</h3>
-                    <p>Implemented DDPM and D3PM workflows and optimized FHMM inference with Bayesian optimization methods.</p>
+                    <p>Implemented DDPM and D3PM pipelines on MNIST and optimized FHMM inference with approximate and exact methods.</p>
                     <p class="meta">Advanced Machine Learning | 2025</p>
                 </article>
             </div>
@@ -81,12 +81,12 @@
                 </article>
                 <article class="info-card project-card">
                     <h3>PostgreSQL Query Processor Components</h3>
-                    <p>Implemented scan, parse, and plan modules with cost-based choices for improved query execution behavior.</p>
+                    <p>Implemented modular scan, parse, and logical planning components with cost-based query optimization for efficient execution plans.</p>
                     <p class="meta">Database Systems | 2025</p>
                 </article>
                 <article class="info-card project-card">
                     <h3>SAT Solver in C++</h3>
-                    <p>Built a DPLL-style SAT solver with unit propagation, pure literal elimination, and CNF validation checks.</p>
+                    <p>Built a SAT solver using DPLL with unit propagation, pure literal elimination, and backtracking with robust CNF testing.</p>
                     <p class="meta">Logic and Automata | 2024 to 2025</p>
                 </article>
                 <article class="info-card project-card">
@@ -109,13 +109,13 @@
             <div class="cards-grid projects-grid">
                 <article class="info-card project-card">
                     <h3>Client-Centric Wi-Fi RRM using RL</h3>
-                    <p>Built constrained TD3 with Lagrangian safety terms for radio resource management as part of the Inter-IIT challenge.</p>
+                    <p>Built a safe RL framework for Wi-Fi radio resource management with constrained TD3 and multi-timescale optimization for QoE.</p>
                     <p class="meta">Inter-IIT Tech Meet | 2025</p>
                 </article>
                 <article class="info-card project-card">
-                    <h3>Move Wise Supply Chain Optimizer</h3>
-                    <p>Modeled assignment decisions in CVXPY to reduce waiting time while improving platform-level fulfillment efficiency.</p>
-                    <p class="meta">Optimization Models | 2024</p>
+                    <h3>Double XGBoost: Depth-wise Boosting</h3>
+                    <p>Proposed a depth-wise boosting variant with second-order optimization ideas to improve expressivity and convergence behavior.</p>
+                    <p class="meta">Juspay Research Problem Statement | 2025 to 2026</p>
                 </article>
                 <article class="info-card project-card">
                     <h3>Applied Data Analysis Labs</h3>
@@ -129,7 +129,7 @@
 
     <footer class="site-footer">
         <div class="container footer-wrap">
-            <p>Harshey | Research and Engineering Portfolio</p>
+            <p>Harshitha Inampudi | Research and Engineering Portfolio</p>
             <p>&copy; <span id="year"></span> All rights reserved.</p>
         </div>
     </footer>
