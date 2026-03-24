@@ -3,29 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - My Portfolio</title>
+    <meta name="description" content="Portfolio website showcasing research, projects, and achievements.">
+    <title>Home | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="activities.html">Other Activities</a></li>
-                <li><a href="interests.html">Interests</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+    <div class="page-bg" aria-hidden="true"></div>
+
+    <header class="site-header">
+        <div class="container nav-wrap">
+            <a href="index.html" class="brand">Portfolio</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">Menu</button>
+            <nav id="siteNav" class="site-nav">
+                <a class="active" href="index.html">Home</a>
+                <a href="projects.html">Projects</a>
+                <a href="activities.html">Achievements</a>
+                <a href="interests.html">Skills</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
     </header>
 
-    <section class="hero">
-        <h1>Welcome to My Portfolio</h1>
-        <p>Discover my work, interests, and more!</p>
-    </section>
+    <main>
+        <section class="hero-section container">
+            <p class="eyebrow">IIT Bombay | CSE Honors + MI & DS Minor</p>
+            <h1>Research-focused engineer building reliable AI, systems, and optimization solutions.</h1>
+            <p class="lead">
+                I work across reinforcement learning, verification, machine learning, systems, and algorithmic engineering.
+                This website captures my work experience, research projects, technical strengths, and academic achievements.
+            </p>
+            <div class="hero-actions">
+                <a class="btn btn-primary" href="projects.html">Explore Projects</a>
+                <a class="btn btn-ghost" href="activities.html">View Achievements</a>
+            </div>
+        </section>
 
-    <footer>
-        <p>&copy; 2023 My Portfolio. All rights reserved.</p>
+        <section class="container stats-grid">
+            <article class="stat-card">
+                <h2>2</h2>
+                <p>Research / internship experiences in 2025-26</p>
+            </article>
+            <article class="stat-card">
+                <h2>20+</h2>
+                <p>Major course and self projects across AI, systems, and hardware</p>
+            </article>
+            <article class="stat-card">
+                <h2>AIR 336</h2>
+                <p>JEE Advanced rank among 180k+ students</p>
+            </article>
+            <article class="stat-card">
+                <h2>Top IIT</h2>
+                <p>Inter-IIT Tech Meet result in RL-based Wi-Fi optimization challenge</p>
+            </article>
+        </section>
+
+        <section class="container section-block">
+            <div class="section-head">
+                <h2>Highlights</h2>
+                <a href="projects.html">See full project list</a>
+            </div>
+            <div class="cards-grid">
+                <article class="info-card">
+                    <h3>Double XGBoost: Depth-wise Boosting</h3>
+                    <p>
+                        Proposed a new boosting method and derived a second-order optimization objective for node-level predictors,
+                        targeting faster convergence and better accuracy.
+                    </p>
+                </article>
+                <article class="info-card">
+                    <h3>Safety in Reinforcement Learning</h3>
+                    <p>
+                        Adapted PPO and TRPO with safety signals from LIDAR and heuristics for model-free continuous control tasks
+                        in Safety Gymnasium.
+                    </p>
+                </article>
+                <article class="info-card">
+                    <h3>Neural Closure Certificates</h3>
+                    <p>
+                        Built template-based certificate learning pipelines to verify safety properties of neural-network-driven
+                        dynamical systems.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="container section-block timeline-section">
+            <div class="section-head">
+                <h2>Recent Timeline</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span>Dec '25 - Jan '26</span>
+                    <p><strong>Software Engineer, Juspay:</strong> Double XGBoost research problem statement.</p>
+                </div>
+                <div class="timeline-item">
+                    <span>May '25 - Jul '25</span>
+                    <p><strong>Research Internship, NTU Singapore:</strong> Safe RL with constrained policy gradients.</p>
+                </div>
+                <div class="timeline-item">
+                    <span>2025</span>
+                    <p><strong>Advanced AI/ML and RL projects:</strong> Diffusion models, machine unlearning, probabilistic inference.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-wrap">
+            <p>Built for GitHub Pages.</p>
+            <p>&copy; <span id="year"></span> Portfolio.</p>
+        </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

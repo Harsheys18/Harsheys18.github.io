@@ -3,29 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Other Activities - My Portfolio</title>
+    <meta name="description" content="Academic achievements, positions of responsibility, and extracurriculars.">
+    <title>Achievements | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="activities.html">Other Activities</a></li>
-                <li><a href="interests.html">Interests</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+    <div class="page-bg" aria-hidden="true"></div>
+
+    <header class="site-header">
+        <div class="container nav-wrap">
+            <a href="index.html" class="brand">Portfolio</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">Menu</button>
+            <nav id="siteNav" class="site-nav">
+                <a href="index.html">Home</a>
+                <a href="projects.html">Projects</a>
+                <a class="active" href="activities.html">Achievements</a>
+                <a href="interests.html">Skills</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
     </header>
 
-    <section class="content">
-        <h1>Other Activities</h1>
-        <p>Here are some of my other activities and hobbies.</p>
-    </section>
+    <main class="container page-main">
+        <section class="section-block compact">
+            <h1>Achievements & Leadership</h1>
+            <p class="lead">Competitive exam achievements, leadership contributions, and extracurricular milestones.</p>
+        </section>
 
-    <footer>
-        <p>&copy; 2023 My Portfolio. All rights reserved.</p>
+        <section class="section-block">
+            <h2>Scholastic Achievements</h2>
+            <ul class="fancy-list">
+                <li><strong>AIR 336</strong> in JEE Advanced among 180,000+ students (2023)</li>
+                <li><strong>AIR 636</strong> in JEE Main among 1,000,000+ candidates (2023)</li>
+                <li><strong>Rank 37</strong> in TS EAMCET among 200,000+ candidates (2023)</li>
+                <li><strong>Rank 46</strong> in EAPCET among 330,000+ students (2023)</li>
+            </ul>
+        </section>
+
+        <section class="section-block">
+            <h2>Positions of Responsibility</h2>
+            <div class="cards-grid">
+                <article class="info-card">
+                    <h3>Mentor, Flappy Learner</h3>
+                    <p>Seasons of Code, Web and Coding Club (IIT Bombay) | May '25 - Jul '25</p>
+                    <p>Mentored RL foundations including MDPs, Bellman equations, Q-learning, SARSA, and TD learning.</p>
+                </article>
+                <article class="info-card">
+                    <h3>Sports Secretary</h3>
+                    <p>CSEA, IIT Bombay | May '24 - Apr '25</p>
+                    <p>Coordinated inter-department tournaments and promoted participation across sports events.</p>
+                </article>
+                <article class="info-card">
+                    <h3>Core Team Member</h3>
+                    <p>Yogastha Club, IIT Bombay | Jan '24 - Jun '24</p>
+                    <p>Improved web and social media presence; helped organize yoga camps and well-being workshops.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section-block">
+            <h2>Extracurricular Activities</h2>
+            <ul class="fancy-list">
+                <li>Gold Medal in Table Tennis Freshie-sta and Silver Medal in Inter-Hostels Championship (2023, 2024)</li>
+                <li>Master Orator title at Narayana School Zonals Level-II (2017-2018)</li>
+                <li>Completed 5 levels of Abacus and won 3rd place in REA Championship L4</li>
+                <li>National Rank 6 and School Rank 2 in Mathematics, Monfort International Olympiad (2015-2016)</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-wrap">
+            <p>Built for GitHub Pages.</p>
+            <p>&copy; <span id="year"></span> Portfolio.</p>
+        </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

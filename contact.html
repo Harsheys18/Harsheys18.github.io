@@ -3,40 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - My Portfolio</title>
+    <meta name="description" content="Contact details and collaboration interests.">
+    <title>Contact | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="activities.html">Other Activities</a></li>
-                <li><a href="interests.html">Interests</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+    <div class="page-bg" aria-hidden="true"></div>
+
+    <header class="site-header">
+        <div class="container nav-wrap">
+            <a href="index.html" class="brand">Portfolio</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">Menu</button>
+            <nav id="siteNav" class="site-nav">
+                <a href="index.html">Home</a>
+                <a href="projects.html">Projects</a>
+                <a href="activities.html">Achievements</a>
+                <a href="interests.html">Skills</a>
+                <a class="active" href="contact.html">Contact</a>
+            </nav>
+        </div>
     </header>
 
-    <section class="content">
-        <h1>Contact Me</h1>
-        <form action="#" method="post">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-            
-            <button type="submit">Send</button>
-        </form>
-    </section>
+    <main class="container page-main">
+        <section class="section-block compact">
+            <h1>Contact</h1>
+            <p class="lead">Open to research collaboration, internships, and software engineering opportunities.</p>
+        </section>
 
-    <footer>
-        <p>&copy; 2023 My Portfolio. All rights reserved.</p>
+        <section class="cards-grid contact-grid">
+            <article class="info-card">
+                <h3>Direct Contact</h3>
+                <p>Add your primary email and profiles below.</p>
+                <ul class="fancy-list">
+                    <li>Email: your-email@example.com</li>
+                    <li>GitHub: github.com/Harsheys18</li>
+                    <li>LinkedIn: linkedin.com/in/your-profile</li>
+                </ul>
+            </article>
+
+            <article class="info-card">
+                <h3>Current Focus</h3>
+                <ul class="fancy-list">
+                    <li>Safe reinforcement learning</li>
+                    <li>ML verification and reliability</li>
+                    <li>Systems and algorithmic engineering</li>
+                </ul>
+            </article>
+        </section>
+
+        <section class="section-block">
+            <h2>Quick Message</h2>
+            <form class="contact-form" action="mailto:your-email@example.com" method="post" enctype="text/plain">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button class="btn btn-primary" type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-wrap">
+            <p>Built for GitHub Pages.</p>
+            <p>&copy; <span id="year"></span> Portfolio.</p>
+        </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

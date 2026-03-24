@@ -3,29 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interests - My Portfolio</title>
+    <meta name="description" content="Technical skills, coursework, and research interests.">
+    <title>Skills | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="activities.html">Other Activities</a></li>
-                <li><a href="interests.html">Interests</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+    <div class="page-bg" aria-hidden="true"></div>
+
+    <header class="site-header">
+        <div class="container nav-wrap">
+            <a href="index.html" class="brand">Portfolio</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">Menu</button>
+            <nav id="siteNav" class="site-nav">
+                <a href="index.html">Home</a>
+                <a href="projects.html">Projects</a>
+                <a href="activities.html">Achievements</a>
+                <a class="active" href="interests.html">Skills</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
     </header>
 
-    <section class="content">
-        <h1>My Interests</h1>
-        <p>Here are some of my interests and passions.</p>
-    </section>
+    <main class="container page-main">
+        <section class="section-block compact">
+            <h1>Technical Skills & Interests</h1>
+            <p class="lead">Core programming stack, tools, libraries, and active technical interests.</p>
+        </section>
 
-    <footer>
-        <p>&copy; 2023 My Portfolio. All rights reserved.</p>
+        <section class="section-block">
+            <h2>Programming & Tools</h2>
+            <div class="tag-cloud">
+                <span>Python</span><span>C++</span><span>C</span><span>Bash</span><span>JavaScript</span><span>HTML</span><span>CSS</span>
+                <span>Verilog</span><span>Prolog</span><span>MIPS</span><span>Git</span><span>LaTeX</span><span>Sed</span><span>Awk</span>
+            </div>
+        </section>
+
+        <section class="section-block">
+            <h2>Libraries & Frameworks</h2>
+            <div class="tag-cloud">
+                <span>PyTorch</span><span>NumPy</span><span>SciPy</span><span>Matplotlib</span><span>Pandas</span><span>Scikit-Learn</span><span>OpenCV</span>
+            </div>
+        </section>
+
+        <section class="section-block">
+            <h2>Coursework Focus</h2>
+            <div class="cards-grid">
+                <article class="info-card">
+                    <h3>Computer Science</h3>
+                    <p>AI/ML, Quantitative Verification, Data Analysis, Networks, Automata Theory, DLDCA, Discrete Structures.</p>
+                </article>
+                <article class="info-card">
+                    <h3>Systems & Programming</h3>
+                    <p>Operating Systems, Design & Analysis of Algorithms, Software Systems, Paradigms, Data Structures.</p>
+                </article>
+                <article class="info-card">
+                    <h3>Math & Optimization</h3>
+                    <p>Optimization Models, Linear Algebra, Differential Equations, Calculus, and applied statistics.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section-block">
+            <h2>Research Interests</h2>
+            <ul class="fancy-list">
+                <li>Safe and constrained reinforcement learning</li>
+                <li>Verification of AI-enabled dynamical systems</li>
+                <li>Generative modeling and diffusion-based learning</li>
+                <li>Optimization algorithms and probabilistic inference</li>
+                <li>Systems design, kernel programming, and scalable software</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-wrap">
+            <p>Built for GitHub Pages.</p>
+            <p>&copy; <span id="year"></span> Portfolio.</p>
+        </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
