@@ -3,25 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Project portfolio covering AI, systems, optimization, and research work.">
-    <title>Projects | Portfolio</title>
+    <meta name="description" content="Professional case-study style overview of projects in AI, systems, and optimization.">
+    <title>Work | Harshey</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="page-bg" aria-hidden="true"></div>
+    <div class="page-bg" aria-hidden="true">
+        <span class="shape shape-one"></span>
+        <span class="shape shape-two"></span>
+        <span class="shape shape-three"></span>
+    </div>
 
     <header class="site-header">
         <div class="container nav-wrap">
-            <a href="index.html" class="brand">Portfolio</a>
+            <a href="index.html" class="brand">Harshey</a>
             <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">Menu</button>
             <nav id="siteNav" class="site-nav">
                 <a href="index.html">Home</a>
-                <a class="active" href="projects.html">Projects</a>
-                <a href="activities.html">Achievements</a>
-                <a href="interests.html">Skills</a>
+                <a class="active" href="projects.html">Work</a>
+                <a href="activities.html">Experience</a>
+                <a href="interests.html">Interests</a>
                 <a href="contact.html">Contact</a>
             </nav>
         </div>
@@ -29,92 +33,104 @@
 
     <main class="container page-main">
         <section class="section-block compact">
-            <h1>Key Projects</h1>
+            <p class="eyebrow">Selected Work</p>
+            <h1>Case Studies and Technical Build Log</h1>
             <p class="lead">
-                A selection of projects across reinforcement learning, probabilistic modeling, systems programming,
-                optimization, and software engineering.
+                This page is organized as project narratives instead of bullet resume points.
+                Each item highlights the problem space, method, and practical outcome.
             </p>
         </section>
 
-        <section class="cards-grid projects-grid">
-            <article class="info-card project-card">
-                <h3>Learning to Forget: Machine Unlearning</h3>
-                <p>Implemented machine unlearning on MNIST with entropy and logit suppression objectives.</p>
-                <p class="meta">AI/ML | Apr '25</p>
-            </article>
-
-            <article class="info-card project-card">
-                <h3>Client-Centric Wi-Fi RRM using RL</h3>
-                <p>Built safe RL framework using constrained TD3 with Lagrangian safety constraints; top score in Inter-IIT challenge.</p>
-                <p class="meta">Inter-IIT Tech Meet 14.0 | Oct '25 - Dec '25</p>
-            </article>
-
-            <article class="info-card project-card">
-                <h3>RL Fine-tuning for Diffusion Models</h3>
-                <p>Developed PPO-based denoising optimization with CLIP-alignment and perceptual quality rewards.</p>
-                <p class="meta">Advanced RL | Oct '25 - Dec '25</p>
-            </article>
-
-            <article class="info-card project-card">
-                <h3>Probabilistic Modeling & Inference</h3>
-                <p>Implemented DDPM/D3PM pipelines and optimized FHMM inference with Bayesian optimization workflows.</p>
-                <p class="meta">Advanced ML | Oct '25 - Dec '25</p>
-            </article>
-
-            <article class="info-card project-card">
-                <h3>SAT Solver using Backtracking in C++</h3>
-                <p>Built DPLL SAT solver with unit propagation, pure literal elimination, and robust CNF validation tests.</p>
-                <p class="meta">Logic & Automata | Dec '24 - Jan '25</p>
-            </article>
-
-            <article class="info-card project-card">
-                <h3>Building the PostgreSQL Query Processor</h3>
-                <p>Implemented modular scan-parse-plan workflow and cost-based query optimization strategies.</p>
-                <p class="meta">Databases | Oct '25 - Dec '25</p>
-            </article>
-
-            <article class="info-card project-card">
-                <h3>Kernel and Systems Programming</h3>
-                <p>Extended xv6 kernel with copy-on-write, mmap, threading, scheduling, and synchronization primitives.</p>
-                <p class="meta">Operating Systems | May '25 - Jul '25</p>
-            </article>
-
-            <article class="info-card project-card">
-                <h3>Plagiarism Detection System</h3>
-                <p>Built multithreaded token-based checker for direct, paraphrased, and patchwork plagiarism patterns.</p>
-                <p class="meta">Data Structures | Nov '24 - Dec '24</p>
-            </article>
-
-            <article class="info-card project-card">
-                <h3>Algorithmic Problem Solving Labs</h3>
-                <p>Created trie-based autocomplete, DEFLATE-related compression modules, and graph-search systems.</p>
-                <p class="meta">Aug '24 - Nov '24</p>
-            </article>
-
-            <article class="info-card project-card">
-                <h3>Interactive Maze Game</h3>
-                <p>Developed random maze generation and graph-based pathfinding with efficient NumPy implementations.</p>
-                <p class="meta">Software Systems Lab | Apr '24 - May '24</p>
-            </article>
-
-            <article class="info-card project-card">
-                <h3>Move Wise: Supply Chain Optimization</h3>
-                <p>Formulated assignment optimization in CVXPY to reduce wait time and maximize marketplace revenue.</p>
-                <p class="meta">Optimization Models | Nov '24 - Dec '24</p>
-            </article>
-
-            <article class="info-card project-card">
-                <h3>Applied Data Analysis & Statistics</h3>
-                <p>Worked on PCA, t-SNE, MLE/Bayesian estimation, CLT simulation, and hypothesis testing pipelines.</p>
-                <p class="meta">Data Analysis | Aug '24 - Nov '24</p>
-            </article>
+        <section class="section-block">
+            <div class="section-head">
+                <h2>Research and AI</h2>
+            </div>
+            <div class="cards-grid projects-grid">
+                <article class="info-card project-card">
+                    <h3>Learning to Forget: Machine Unlearning</h3>
+                    <p>Implemented machine unlearning on MNIST using entropy and logit suppression objectives for selective forgetting.</p>
+                    <p class="meta">Artificial Intelligence and Machine Learning | 2025</p>
+                </article>
+                <article class="info-card project-card">
+                    <h3>RL Fine-Tuning for Diffusion Models</h3>
+                    <p>Built reward-driven denoising optimization with CLIP alignment and perceptual quality scoring to improve generated output quality.</p>
+                    <p class="meta">Advanced RL | 2025</p>
+                </article>
+                <article class="info-card project-card">
+                    <h3>Markov Models for Word Tagging</h3>
+                    <p>Implemented a Hidden Markov Model POS tagger with Laplace smoothing and Viterbi decoding using Brown Corpus.</p>
+                    <p class="meta">Artificial Intelligence and Machine Learning | 2025</p>
+                </article>
+                <article class="info-card project-card">
+                    <h3>Probabilistic Modeling and Inference</h3>
+                    <p>Implemented DDPM and D3PM workflows and optimized FHMM inference with Bayesian optimization methods.</p>
+                    <p class="meta">Advanced Machine Learning | 2025</p>
+                </article>
+            </div>
         </section>
+
+        <section class="section-block">
+            <div class="section-head">
+                <h2>Systems and Infrastructure</h2>
+            </div>
+            <div class="cards-grid projects-grid">
+                <article class="info-card project-card">
+                    <h3>xv6 Kernel Extensions</h3>
+                    <p>Added copy-on-write memory, mmap support, threading, scheduling improvements, and synchronization primitives.</p>
+                    <p class="meta">Operating Systems Lab | 2025</p>
+                </article>
+                <article class="info-card project-card">
+                    <h3>PostgreSQL Query Processor Components</h3>
+                    <p>Implemented scan, parse, and plan modules with cost-based choices for improved query execution behavior.</p>
+                    <p class="meta">Database Systems | 2025</p>
+                </article>
+                <article class="info-card project-card">
+                    <h3>SAT Solver in C++</h3>
+                    <p>Built a DPLL-style SAT solver with unit propagation, pure literal elimination, and CNF validation checks.</p>
+                    <p class="meta">Logic and Automata | 2024 to 2025</p>
+                </article>
+                <article class="info-card project-card">
+                    <h3>Plagiarism Detection Engine</h3>
+                    <p>Developed a multithreaded token analysis system to detect direct copying, patchwork plagiarism, and paraphrased similarity.</p>
+                    <p class="meta">Data Structures | 2024</p>
+                </article>
+                <article class="info-card project-card">
+                    <h3>Algorithmic Problem Solving Labs</h3>
+                    <p>Built autocomplete with tries and implemented compression algorithms including RLE, Huffman, and LZ77-based workflows.</p>
+                    <p class="meta">Data Structures and Algorithms | 2024</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section-block">
+            <div class="section-head">
+                <h2>Optimization and Applied Data</h2>
+            </div>
+            <div class="cards-grid projects-grid">
+                <article class="info-card project-card">
+                    <h3>Client-Centric Wi-Fi RRM using RL</h3>
+                    <p>Built constrained TD3 with Lagrangian safety terms for radio resource management as part of the Inter-IIT challenge.</p>
+                    <p class="meta">Inter-IIT Tech Meet | 2025</p>
+                </article>
+                <article class="info-card project-card">
+                    <h3>Move Wise Supply Chain Optimizer</h3>
+                    <p>Modeled assignment decisions in CVXPY to reduce waiting time while improving platform-level fulfillment efficiency.</p>
+                    <p class="meta">Optimization Models | 2024</p>
+                </article>
+                <article class="info-card project-card">
+                    <h3>Applied Data Analysis Labs</h3>
+                    <p>Worked on PCA, t-SNE, Bayesian estimation, and hypothesis testing to build interpretable analysis pipelines.</p>
+                    <p class="meta">Data Analysis Coursework | 2024</p>
+                </article>
+            </div>
+        </section>
+
     </main>
 
     <footer class="site-footer">
         <div class="container footer-wrap">
-            <p>Built for GitHub Pages.</p>
-            <p>&copy; <span id="year"></span> Portfolio.</p>
+            <p>Harshey | Research and Engineering Portfolio</p>
+            <p>&copy; <span id="year"></span> All rights reserved.</p>
         </div>
     </footer>
 

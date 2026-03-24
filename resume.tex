@@ -1,0 +1,497 @@
+\documentclass[10pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{enumitem}
+\usepackage[a4paper,bottom=6.4mm,left=14.11mm,right=14.11mm,top=62.74 mm]{geometry}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage[table, svgnames]{xcolor}
+\usepackage{hyphenat}
+\usepackage{romannum}
+\usepackage{anyfontsize}
+% \usepackage[empty]{fullpage}
+% \usepackage[usenames,dvipsnames]{color}
+\usepackage[pdftex]{hyperref}
+\usepackage{fontawesome}
+\usepackage[misc]{ifsym}
+\usepackage{array}
+\usepackage{hyperref}
+
+\setlength{\parindent}{0pt}
+\hyphenpenalty 10000
+
+%%%%%%% Command for Thick hline %%%%%%%%%%
+\makeatletter
+\newcommand{\thickhline}{%
+    \noalign {\ifnum 0=`}\fi \hrule height 0.7pt
+    \futurelet \reserved@a \@xhline
+}
+\newcolumntype{"}{@{\hskip\tabcolsep\vrule width 0.7pt\hskip\tabcolsep}}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%% Command Section Headers %%%%%%%%%%
+\newcommand{\xfill}[2][1ex]{
+	\dimen0=#2\advance\dimen0 by #1
+	\leaders\hrule height \dimen0 depth -#1\hfill
+}
+\renewcommand{\section}[1]{
+	\vspace{5pt}
+	{\color{Blue}{\Large\scshape\raggedright #1\xfill[0pt]{0.5pt}}}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%% Command Subsection Headers %%%%%%%
+\renewcommand{\subsection}[4]{
+	\def\temp{#4}
+	\vspace{2pt}
+	{
+		\large
+		{\color{Green} \textbf{#1}} | {\sl #2} \filldate{#3}
+		\ifx\temp\empty
+		\else
+		{
+			\\[0.098em]
+			\fontsize{10.5}{13.2}\selectfont
+			\sl #4
+		}
+		\fi
+	}
+}
+\newcommand{\subsectionthree}[3]{
+    \vspace{2pt}
+    {
+        \large
+        {\color{Green} \textbf{#1}} \textbar\ {\sl #2} \filldate{#3}
+    }
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%% Date Formatting %%%%%%%%%%%%%%%%
+\newcommand{\filldate}[1]{\strut\hfill {\small \textit{(#1)}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%% Set itemize formatting %%%%%%%%%%%
+\renewcommand\labelitemi{\small$\bullet$}
+\setlist[itemize]{itemsep=-0.5mm, topsep=2pt, leftmargin=15pt, after=\vspace{1pt}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Resume Margins:
+% - Top (Short Header): 53.09 mm
+% - ⁠Top (Long Header): 62.74 mm
+% - ⁠Bottom: 6.4 mm, Left: 14.11 mm, Right: 14.11 mm
+
+%%%%% Edit if you want long header %%%%%%%
+% Long Header
+% \newif\iflong
+% \longtrue
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \iflong
+% 	\addtolength{\topmargin}{9.54mm}
+% \fi
+\newgeometry{top = 62.74 mm, left = 14.11mm, right = 14.11mm, bottom=6.4mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%				 First Page
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%% Minors & Honors %%%%%%%%%%%%%%%%
+Pursuing \textbf{Honors} in \textbf{Computer Science} \& \textbf{Engineering} and a \textbf{Minor} in \textbf{Machine Intelligence} \& \textbf{Data Science}
+
+\vspace{-9px}
+%%%%%%%%% Scholastic %%%%%%%%%%%%%%%%%%%%%
+\vspace{0.5em}
+\section{Scholastic Achievements}
+\vspace{2pt}
+\begin{itemize}
+    \item Secured {\bf All India Rank 336} in the \textbf{Joint Entrance Examination Advanced} among \textbf{180,000+} students \hfill{\sl \small ('23)} 
+
+    \item Attained {\bf All India Rank 636} in the \textbf{Joint Entrance Examination Main} among \textbf{1 million+} candidates \hfill{\sl \small ('23)}
+    
+    \item Earned a {\bf Rank of 37} in the \textbf{TS EAMCET}, among over \textbf{200,000} candidates across the state of Telangana \hfill{\sl \small ('23)}
+    
+    \item Achieved {\bf Rank 46} in the \textbf{EAPCET} standing out among \textbf{330,000+} students across Andhra Pradesh state \hfill{\sl \small ('23)}
+\end{itemize}
+
+\vspace{-6px}
+
+%%%%%%%%%%%%% Internship %%%%%%%%%%%%%%%%%%%%%%%%
+\section{Work Experience}
+
+\subsection{Double XGBoost: Depth-wise Boosting}{Software Engineer, Juspay}{Dec '25 - Jan '26}{\textit{Research problem statement, Mumbai}}
+\begin{itemize}
+\item Proposed a novel algorithm \textbf{Double XGBoost}, introducing \textbf{depth-wise boosting} for improved expressivity 
+\item Derived a \textbf{second-order optimization problem} using Taylor series for closed-form training of node-level predictors
+\item Demonstrated \textbf{faster convergence and improved accuracy} via residual correction; work in progress for publication
+\end{itemize}
+\vspace{-15px}
+
+\subsection{Safety in Reinforcement Learning}{Research Internship, Ong's Group}{May '25 - Jul '25}{\textit{Instructor: Prof. Luke Ong, Nanyang Technological University (NTU), Singapore}}
+\begin{itemize}
+    \item Worked on \textbf{safe RL} by adapting standard RL algorithms to account for safety constraints arising because of hazards
+    \item Modified policy gradient algorithms like \textbf{PPO} and \textbf{TRPO} to incorporate safety feedback from \textbf{LIDAR} and heuristics in \textbf{model-free}, continuous control \textbf{Safety Gymnasium} environments with \textbf{60}-Dimensional state spaces
+    \item Analysed limitations of safe RL approaches across \textbf{control theory} and other extensions of standard RL algorithms
+\end{itemize}
+\vspace{-15px}
+
+\section{Research Experience}
+
+\subsection{Neural Closure Certificates for Verification}{Research \& Development}{Aug '25 - Nov '25}{\textit{RnD course project, Instructor: Prof. Akshay S, IIT Bombay}}
+\begin{itemize}
+\item Developed \textbf{neural closure certificates} for verifying safety of neural networks in dynamical systems
+\item Formulated \textbf{template-based certificates} and trained neural networks to learn valid certificate functions
+\item Evaluated \textbf{safety guarantees and correctness} on benchmark systems including two-room temperature model
+\end{itemize}
+
+\vspace{-3px}
+
+\subsection{Timed Automaton and It's Applications}{Research \& Development}{Jan '25 - Apr '25}{\textit{RnD course project, Instructor: Prof. Krishna Shankar Narayan, IIT Bombay}}
+\begin{itemize}
+    \item Studied \textbf{reachability} and \textbf{closure properties} in timed automata using \textbf{region} and \textbf{zone graph construction}
+    \item Explored models like \textbf{Event-Clock}, \textbf{Updatable Timed Automata} and \textbf{One-clock} with a focus on decidability
+    % \item Evaluated \textbf{universality} \& \textbf{Inclusion} problems and impact of \textbf{diagonal constraints} on timed automata behaviour
+\end{itemize}
+
+\vspace{-8px}
+
+%%%%%%%%%% Course Projects %%%%%%%%%%%%%%%
+\section{Key Projects}
+
+\subsection{Learning to Forget: Machine Unlearning}{Artificial Intelligence \& Machine Learning}{Apr'25}{\textit{Course Project, Instructor: Prof. Pushpak Bhattacharya, IIT Bombay}}
+\begin{itemize}
+    \item Implemented machine unlearning on MNIST by \textbf{fine-tuning} additional layers using \textbf{entropy} and \textbf{logit suppression}
+    \item Designed a model which preserves performance on retained data, and enforces forgetting by \textbf{increasing uncertainty}
+    \item Integrated \textbf{binary classifier} over softmax outputs for distinguishing retained vs. forgotten samples and incorporated \textbf{confidence-based selective prediction} into a user-friendly interface for evaluation and visualisation of outcomes
+\end{itemize}
+
+\vspace{-13px}
+
+\subsection{Markov Models for Word Tagging}{Artificial Intelligence \& Machine Learning}{Jan '25 - Apr '25}{\textit{Course Labs, Instructor: Prof. Pushpak Bhattacharya, IIT Bombay}}
+\begin{itemize}
+    \item Implemented a \textbf{Hidden Markov Model} based \textbf{Part-of-Speech} tagger using Brown Corpus with Laplace smoothing
+    \item Applied \textbf{5-fold cross-validation} to train and evaluate HMMs for improved accuracy and numerical stability
+    \item Implemented the \textbf{Viterbi Algorithm} to compute and predict the most probable tag sequence for unseen sentences
+\end{itemize}
+
+\vspace{-13px}
+
+% \vspace{-14px}
+
+% \subsection{Markov Decision Processes and Reinforcement Learning}{Summer of Science}{May - Jul '25}{\textit{Mentored Undergraduate Group, Maths and Physics Club, IIT Bombay}}
+% \begin{itemize}
+% \item Guided learning on \textbf{Markov chains} and \textbf{Markov Decision Processes}, exact and approximate solution methods
+% \item Guided mentees through foundations, including Bellman equations, value and policy iteration, and \textbf{reward design}
+% \item Focused on model-free RL (\textbf{Q-learning}, TD) and policy gradients (\textbf{PPO}, \textbf{TRPO}) with function approximation
+% \end{itemize}
+
+\vspace{-2px}
+
+\subsection{SAT solver using Backtracking in C++}{Logic \& Automata Theory}{Dec '24 - Jan '25}{\textit{Self Project, Instructor: Prof. Krishna Shankar Narayan, IIT Bombay}}
+\begin{itemize}
+    \item Developed a SAT solver using \textbf{DPLL}, incorporating \textbf{unit propagation}, \textbf{pure literal elimination}, and backtracking  
+    \item Optimised solving by pruning the search space and improving decision-making in \textbf{Boolean formula satisfiability}
+    \item Validated correctness of the SAT solver across \textbf{diverse CNF} inputs using systematic testing and edge-case analysis
+\end{itemize}
+
+\vspace{-13px}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\newgeometry{bottom=6.4mm,left=14.11mm,right=14.11mm,top=16mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 				Second Page
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \vspace{-12px}
+\subsection{Client-Centric Wi-Fi RRM using RL}{Inter-IIT Tech Meet 14.0, IIT Patna}{Oct '25 - Dec '25}{\textit{Problem Statement by Arista Networks, Team IIT Bombay}}
+\begin{itemize}
+\item Built a \textbf{safe RL framework} for Wi-Fi RRM, optimizing transmit power and bandwidth under network constraints
+\item Designed a \textbf{multi-timescale system} with fast interference mitigation and \textbf{slow-loop RL optimization} for QoE
+\item Implemented \textbf{constrained TD3 (Lagrangian)} with safety guarantees; achieved \textbf{top score among all IITs}
+\end{itemize}
+
+\subsection{RL based finetuning for Text-to-Image Diffusion models}{Advanced RL}{Oct '25 - Dec '25}{\textit{Course Project, Instructor: Prof. Shivaram Kalyanakrishnan, IIT Bombay}}
+\begin{itemize}
+\item Developed a PPO-based \textbf{fine-tuning} pipeline for text-to-image diffusion models, \textbf{optimising denoising trajectories}
+\item Designed reward functions combining \textbf{CLIP-based} alignment and \textbf{perceptual quality} to guide diffusion generation
+\item Implemented timestep-level credit assignment with \textbf{prompt-conditioned} updates, improving alignment over baselines
+\end{itemize}
+
+\subsection{Probabilistic Modeling \& Inference Research}{Advanced Machine Learning}{Oct '25 - Dec '25}{\textit{Course Project, Instructor: Prof. Sunita Sarawagi, IIT Bombay}}
+\begin{itemize}
+\item Implemented diffusion-based generative models (DDPM \& D3PM) on MNIST, achieving low FID scores by optimizing noise schedules and step counts, and implemented unconditional and conditional generation pipelines
+\item Optimized exact \& approximate FHMM inference in O(TMK(M+1)) complexity with Loopy Belief Propagation
+\item Developed Bayesian Optimization (GP surrogates) for neural network hyperparameter tuning in 6D space
+\end{itemize}
+
+\subsection{Building the PostgreSQL query processor}{Database and Information Systems}{Oct '25 - Dec '25}{\textit{Course Project, Instructor: Prof. Sudharshan, IIT Bombay}}
+\begin{itemize}
+    \item Implemented a modular query processing pipeline for PostgreSQL, including scanning, parsing and logical planning.
+    \item Developed cost-based optimisation techniques to generate efficient execution plans for complex SQL queries.
+    \item Analysed query performance by execution metrics, and implemented improvements to handle estimation errors.
+\end{itemize}
+\subsection{Plagiarism Detection System}{Data Structure and Algorithms}{Nov '24 - Dec'24}{\textit{Course Project, Instructor: Prof. Ashutosh Gupta, IIT Bombay}}
+\begin{itemize}
+    \item Developed a plagiarism detection system in C++ using \textbf{token-based} pattern matching to identify multiple forms of direct copying, paraphrasing, and \textbf{patchwork plagiarism}; the project ranked in the \textbf{top 5} among all submissions
+    \item Optimized \textbf{multithreaded} plagiarism checker using C++ STL for efficient processing of real-time code submissions
+\end{itemize}
+
+\vspace{-13px}
+
+\subsection{Algorithmic Problem Solving}{Data Structures and Algorithms}{Aug '24 - Nov '24}{\textit{Course Labs, Instructor: Prof. Ashutosh Gupta, IIT Bombay}}  
+\begin{itemize}
+    \item Developed an \textbf{autocomplete system} using a \textbf{trie data structure} and implemented compression algorithms including \textbf{Run-Length Encoding}, \textbf{Huffman encoding}, and \textbf{Lempel-Ziv 77} as part of the \textbf{DEFLATE} algorithm  
+    \item Designed efficient \textbf{polymorphic tree encoding} mechanisms for both the \textbf{variable} and the \textbf{fixed N-ary trees}  
+    \item Studied \textbf{graph algorithms}, minimum spanning trees, \textbf{A* search}, union-find, and \textbf{shortest path algorithms}
+\end{itemize}
+
+\subsection{RL based finetuning for Text-to-Image Diffusion models}{Advanced RL}{Oct '25 - Dec '25}{\textit{Course Project, Instructor: Prof. Shivaram Kalyanakrishnan, IIT Bombay}}
+\begin{itemize}
+\item Developed a PPO-based \textbf{fine-tuning} pipeline for text-to-image diffusion models, \textbf{optimising denoising trajectories}
+\item Designed reward functions combining \textbf{CLIP-based} alignment and \textbf{perceptual quality} to guide diffusion generation
+\item Implemented timestep-level credit assignment with \textbf{prompt-conditioned} updates, improving alignment over baselines
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\newgeometry{bottom=6.4mm,left=14.11mm,right=14.11mm,top=16mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 				Third Page
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Code Canvas - Text Editor}{Seasons of Code}{Summer'24}{\textit{Web and Coding Club}}  
+\begin{itemize}
+    \item Developed a basic text editor inspired by \textbf{nano}, built upon \textbf{Tkinter} with efficient text manipulation features
+    \item Implemented multiple search options with the \textbf{Knuth-Morris-Pratt} (KMP) algorithm along with save feature
+\end{itemize}
+
+
+\subsection{Real-time Face Mask Detection}{Winter in Data Science}{Dec - Jan '24}{\textit{Mentored Undergraduate Group, Analytics Club, IIT Bombay}}  
+\begin{itemize}
+    \item Guided students in developing a face mask detection system using \textbf{OpenCV}, and \textbf{artificial neural networks}
+    \item Supervised in implementing \textbf{convolutional neural network} model trained on datasets for accurate detection
+    \item Facilitated integration of \textbf{video stream processing} to enable \textbf{real-time} face mask detection in the environment
+\end{itemize}
+
+
+\subsection{Architecting Efficient Digital Systems}{DLDCA Course Lab}{Autumn'24}{\textit{Guide: Prof. Sayandeep Saha and Prof. Bhaskaran Raman}}  
+\begin{itemize}
+    \item Engineered \textbf{Karatsuba} and \textbf{Iterative Karatsuba} algorithms in Verilog for a \textbf{32-bit multiplier} and FIFO
+    \item Implemented \textbf{RCA}, \textbf{CLA}, multiplexers, and explored \textbf{single-cycle MIPS 32/64}, cache analysis, and optimizations  
+    \item Developed \textbf{Binary Search}, recursive algorithms, and \textbf{Stacks} using MIPS ISA, enhancing program efficiency  
+\end{itemize}
+
+\subsection{Facial Recognition using ML}{Self Project: Learner Space}{Autumn'24}{\textit{Independent Work}}  
+\begin{itemize}
+   \item Developed an advanced facial recognition system utilizing a \textbf{Siamese Neural Network} architecture effectively
+    \item Utilized \textbf{OpenCV} for CNN techniques and advanced image processing methods to enhance image analysis
+    \item Analyzed \textbf{YOLOv8} for object detection and classification, leveraging \textbf{TensorFlow} for building neural networks 
+\end{itemize}
+
+\subsection{A Dynamic GUI Chat Application}{Self Project}{Summer'24}{\textit{Independent Work}}  
+\begin{itemize}
+    \item Built an \textbf{interactive GUI chat application} with secure login using \texttt{socket} module for \textbf{client-server architecture}
+    \item Used \textbf{multithreading} with Python's \texttt{threading} module to handle multiple clients, enabling real-time group chat
+    \item Designed an interface with \textbf{Tkinter}, featuring \textbf{message broadcasting}, user recognition, and real-time updates 
+\end{itemize}
+
+\subsection{Code Canvas - Text Editor}{Seasons of Code}{Summer'24}{\textit{Web and Coding Club}}  
+\begin{itemize}
+    \item Developed a basic text editor inspired by \textbf{nano}, built upon \textbf{Tkinter} with efficient text manipulation features
+    \item Implemented multiple search options with the \textbf{Knuth-Morris-Pratt} (KMP) algorithm along with save feature
+\end{itemize}
+
+\subsection{Innovatix - Power In Collaboration}{EnB Buzz Competition}{Autumn'23}{\textit{Entrepreneurship and Business Club}}  
+\begin{itemize}
+    \item Founded a \textbf{startup} idea focused on eliminating \textbf{middlemen} to improve economic efficiency in global South countries 
+    \item This startup idea successfully reached the finals of the challenge and ranked in the \textbf{top 10 out of 100+ startups}
+\end{itemize}
+
+\subsection{Match Making Website}{Software Systems Lab Self Project}{Spring'24}{\textit{Guide: Prof. Kameswari Chebrolu}}  
+\begin{itemize}
+    \item Developed a \textbf{responsive web interface} for data collection and match suggestions based on shared interests  
+    \item Implemented secure login with credential handling and \textbf{password recovery}  
+    \item Designed a matching algorithm in \textbf{JavaScript}, with scalable processing of database entries  
+\end{itemize}
+
+\subsection{Quadcopter - UAV Development}{Course Project: Makerspace}{Spring'24}{\textit{Guide: Prof. Kushal Tuekley and Prof. Siddini Venkatesh Prabhu}}  
+\begin{itemize}
+    \item Built a 500mm \textbf{advanced drone} with support for pitch, roll, and yaw motions, programmed using Arduino  
+    \item Enabled \textbf{smartphone-based remote control} via the \textbf{Remote XY} app interface  
+\end{itemize}
+
+
+\subsection{Yogastha Website}{Web Coordinator, Yogastha Club}{Summer'24}{\textit{Web Development}}  
+\begin{itemize}
+    \item \textbf{Maintained and regularly updated} the website with the events and information as part of publicity efforts
+    \item Gained hands-on experience with the power of \textbf{JavaScript}, using it to enhance real-time website functionality
+\end{itemize}
+
+\subsection{Printed Combat Bot - Battlebot Challenge}{Project: Battlebot, Tinkerer's Lab}{Summer'24}{\textit{Independent Work}}  
+\begin{itemize}
+    \item Designed and constructed a Battlebot featuring a powerful attack and defense system, precise motor control
+    \item Developed the Battlebot using \texttt{Fusion360} and printed the model through advanced \textbf{3D printing} techniques
+    % \item Collaborated with a team of four, acquiring skills in \textbf{Arduino programming}, \textbf{motor control}, and \textbf{circuit design}
+\end{itemize}
+\subsection{Sudoku Solver using Machine Learning}{Winter in Data Science}{Dec '24 - Jan '25}{\textit{Web and Coding Club, IIT Bombay}}
+\begin{itemize}
+\item Trained a \textbf{Convolutional NN} on \textbf{MNIST} datasets to recognise digits from noisy Sudoku grids using \texttt{OpenCV}
+\item Built an end-to-end pipeline combining grid extraction, digit classification, and \textbf{backtracking-based} puzzle solving
+\item Used 0–9 digit \textbf{CNN classifiers} and applied \textbf{A* search} with domain \textbf{heuristics} for guided Sudoku solving
+\end{itemize}
+
+\vspace{-5px}
+
+% There is ENT603 Project also
+
+
+\newpage
+\newgeometry{bottom=6.4mm,left=14.11mm,right=14.11mm,top=16mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 				Fourth Page
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \vspace{10px}
+
+
+\section{Other Projects}
+
+\vspace{0px}
+
+\subsection{Kernel and Systems Programming}{Operating Systems}{May '25 - Jul '25}{\textit{Course Labs, Instructor: Prof. Mythili Vutukuru, IIT Bombay}}
+\begin{itemize}
+\item Built a Linux shell supporting job control, \textbf{signal handling}, parallel execution, and \textbf{inter-process communication}
+\item Extended \textbf{xv6} kernel with various system calls, \textbf{copy-on-write} fork, \texttt{mmap}, \textbf{scheduling}, threads and synchronization 
+\item Constructed process communication via POSIX shared memory, Unix sockets, \textbf{pthread locks}, \& condition variables
+\end{itemize}
+
+\vspace{-14px}
+
+\subsection{Move Wise - Uber-like Supply Chain Model}{Optimisation Models}{Nov '24 - Dec '24}{\textit{Course Project, Instructor: Prof. Avinash Bharadwaj, IIT Bombay}}  
+\begin{itemize}
+    \item Built an \textbf{optimisation model} to assign drivers to customers, minimising \textbf{waiting time} and maximising \textbf{revenue}
+    \item Formulated and solved \textbf{optimisation problems} with \textbf{real-world constraints} using Python’s \textbf{CVXPY} library
+\end{itemize}
+
+\vspace{-2px}
+
+\subsection{Applied Data Analysis and Statistics}{Data Analysis \& Interpretation}{Aug '24 - Nov '24}{\textit{Course work, Instructor: Prof. Sunita Sarawagi, IIT Bombay}}  
+\begin{itemize}
+    \item Simulated a \textbf{Galton Board} to prove the \textbf{CLT}; applied \textbf{PCA}, \textbf{t-SNE}, and \textbf{SNE} for dimensionality reduction
+    \item Estimated distribution parameters using \textbf{SciPy} and \textbf{fsolve}, fitting models like binomial, gamma, and \textbf{Gaussian Mixture Models}; applied \textbf{MLE} and \textbf{Bayesian estimation}, and estimated \textbf{CDFs} using kernel-based methods
+    \item Cleaned and visualized survey data using \textbf{Pareto} and \textbf{Coxcomb charts}, while performing \textbf{hypothesis testing}
+\end{itemize}
+
+\vspace{-2px}
+
+\subsection{Quantitative Finance, Trading Strategies \& Derivatives}{Online Course}{May '25 - Jul '25}{\textit{Algorithmic Trading and Quantitative Finance, Platform: Udemy}}
+\begin{itemize}
+\item Completed courses in \textbf{Quantitative Finance}, \textbf{Algorithmic Trading}, and \textbf{Financial Derivatives} using Python  
+\item Gained expertise in \textbf{time series} modelling (ARIMA, GARCH), financial derivatives (futures, options, swaps), technical indicators, and core portfolio optimisation methods like \textbf{Markowitz theory} and the CAPM framework
+\item Learned about trading strategies using \textbf{stochastic models}, and \textbf{Monte Carlo}; learned volatility and Sharpe ratio
+\end{itemize}
+
+
+\vspace{-14px}
+
+\subsection{Interactive Maze Game}{Software Systems Lab}{Apr '24 - May '24}{\textit{Course Project, Guide: Prof. Kameswari Chebrolu, IIT Bombay}}  
+\begin{itemize}
+    \item Developed a \textbf{randomly generated maze game} featuring \textbf{pathfinding} using \textbf{Graph algorithms} and properties
+    \item Utilized \textbf{NumPy} to generate a random maze by first creating a \textbf{random path} and building the maze around it
+    % \item Included features such as score tracking, a leaderboard, sound, level progression, and user account login 
+\end{itemize}
+
+
+\vspace{-5pt}
+
+%%%%%%%%% Technical Skills %%%%%%%%%
+\section{Technical Skills}
+
+\vspace{2pt}
+\begin{tabularx}{\textwidth}{ p{2.5cm}  m{14.5cm} }
+	\textbf{Programming} & Python, C++, C, Bash, Prolog, Sed, Awk, Verilog, HTML, CSS, JavaScript, MIPS, Git, \LaTeX\\ 
+	\textbf{Libraries} & PyTorch, NumPy, Scipy, Matplotlib, Pandas, Scikit-Learn, OpenCV\\
+\end{tabularx}
+\vspace{-7pt}
+% \hfill * \textit{Learning process ongoing}
+
+%%%%%%%%%Courses undertaken%%%%%%%%%
+\section{Courses Undertaken}
+\vspace{4pt}
+
+\begin{tabular}{p{2.7cm} p{14.5cm}}
+    % \textbf{Data Science} &  \\
+    \textbf{Computer Science} & Quantitative Verification, Artificial Intelligence and Machine Learning$^\dagger$, Data Analysis and Interpretation, Discrete Structures, Logic and Theory for Computation, Digital Logic Design and Computer Architecture$^\dagger$, Computer Networks$^\dagger$*, Automata Theory* \\
+    \textbf{Programming} & Abstractions and Paradigms for Programming$^\dagger$*, Design and Analysis of Algorithms, Operating Systems$^\dagger$, Data Structures and Algorithms$^\dagger$, Computer Programming$^\dagger$, Software Systems$^\dagger$ \\
+    \textbf{Mathematics} & Optimisation Models (M), Calculus, Linear Algebra \& Differential Equations, Economics \\
+    \textbf{Entrepreneurship} & Business Fundamentals for Technopreneurs, Supply chain for Technopreneurs, Introduction for Entrepreneurship
+\end{tabular}
+
+\vspace{2pt}
+
+\hspace*{3mm}{\sl $\dagger${\it Course has corresponding lab}}
+\hspace*{75mm}{\sl *{\it to be completed by December 2025}}
+
+\vspace{-2pt}
+
+
+%%%%%%%%%Positions of Responsibility%%%%%%%%%
+\section{Positions of Responsibility}
+\vspace{0.1em}
+
+\vspace{0pt}
+
+\subsectionthree{Mentor: Flappy Learner}{Seasons of Code, Web and Coding Club \textbar\ \textit{IITB}}{May '25 - Jul '25}
+\begin{itemize}
+    \item Mentored students in RL fundamentals: \textbf{MDPs}, \textbf{Bellman equations}, reward shaping, \textbf{value/policy iteration}
+    \item Guided development of RL agents using \textbf{Q-learning, SARSA, TD learning} with self-play and reward shaping
+\end{itemize}
+
+\vspace{-3pt}
+
+\subsectionthree{Sports Secretary}{Computer Science and Engineering Association \textbar\ \textit{IIT Bombay}}{May '24 - Apr '25}
+\begin{itemize}
+    \item Coordinated \textbf{Inter-Department} Sports Tournament and volunteered at cultural events such as \textbf{Traditionals Day}
+    \item Managed badminton, volleyball, table tennis, and kho-kho events with emphasis on encouraging female participation
+\end{itemize}
+
+\vspace{-14pt}
+
+\subsectionthree{Core Team Member}{Yogastha Club \textbar\ \textit{IIT Bombay}}{Jan '24 - Jun '24} 
+\begin{itemize}
+   \item Enhanced club visibility by managing social media and \textbf{improving the website} for an optimised user experience
+    \item Organized well-being events like \textbf{5-day yoga camps} and \textbf{breakthrough workshops}, enriching student experience
+\end{itemize}
+
+\vspace{-17pt}
+
+%%%%%%%%% Extracurrics %%%%%%%%%%%%%
+\section{Extracurricular Activities}
+\vspace{-2pt}
+
+\begin{itemize}
+    \item Won {\bf Gold Medal} in Table Tennis Freshie-sta and {\bf Silver Medal} in Inter-Hostels General Championship \hfill{\sl \small ('23, '24)}
+
+    % \item Competed in the Table Tennis General Championship and earned a {\bf Silver Medal} for {\bf Hostel-15} \hfill{\sl \small (2024)}
+
+    % \item Engineered a manually controlled {\bf robot}, imbued with the ability to navigate through a diverse array of obstacles while participating in the prestigious {\bf XLR8} Competition, organized by the {\bf Robotics Club of IITB} \hfill{\sl \small (2023)}
+    
+    % \item Achieved a remarkable {\bf Gold Medal} in the Table Tennis Freshie-sta Competition at {\bf IIT Bombay} \hfill{\sl \small (2023)}
+    
+    \item Represented our campus at Narayana School Zonals and achieved the title of {\bf Master Orator} in Level-II \hfill {\sl \small ('17 - '18)}
+    
+    \item Completed {\bf 5 levels of Abacus} and won {\bf 3rd place} in the {\bf REA Championship} (L4, Without Abacus) \hfill{\sl \small ('16 - '17)}
+    
+    % \item Bagged {\bf Class Topper Silver Medal} in the {\bf 9th SOF International Mathematics Olympiad} (IMO) \hfill{\sl \small (2015-16)}
+    
+    \item Secured {\bf National Rank 6} and {\bf School Rank 2} in Mathematics, {\bf Monfort International Olympiad}\hfill{\sl \small ('15 - '16)}
+\end{itemize}
+% 	\end{itemize}
+% 	\\ \thickhline
+% \end{tabularx}
+
+\end{document}

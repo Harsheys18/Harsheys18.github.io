@@ -11,4 +11,18 @@ if (menuToggle && siteNav) {
     const isOpen = siteNav.classList.toggle("open");
     menuToggle.setAttribute("aria-expanded", String(isOpen));
   });
+
+  siteNav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      siteNav.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
+    });
+  });
+
+  window.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      siteNav.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
+    }
+  });
 }
