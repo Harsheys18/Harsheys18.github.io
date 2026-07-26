@@ -1,20 +1,20 @@
-# Personal Portfolio Website
+# Harshitha Inampudi — Portfolio
 
-This repository contains a complete multi-page personal portfolio website designed for GitHub Pages.
+A static, light-themed, multi-page portfolio for a CSE (Honors) undergrad at IIT Bombay, built for GitHub Pages. Content is sourced directly from [resume.tex](resume.tex) — no fabricated roles, metrics, or products.
 
 ## Pages
 
-- Home: introduction, highlights, timeline
-- Projects: selected technical and research projects
-- Achievements: scholastic results, leadership, extracurriculars
-- Skills: tech stack, coursework, research interests
-- Contact: direct contact section and quick message form
+- Home: hero, stats, research interests, year-wise timeline
+- Projects: research/AI, systems, and optimization project cards with tech-stack badges
+- Achievements: work + research experience, education, positions of responsibility, scholastic and extracurricular records
+- Skills: languages, libraries, and technical focus areas
+- Contact: direct contact links and a quick message form
 
 ## Tech Stack
 
 - HTML5
-- CSS3 (custom responsive layout)
-- Vanilla JavaScript (mobile nav + dynamic year)
+- CSS3 (custom responsive layout, scroll-reveal, timeline/research-card components)
+- Vanilla JavaScript (mobile nav, scroll-reveal, scroll progress bar, back-to-top, dynamic year)
 
 ## Run Locally
 
@@ -43,11 +43,10 @@ Use this if you want your site at https://your-username.github.io/repository-nam
 5. Branch: main and folder: /(root)
 6. Save and wait for deployment.
 
-## Important Personalization
+## Keeping Content Accurate
 
-Before publishing, update these placeholders in [contact.html](contact.html):
+All section content is pulled from real resume entries. When updating:
 
-- your-email@example.com
-- linkedin.com/in/your-profile
-
-You can also change the brand name and section text in [index.html](index.html).
+- Edit `resume.tex` first, then propagate factual changes into the corresponding HTML page.
+- The "Looking ahead" / future-direction notes on the Home and Projects pages are explicitly labeled as early-stage/aspirational — keep that framing rather than presenting them as completed work.
+- No resume PDF is committed yet; add one (e.g. `resume.pdf`) and link it from the nav if you want a downloadable resume button.
