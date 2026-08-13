@@ -1,13 +1,17 @@
 # Harshitha Inampudi — Portfolio
 
-A static, light-themed, multi-page portfolio for a CSE (Honors) undergrad at IIT Bombay, built for GitHub Pages. Content is sourced directly from [resume.tex](resume.tex) — no fabricated roles, metrics, or products.
+A static, light-themed, multi-page portfolio for a CSE (Honors) undergrad at IIT Bombay applying to PhD programs in
+Robotics and Machine Learning, built for GitHub Pages. Content is sourced directly from [resume.tex](resume.tex) —
+no fabricated roles, metrics, or products.
 
 ## Pages
 
 - Home: hero, stats, research interests, year-wise timeline
-- Projects: research/AI, systems, and optimization project cards with tech-stack badges
+- Projects: project cards organized by domain — Robotics, Machine Learning, Systems & Algorithms, Optimization &
+  Quantitative Research, and Miscellaneous — linked to public repos at [github.com/Harsheys18](https://github.com/Harsheys18) where available
 - Achievements: work + research experience, education, positions of responsibility, scholastic and extracurricular records
 - Skills: languages, libraries, and technical focus areas
+- Musings: informal notes and stories from projects and life, separate from the formal record
 - Contact: direct contact links and a quick message form
 
 ## Tech Stack

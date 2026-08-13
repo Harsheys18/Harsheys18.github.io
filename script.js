@@ -62,7 +62,7 @@ window.addEventListener(
 
 // Scroll reveal
 const revealTargets = document.querySelectorAll(
-  ".info-card, .research-card, .timeline-item, .panel, .stat-card-modern, .fancy-list li, .future-note"
+  ".info-card, .research-card, .timeline-item, .panel, .stat-card-modern, .fancy-list li, .future-note, .musing-card"
 );
 
 if ("IntersectionObserver" in window && revealTargets.length) {
