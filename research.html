@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Research by Harshitha Inampudi on robotics, safe reinforcement learning, formal verification, and quantitative research.">
+    <title>Research | Harshitha Inampudi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="page header-row">
+            <a href="index.html" class="site-title">Harshitha Inampudi</a>
+            <nav class="site-nav">
+                <a href="index.html">About</a>
+                <a class="active" href="research.html">Research</a>
+                <a href="projects.html">Projects</a>
+                <a href="musings.html">Musings</a>
+                <a href="cv.html">CV</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page main">
+        <div class="page-head">
+            <h1 class="page-title">Research</h1>
+            <p class="page-intro">
+                Research positions and self-directed research work, grouped by theme. Formal, course-graded
+                projects that aren't tied to a research position live on the <a href="projects.html">Projects</a>
+                page instead.
+            </p>
+        </div>
+
+        <section>
+            <p class="section-label">Robotics &amp; Embodied AI</p>
+            <div class="entry-list">
+                <article class="entry">
+                    <h3 class="entry-title">Sakhi &mdash; AI Companion Robot</h3>
+                    <p class="entry-meta">Technical Lead &amp; Founding Member &middot; IDEAS Program, IIT Bombay &middot; 2025&ndash;current</p>
+                    <p class="entry-body">
+                        Sakhi is an attempt to build a companion robot that behaves like one coherent agent
+                        rather than a set of independently built modules stitched together. As technical lead,
+                        I work on the perception-to-dialogue pipeline that ties speech-to-text, facial emotion
+                        detection, LLM-based reasoning, and expressive text-to-speech into a single real-time
+                        loop, so the robot can hold a conversation while staying responsive to who it's talking
+                        to and how they're reacting. The project was selected for IDEAS Level 1, has since
+                        advanced to Level 2, and has secured funding to continue development and validation.
+                    </p>
+                    <p class="entry-links"><a href="https://github.com/Harsheys18/Sakhi-end-to-end" target="_blank" rel="noopener noreferrer">code</a></p>
+                </article>
+                <article class="entry">
+                    <h3 class="entry-title">Perception and RL-Based Robot Control</h3>
+                    <p class="entry-meta">B.Tech Project &middot; Advisor: Prof. Nived Chebrolu, IIT Bombay &middot; Jul '26&ndash;current</p>
+                    <p class="entry-body">
+                        For my B.Tech project, I'm looking at how a robot's control policy can be built directly
+                        on learned visual representations rather than hand-designed state estimates, aiming for
+                        decision-making that stays robust when observations are incomplete or noisy. Alongside
+                        this, I'm exploring neuro-symbolic and hierarchical approaches that let structured task
+                        constraints shape the learned policy over long horizons, and studying closed-loop setups
+                        where perception and control adapt to each other instead of being trained and deployed
+                        separately.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section>
+            <p class="section-label">Safe Reinforcement Learning</p>
+            <div class="entry-list">
+                <article class="entry">
+                    <h3 class="entry-title">Safety in Reinforcement Learning</h3>
+                    <p class="entry-meta">Research Internship, Ong's Group &middot; Advisor: Prof. Luke Ong, Nanyang Technological University, Singapore &middot; May&ndash;Jul '25</p>
+                    <p class="entry-body">
+                        This internship examined how standard reinforcement-learning algorithms hold up once
+                        safety constraints enter the picture &mdash; specifically, how policy-gradient methods
+                        like PPO and TRPO can be adapted to incorporate feedback from LIDAR and hazard heuristics
+                        in continuous-control settings. I worked within Safety Gymnasium, a model-free benchmark
+                        with 60-dimensional state spaces, and spent time understanding where existing safe-RL
+                        approaches break down, including how they compare against ideas drawn from control theory.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section>
+            <p class="section-label">Formal Verification</p>
+            <div class="entry-list">
+                <article class="entry">
+                    <h3 class="entry-title">Neural Closure Certificates for Verification</h3>
+                    <p class="entry-meta">R&amp;D Course Project &middot; Advisor: Prof. Akshay S, IIT Bombay &middot; Aug&ndash;Nov '25</p>
+                    <p class="entry-body">
+                        This project asked whether a neural network could be trained not just to control a
+                        system, but to certify that the system stays safe. I formulated template-based closure
+                        certificates and trained networks to learn valid certificate functions, then evaluated
+                        the resulting safety guarantees on benchmark dynamical systems, including a two-room
+                        temperature model &mdash; essentially testing whether a learned certificate can offer
+                        the kind of guarantee usually reserved for a hand-derived proof.
+                    </p>
+                </article>
+                <article class="entry">
+                    <h3 class="entry-title">Timed Automaton and Its Applications</h3>
+                    <p class="entry-meta">R&amp;D Course Project &middot; Advisor: Prof. Krishna Shankar Narayan, IIT Bombay &middot; Jan&ndash;Apr '25</p>
+                    <p class="entry-body">
+                        A more theoretical detour into formal methods: studying reachability and closure
+                        properties of timed automata through region and zone graph constructions, and comparing
+                        decidability across variants such as event-clock, updatable-timed, and one-clock automata.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section>
+            <p class="section-label">Machine Learning Systems &amp; Quantitative Research</p>
+            <div class="entry-list">
+                <article class="entry">
+                    <h3 class="entry-title">Double XGBoost: Depth-Wise Boosting</h3>
+                    <p class="entry-meta">Software Engineer, Juspay &middot; Research problem statement, Mumbai &middot; Dec '25&ndash;Jan '26 &middot; work in progress toward publication</p>
+                    <p class="entry-body">
+                        This started as an open research question at Juspay: whether a boosted-tree model could
+                        gain expressivity by going deeper rather than simply adding more trees. I proposed
+                        Double XGBoost, which introduces depth-wise boosting, and derived a second-order
+                        optimization formulation via Taylor expansion so that node-level predictors could be
+                        trained in closed form. Early results show faster convergence and improved accuracy from
+                        the residual-correction step; the work is still in progress toward publication.
+                    </p>
+                </article>
+                <article class="entry">
+                    <h3 class="entry-title">Quantitative Research: Portfolio Optimization &amp; Alpha Signals</h3>
+                    <p class="entry-meta">Quantitative Researcher, Graviton &middot; Gurugram, India &middot; May&ndash;Jul '26</p>
+                    <p class="entry-body">
+                        At Graviton, I worked on portfolio optimization for long-short strategies, focusing on
+                        systematic weight allocation, and on evaluating ML-based alpha signals across different
+                        model configurations. Part of the role involved building a reusable Python library and
+                        an interactive UI so the rest of the team could run training and backtesting experiments
+                        and compare alpha performance without rebuilding the pipeline each time.
+                    </p>
+                    <p class="entry-links"><a href="https://github.com/Harsheys18/Regime_Shift" target="_blank" rel="noopener noreferrer">related code</a></p>
+                </article>
+            </div>
+        </section>
+
+        <section>
+            <p class="section-label">Research Direction</p>
+            <p class="section-note" style="margin-bottom: 0;">
+                These threads &mdash; safe reinforcement learning, formal verification, and perception-driven
+                robot control &mdash; are converging into the direction I want to pursue as a PhD: systems that
+                combine learning with some form of guarantee about how they'll behave.
+            </p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p class="page">&copy; <span id="year"></span> Harshitha Inampudi &middot; <a href="https://github.com/Harsheys18/Harsheys18.github.io" target="_blank" rel="noopener noreferrer">view source</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
