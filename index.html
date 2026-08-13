@@ -3,206 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Harshitha Inampudi: research portfolio on safe reinforcement learning, formal verification, and embodied AI, ahead of PhD applications.">
-    <title>Home | Harshitha Inampudi</title>
+    <meta name="description" content="Harshitha Inampudi — undergraduate researcher at IIT Bombay working on robotics, safe reinforcement learning, and formal verification, applying to PhD programs.">
+    <title>Harshitha Inampudi</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Lora:ital,wght@0,500;0,600;0,700;1,500;1,600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="hero-bg" aria-hidden="true"></div>
-
     <header class="site-header">
-        <div class="container nav-wrap">
-            <a href="index.html" class="brand">Harshitha Inampudi</a>
-            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">Menu</button>
-            <nav id="siteNav" class="site-nav">
-                <a class="active" href="index.html">Home</a>
-                <a href="projects.html">Projects</a>
-                <a href="activities.html">Achievements</a>
-                <a href="interests.html">Skills</a>
-                <a href="musings.html">Musings</a>
-                <a href="contact.html">Contact</a>
+        <div class="page header-row">
+            <a href="index.html" class="site-title">Harshitha Inampudi</a>
+            <nav class="site-nav">
+                <a class="active" href="index.html">about</a>
+                <a href="projects.html">research</a>
+                <a href="activities.html">cv</a>
+                <a href="interests.html">skills</a>
+                <a href="musings.html">notes</a>
+                <a href="contact.html">contact</a>
             </nav>
         </div>
     </header>
 
-    <main>
-        <section class="hero-modern container">
-            <div>
-                <p class="hero-eyebrow">IIT Bombay | CSE Honors + MI and DS Minor | Prospective PhD Researcher</p>
-                <h1 class="hero-title">Building safe, verifiable, and embodied AI — from constrained reinforcement learning to robots that perceive and act.</h1>
-                <p class="hero-lead">
-                    I'm an undergraduate researcher working across robotics, perception-driven control, and machine
-                    learning &mdash; safe reinforcement learning and formal verification in particular &mdash; and I'm
-                    applying to PhD programs in Robotics and Machine Learning. This website captures my research,
-                    projects, and academic record.
-                </p>
-                <div class="hero-actions-modern">
-                    <a class="btn-modern btn-orange" href="projects.html">Explore Projects</a>
-                    <a class="btn-modern btn-outline" href="activities.html">View Achievements</a>
-                </div>
-            </div>
-        </section>
+    <main class="page main">
+        <h1 class="sr-only">Harshitha Inampudi — About</h1>
 
-        <section class="container stats-modern-grid">
-            <article class="stat-card-modern">
-                <h2>4</h2>
-                <p>Research and industry experiences across 2025-26 (Sakhi, Graviton, Juspay, NTU Singapore)</p>
-            </article>
-            <article class="stat-card-modern">
-                <h2>25+</h2>
-                <p>Course, self-driven, and research projects across AI, robotics, systems, and hardware</p>
-            </article>
-            <article class="stat-card-modern">
-                <h2>AIR 336</h2>
-                <p>JEE Advanced rank among 180K+ students</p>
-            </article>
-            <article class="stat-card-modern">
-                <h2 class="xl-stat">Top IIT</h2>
-                <p>Inter-IIT Tech Meet result in RL-based Wi-Fi optimization challenge</p>
-            </article>
-        </section>
-
-        <section class="container section-block" id="research">
-            <div class="section-head">
-                <h2>Research Interests</h2>
-            </div>
-            <p class="lead" style="margin-top: -0.6rem; margin-bottom: 1.4rem;">
-                Grounded in coursework, internships, and R&amp;D projects at IIT Bombay — not aspirational labels.
+        <section class="intro">
+            <p class="lede">
+                I'm an undergraduate researcher in Computer Science &amp; Engineering (Honors) at IIT Bombay,
+                working on robotics, safe reinforcement learning, and formal verification. I'm applying to PhD
+                programs in Robotics and Machine Learning.
             </p>
-            <div class="research-grid">
-                <article class="research-card">
-                    <div class="research-icon">⬢</div>
-                    <h3>Robotics &amp; Embodied AI</h3>
-                    <p>Perception-to-control frameworks combining learned visual representations with RL, and multimodal human-robot interaction on the Sakhi companion robot.</p>
-                </article>
-                <article class="research-card">
-                    <div class="research-icon">◆</div>
-                    <h3>Safe Reinforcement Learning</h3>
-                    <p>Constraint-aware PPO, TRPO, and constrained TD3 for continuous control under safety hazards.</p>
-                </article>
-                <article class="research-card">
-                    <div class="research-icon">▣</div>
-                    <h3>Formal Verification</h3>
-                    <p>Neural closure certificates and timed automata for proving safety of learned and dynamical systems.</p>
-                </article>
-                <article class="research-card">
-                    <div class="research-icon">◇</div>
-                    <h3>Generative &amp; Probabilistic Models</h3>
-                    <p>Diffusion models (DDPM, D3PM), RL-based fine-tuning, and approximate inference (FHMM, Bayesian optimization).</p>
-                </article>
-                <article class="research-card">
-                    <div class="research-icon">▤</div>
-                    <h3>ML Systems &amp; Optimization</h3>
-                    <p>Boosting algorithm design (Double XGBoost), portfolio optimization and alpha research, and cost-based query planning.</p>
-                </article>
-                <article class="research-card">
-                    <div class="research-icon">▧</div>
-                    <h3>Systems &amp; Algorithms</h3>
-                    <p>Kernel and OS internals (xv6), database query processing, and classical algorithm design.</p>
-                </article>
-            </div>
-        </section>
-
-        <section class="container section-block" id="timeline">
-            <div class="section-head">
-                <h2>Timeline</h2>
-            </div>
-            <ol class="timeline" style="list-style: none; margin: 0;">
-                <li class="timeline-item">
-                    <p class="timeline-year">2023</p>
-                    <h3>Joined IIT Bombay</h3>
-                    <ul>
-                        <li>AIR 336 in JEE Advanced (180,000+ candidates); AIR 636 in JEE Main</li>
-                        <li>Began B.Tech in Computer Science &amp; Engineering (Honors), Minor in Machine Intelligence &amp; Data Science</li>
-                        <li>Innovatix startup idea reached the finals (top 10/100+) of the EnB Buzz Competition</li>
-                    </ul>
-                </li>
-                <li class="timeline-item">
-                    <p class="timeline-year">2024</p>
-                    <h3>Systems foundations and mentoring</h3>
-                    <ul>
-                        <li>Data Structures &amp; Algorithms, Digital Logic Design and Computer Architecture coursework and labs</li>
-                        <li>Sports Secretary, CSE Association; Core Team, Yogastha Club</li>
-                        <li>Mentored a face mask detection (OpenCV/CNN) project for the Analytics Club</li>
-                    </ul>
-                </li>
-                <li class="timeline-item">
-                    <p class="timeline-year">2025</p>
-                    <h3>Research internships, Inter-IIT, and founding Sakhi</h3>
-                    <ul>
-                        <li>Safe RL research internship with Prof. Luke Ong's group, NTU Singapore</li>
-                        <li>R&amp;D projects: timed automata theory; neural closure certificates for verification, IIT Bombay</li>
-                        <li>Inter-IIT Tech Meet 14.0 — constrained TD3 for Wi-Fi RRM, top score among all IITs</li>
-                        <li>Software Engineering internship at Juspay: proposed Double XGBoost (Dec '25 – Jan '26)</li>
-                        <li>Technical Lead and Founding Member, Sakhi — an AI companion robot under IIT Bombay's IDEAS Program</li>
-                    </ul>
-                </li>
-                <li class="timeline-item">
-                    <p class="timeline-year">2026 and beyond</p>
-                    <h3>Deepening research, applying to PhD programs</h3>
-                    <ul>
-                        <li>B.Tech Project on perception-to-control learning for autonomous robots with Prof. Nived Chebrolu</li>
-                        <li>Quantitative Researcher at Graviton, building portfolio optimization and ML-based alpha pipelines</li>
-                        <li>Institute Student Mentor, IIT Bombay Student Mentorship Program</li>
-                        <li>Continuing Double XGBoost work toward a potential publication</li>
-                        <li>Applying to PhD programs in Robotics and Machine Learning</li>
-                    </ul>
-                </li>
-            </ol>
-        </section>
-
-        <section class="container future-note reveal" style="margin-bottom: 4rem;">
-            <p class="eyebrow">Looking ahead</p>
             <p>
-                I'm looking to pursue a PhD in Robotics and Machine Learning, continuing work on perception-driven
-                control, safe reinforcement learning, and formal verification for systems that reason and act
-                reliably in the real world.
+                My recent work includes Sakhi, an AI companion robot combining multimodal perception and
+                LLM-based reasoning; a B.Tech project on perception-to-control learning with Prof. Nived
+                Chebrolu; a safe-RL research internship with Prof. Luke Ong's group at NTU Singapore; and a
+                constrained-RL system for Wi-Fi resource management that took the top score among all IITs at
+                Inter-IIT Tech Meet 14.0. Before that, I worked across formal verification, generative
+                modeling, quantitative research, and classical systems &mdash; xv6, PostgreSQL internals, SAT
+                solving.
+            </p>
+            <p>
+                I joined IIT Bombay in 2023 after securing All India Rank 336 in JEE Advanced. Outside of
+                research, I mentor incoming students, play table tennis, and occasionally build robots purely
+                because it's fun &mdash; more on that in <a href="musings.html">notes</a>.
+            </p>
+            <p class="contact-line">
+                <a href="mailto:23b1071@iitb.ac.in">23b1071@iitb.ac.in</a>
+                <span class="sep">&middot;</span>
+                <a href="https://github.com/Harsheys18" target="_blank" rel="noopener noreferrer">github</a>
+                <span class="sep">&middot;</span>
+                <a href="https://www.linkedin.com/in/harshitha-inampudi-69a831293/" target="_blank" rel="noopener noreferrer">linkedin</a>
+                <span class="sep">&middot;</span>
+                <a href="activities.html">cv</a>
             </p>
         </section>
 
-        <section class="container section-block compact home-quick-links">
-            <div class="section-head">
-                <h2>Explore the Website</h2>
-            </div>
-            <div class="cards-grid">
-                <article class="info-card">
-                    <h3>Projects</h3>
-                    <p>Robotics, machine learning, systems, and optimization work organized by domain.</p>
-                    <a class="text-link" href="projects.html">Open Projects</a>
-                </article>
-                <article class="info-card">
-                    <h3>Achievements</h3>
-                    <p>Research internships, education, leadership, and scholastic highlights.</p>
-                    <a class="text-link" href="activities.html">Open Achievements</a>
-                </article>
-                <article class="info-card">
-                    <h3>Skills</h3>
-                    <p>Technical strengths across machine learning, optimization, software systems, and tools.</p>
-                    <a class="text-link" href="interests.html">Open Skills</a>
-                </article>
-                <article class="info-card">
-                    <h3>Musings</h3>
-                    <p>Informal notes and stories from robotics builds, research detours, and life outside the lab.</p>
-                    <a class="text-link" href="musings.html">Open Musings</a>
-                </article>
-            </div>
+        <section>
+            <p class="section-label">Research Interests</p>
+            <p>
+                Robotics &amp; embodied AI, safe reinforcement learning, formal verification of learned systems,
+                generative &amp; probabilistic modeling, and optimization. I'm most drawn to problems where
+                perception, learning, and control have to work together reliably &mdash; not just perform well
+                on average.
+            </p>
         </section>
 
-        <section class="container cta-strip">
-            <h2>Open to research and engineering collaborations</h2>
-            <p class="lead">For projects, internships, or technical discussions, feel free to connect.</p>
-            <a class="btn btn-primary" href="contact.html">Contact Me</a>
+        <section>
+            <p class="section-label">News</p>
+            <ul class="news-list">
+                <li><span class="news-date">2026</span> Started as a Quantitative Researcher at Graviton, working on portfolio optimization and ML-based alpha research.</li>
+                <li><span class="news-date">2026</span> Began a B.Tech Project on perception-to-control learning for autonomous robots with Prof. Nived Chebrolu.</li>
+                <li><span class="news-date">2026</span> Became an Institute Student Mentor as part of IIT Bombay's Student Mentorship Program.</li>
+                <li><span class="news-date">2025</span> Sakhi advanced to IDEAS Level 2, with funding secured to develop and validate the companion robot.</li>
+                <li><span class="news-date">2025</span> Our team took the top score among all IITs at Inter-IIT Tech Meet 14.0, building a safe-RL system for Wi-Fi resource management.</li>
+                <li><span class="news-date">2025</span> Interned on safe reinforcement learning with Prof. Luke Ong's group at NTU Singapore.</li>
+                <li><span class="news-date">2025</span> Proposed Double XGBoost, a depth-wise boosting algorithm, while at Juspay &mdash; work in progress toward publication.</li>
+            </ul>
+        </section>
+
+        <section class="quick-links">
+            <p class="section-label">Elsewhere on this site</p>
+            <p>
+                <a href="projects.html">Research &amp; projects</a> organized by domain &middot;
+                <a href="activities.html">full CV</a> with experience, education, and honors &middot;
+                <a href="interests.html">skills</a> and technical toolkit &middot;
+                <a href="musings.html">notes</a>, the informal side of things
+            </p>
         </section>
     </main>
 
     <footer class="site-footer">
-        <div class="container footer-wrap">
-            <p>Harshitha Inampudi | Research and Engineering Portfolio</p>
-            <p>&copy; <span id="year"></span> All rights reserved.</p>
-        </div>
+        <p class="page">&copy; <span id="year"></span> Harshitha Inampudi &middot; <a href="https://github.com/Harsheys18/Harsheys18.github.io" target="_blank" rel="noopener noreferrer">view source</a></p>
     </footer>
 
     <script src="script.js"></script>

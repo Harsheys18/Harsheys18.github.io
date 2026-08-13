@@ -7,80 +7,47 @@
     <title>Contact | Harshitha Inampudi</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Lora:ital,wght@0,500;0,600;0,700;1,500;1,600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="page-bg" aria-hidden="true">
-        <span class="shape shape-one"></span>
-        <span class="shape shape-two"></span>
-        <span class="shape shape-three"></span>
-    </div>
-
     <header class="site-header">
-        <div class="container nav-wrap">
-            <a href="index.html" class="brand">Harshitha Inampudi</a>
-            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">Menu</button>
-            <nav id="siteNav" class="site-nav">
-                <a href="index.html">Home</a>
-                <a href="projects.html">Projects</a>
-                <a href="activities.html">Achievements</a>
-                <a href="interests.html">Skills</a>
-                <a href="musings.html">Musings</a>
-                <a class="active" href="contact.html">Contact</a>
+        <div class="page header-row">
+            <a href="index.html" class="site-title">Harshitha Inampudi</a>
+            <nav class="site-nav">
+                <a href="index.html">about</a>
+                <a href="projects.html">research</a>
+                <a href="activities.html">cv</a>
+                <a href="interests.html">skills</a>
+                <a href="musings.html">notes</a>
+                <a class="active" href="contact.html">contact</a>
             </nav>
         </div>
     </header>
 
-    <main class="container page-main">
-        <section class="section-block compact">
-            <p class="eyebrow">Contact</p>
-            <h1>Let's talk research</h1>
-            <p class="lead">Open to PhD-related conversations, research collaborations, and discussions on robotics and machine learning.</p>
+    <main class="page main">
+        <div class="page-head">
+            <h1 class="page-title">Contact</h1>
+            <p class="page-intro">Open to PhD-related conversations, research collaborations, and discussions on robotics and machine learning.</p>
+        </div>
+
+        <section>
+            <dl class="contact-list">
+                <div><dt>email</dt> <a href="mailto:23b1071@iitb.ac.in">23b1071@iitb.ac.in</a></div>
+                <div><dt>github</dt> <a href="https://github.com/Harsheys18" target="_blank" rel="noopener noreferrer">github.com/Harsheys18</a></div>
+                <div><dt>linkedin</dt> <a href="https://www.linkedin.com/in/harshitha-inampudi-69a831293/" target="_blank" rel="noopener noreferrer">harshitha-inampudi-69a831293</a></div>
+                <div><dt>location</dt> Mumbai, India</div>
+            </dl>
         </section>
 
-        <section class="section-block two-column">
-            <article class="panel">
-                <h2>Primary Channels</h2>
-                <ul class="fancy-list">
-                    <li>Email: <a href="mailto:23b1071@iitb.ac.in">23b1071@iitb.ac.in</a></li>
-                    <li>GitHub: <a href="https://github.com/Harsheys18" target="_blank" rel="noopener noreferrer">github.com/Harsheys18</a></li>
-                    <li>LinkedIn: <a href="https://www.linkedin.com/in/harshitha-inampudi-69a831293/" target="_blank" rel="noopener noreferrer">harshitha-inampudi-69a831293</a></li>
-                    <li>Location: Mumbai, India</li>
-                </ul>
-            </article>
-            <article class="panel">
-                <h2>Current Focus Areas</h2>
-                <ul class="fancy-list">
-                    <li>Robotics and embodied AI</li>
-                    <li>Safe reinforcement learning</li>
-                    <li>Formal verification of learned systems</li>
-                </ul>
-            </article>
-        </section>
-
-        <section class="section-block">
-            <h2>Quick Message</h2>
-            <form class="contact-form" action="mailto:23b1071@iitb.ac.in" method="post" enctype="text/plain">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-
-                <button class="btn btn-primary" type="submit">Send Message</button>
-            </form>
+        <section>
+            <p class="section-label">Current Focus Areas</p>
+            <p>Robotics and embodied AI, safe reinforcement learning, and formal verification of learned systems.</p>
         </section>
     </main>
 
     <footer class="site-footer">
-        <div class="container footer-wrap">
-            <p>Harshitha Inampudi | Research and Engineering Portfolio</p>
-            <p>&copy; <span id="year"></span> All rights reserved.</p>
-        </div>
+        <p class="page">&copy; <span id="year"></span> Harshitha Inampudi &middot; <a href="https://github.com/Harsheys18/Harsheys18.github.io" target="_blank" rel="noopener noreferrer">view source</a></p>
     </footer>
 
     <script src="script.js"></script>

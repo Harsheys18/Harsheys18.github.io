@@ -7,122 +7,87 @@
     <title>Skills | Harshitha Inampudi</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Lora:ital,wght@0,500;0,600;0,700;1,500;1,600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="page-bg" aria-hidden="true">
-        <span class="shape shape-one"></span>
-        <span class="shape shape-two"></span>
-        <span class="shape shape-three"></span>
-    </div>
-
     <header class="site-header">
-        <div class="container nav-wrap">
-            <a href="index.html" class="brand">Harshitha Inampudi</a>
-            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">Menu</button>
-            <nav id="siteNav" class="site-nav">
-                <a href="index.html">Home</a>
-                <a href="projects.html">Projects</a>
-                <a href="activities.html">Achievements</a>
-                <a class="active" href="interests.html">Skills</a>
-                <a href="musings.html">Musings</a>
-                <a href="contact.html">Contact</a>
+        <div class="page header-row">
+            <a href="index.html" class="site-title">Harshitha Inampudi</a>
+            <nav class="site-nav">
+                <a href="index.html">about</a>
+                <a href="projects.html">research</a>
+                <a href="activities.html">cv</a>
+                <a class="active" href="interests.html">skills</a>
+                <a href="musings.html">notes</a>
+                <a href="contact.html">contact</a>
             </nav>
         </div>
     </header>
 
-    <main class="container page-main">
-        <section class="section-block compact">
-            <p class="eyebrow">Skills</p>
-            <h1>Technical Strengths and Focus Areas</h1>
-            <p class="lead">Core skills built through robotics and ML research, internships, and advanced coursework, ahead of a PhD in Robotics and Machine Learning.</p>
+    <main class="page main">
+        <div class="page-head">
+            <h1 class="page-title">Skills</h1>
+            <p class="page-intro">Core skills built through robotics and ML research, internships, and advanced coursework.</p>
+        </div>
+
+        <section>
+            <p class="section-label">Focus Areas</p>
+            <dl class="deflist">
+                <div class="deflist-row">
+                    <dt>Robotics &amp; Embodied AI</dt>
+                    <dd>Perception-to-control pipelines combining vision with reinforcement learning; multimodal human-robot interaction (STT, facial emotion detection, TTS, LLM-based reasoning); neuro-symbolic and hierarchical learning for long-horizon robot tasks</dd>
+                </div>
+                <div class="deflist-row">
+                    <dt>Reinforcement Learning</dt>
+                    <dd>Safe RL for physical and networked systems: PPO, TRPO, constrained TD3; RL-based fine-tuning of generative models</dd>
+                </div>
+                <div class="deflist-row">
+                    <dt>Machine Learning</dt>
+                    <dd>Generative modeling (DDPM, D3PM), machine unlearning and model reliability, probabilistic modeling and approximate inference</dd>
+                </div>
+                <div class="deflist-row">
+                    <dt>Formal Methods</dt>
+                    <dd>Neural closure certificates and timed automata for verification-oriented modeling</dd>
+                </div>
+                <div class="deflist-row">
+                    <dt>Systems &amp; Algorithms</dt>
+                    <dd>Operating systems (xv6 kernel internals), database query parsing and cost-based optimization, SAT solving, graph algorithms, compression, digital systems (Verilog, MIPS)</dd>
+                </div>
+                <div class="deflist-row">
+                    <dt>Optimization &amp; Quant</dt>
+                    <dd>Portfolio optimization and long-short strategy design, ML-based alpha research and backtesting, convex optimization with CVXPY, time-series modeling (ARIMA, GARCH), Monte Carlo methods</dd>
+                </div>
+            </dl>
         </section>
 
-        <section class="section-block two-column">
-            <article class="panel">
-                <h2>Robotics and Embodied AI</h2>
-                <ul class="fancy-list">
-                    <li>Perception-to-control pipelines combining vision with reinforcement learning</li>
-                    <li>Multimodal human-robot interaction: STT, facial emotion detection, TTS, LLM-based reasoning</li>
-                    <li>Safe RL for physical and networked systems: PPO, TRPO, constrained TD3</li>
-                    <li>Neuro-symbolic and hierarchical learning for long-horizon robot tasks</li>
-                </ul>
-            </article>
-            <article class="panel">
-                <h2>Machine Learning and AI</h2>
-                <ul class="fancy-list">
-                    <li>Generative modeling: DDPM, D3PM, diffusion model fine-tuning</li>
-                    <li>Machine unlearning and model reliability techniques</li>
-                    <li>Probabilistic modeling and approximate inference methods</li>
-                    <li>Formal methods: neural closure certificates and timed automata for verification</li>
-                </ul>
-            </article>
+        <section>
+            <p class="section-label">Languages &amp; Tools</p>
+            <dl class="deflist">
+                <div class="deflist-row">
+                    <dt>Languages</dt>
+                    <dd>Python, C++, C, Bash, Prolog, Sed, Awk, Verilog, HTML, CSS, JavaScript, MIPS, Git, LaTeX</dd>
+                </div>
+                <div class="deflist-row">
+                    <dt>Libraries</dt>
+                    <dd>PyTorch, NumPy, SciPy, Matplotlib, Pandas, Scikit-Learn, OpenCV, CVXPY</dd>
+                </div>
+            </dl>
         </section>
 
-        <section class="section-block two-column">
-            <article class="panel">
-                <h2>Systems and Algorithms</h2>
-                <ul class="fancy-list">
-                    <li>Operating systems: xv6 kernel enhancements and memory optimizations</li>
-                    <li>Databases: query parsing, planning, and cost-based optimization</li>
-                    <li>Algorithms: SAT solving, graph methods, compression workflows</li>
-                    <li>Digital systems: Verilog multipliers, adders, and MIPS architecture</li>
-                </ul>
-            </article>
-            <article class="panel">
-                <h2>Optimization and Quantitative Research</h2>
-                <ul class="fancy-list">
-                    <li>Portfolio optimization and long-short strategy design</li>
-                    <li>ML-based alpha research, training, and backtesting pipelines</li>
-                    <li>Convex optimization with CVXPY for real-world constrained problems</li>
-                    <li>Time-series modeling (ARIMA, GARCH) and Monte Carlo methods</li>
-                </ul>
-            </article>
-        </section>
-
-        <section class="section-block">
-            <h2>Programming and Tools</h2>
-            <div class="cards-grid">
-                <article class="info-card">
-                    <h3>Languages</h3>
-                    <div class="pill-row">
-                        <span class="pill">Python</span><span class="pill">C++</span><span class="pill">C</span>
-                        <span class="pill">Bash</span><span class="pill">Prolog</span><span class="pill">Verilog</span>
-                        <span class="pill">JavaScript</span><span class="pill">MIPS</span><span class="pill">LaTeX</span>
-                    </div>
-                </article>
-                <article class="info-card">
-                    <h3>Libraries</h3>
-                    <div class="pill-row">
-                        <span class="pill">PyTorch</span><span class="pill">NumPy</span><span class="pill">SciPy</span>
-                        <span class="pill">Pandas</span><span class="pill">Scikit-Learn</span><span class="pill">OpenCV</span>
-                        <span class="pill">Matplotlib</span><span class="pill">CVXPY</span>
-                    </div>
-                </article>
-                <article class="info-card">
-                    <h3>Engineering Practice</h3>
-                    <p>Research implementation, algorithm prototyping, systems debugging, and performance-aware development.</p>
-                </article>
-            </div>
-        </section>
-
-        <section class="section-block">
-            <h2>Additional Highlights</h2>
-            <ul class="fancy-list">
-                <li>Research and development coursework in verification and automata</li>
-                <li>Competition experience in real-world reinforcement learning applications</li>
-                <li>Strong foundation in mathematical modeling and optimization</li>
-                <li>Active involvement in technical collaboration and peer learning</li>
+        <section>
+            <p class="section-label">Additional Highlights</p>
+            <ul class="simple-list" style="padding-left: 0;">
+                <li style="padding-left: 0;">Research and development coursework in verification and automata theory</li>
+                <li style="padding-left: 0;">Competition experience in real-world reinforcement learning applications</li>
+                <li style="padding-left: 0;">Strong foundation in mathematical modeling and optimization</li>
+                <li style="padding-left: 0;">Active involvement in technical collaboration and peer mentoring</li>
             </ul>
         </section>
     </main>
 
     <footer class="site-footer">
-        <div class="container footer-wrap">
-            <p>Harshitha Inampudi | Research and Engineering Portfolio</p>
-            <p>&copy; <span id="year"></span> All rights reserved.</p>
-        </div>
+        <p class="page">&copy; <span id="year"></span> Harshitha Inampudi &middot; <a href="https://github.com/Harsheys18/Harsheys18.github.io" target="_blank" rel="noopener noreferrer">view source</a></p>
     </footer>
 
     <script src="script.js"></script>
