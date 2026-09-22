@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#f7fbfe">
     <meta name="description" content="Machine learning and robotics research by Harshitha Inampudi: embodied AI, safe reinforcement learning, formal verification of learned systems, and generative modeling.">
     <title>Research | Harshitha Inampudi</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,19 +33,16 @@
                 and self-directed builds. Each entry has a figure showing what the system actually does, and a
                 link to the code where the repository is public.
             </p>
-            <nav class="jump-nav" aria-label="Jump to a theme">
-                <a href="#robotics">Robotics &amp; Embodied AI</a>
-                <a href="#safe-rl">Safe &amp; Sequential Decision-Making</a>
-                <a href="#verification">Verification &amp; Reasoning</a>
-                <a href="#generative">Generative &amp; Probabilistic</a>
-                <a href="#applied">Applied ML &amp; Perception</a>
-                <a href="#quant">ML for Quantitative Research</a>
+            <nav class="jump-nav" aria-label="Jump to a group">
+                <a href="#robot-learning">Robot Learning</a>
+                <a href="#safety">Safety &amp; Verification</a>
+                <a href="#ml">Machine Learning</a>
+                <a href="#hardware">Hardware &amp; Robotics Systems</a>
             </nav>
         </div>
 
-        <!-- ================= ROBOTICS ================= -->
-        <section id="robotics">
-            <p class="section-label">Robotics &amp; Embodied AI</p>
+        <section id="robot-learning">
+            <p class="section-label">Robot Learning</p>
             <div class="project-list">
 
                 <article class="project">
@@ -84,67 +82,11 @@
                         <p class="repo-line"><span class="repo-none">Repository not public yet &mdash; project in progress.</span></p>
                     </div>
                 </article>
-
-                <article class="project">
-                    <figure class="project-figure"><img src="assets/viz/terrarover.svg" alt="Illustration of a six-wheeled rocker-bogie rover on Martian terrain with frontier exploration goals and the ROS 2 control, EKF and navigation stack beneath it." loading="lazy"></figure>
-                    <div>
-                        <h3 class="project-title">TerraROVER &mdash; Planetary Exploration Rover</h3>
-                        <p class="project-meta">Summer of Robotics <span class="sep">&middot;</span> Electronics and Robotics Club, IIT Bombay <span class="sep">&middot;</span> May&ndash;Jul 2026</p>
-                        <p class="project-body">
-                            A complete ROS 2 simulation framework for a six-wheeled rocker-bogie Mars rover, taking
-                            the whole pipeline from velocity command to wheel-level control: a custom C++ controller
-                            implementing Ackermann kinematics for six wheels, an extended Kalman filter fusing wheel
-                            odometry with IMU for pose estimation, and Nav2 with a tuned pure-pursuit controller for
-                            navigation. On top of the required work I added two exploration modes &mdash; random goal
-                            generation, and frontier-based exploration using DBSCAN clustering with three different
-                            frontier-selection strategies.
-                        </p>
-                        <div class="tag-row"><span class="tag">ROS 2</span><span class="tag">Gazebo</span><span class="tag">EKF localisation</span><span class="tag">frontier exploration</span></div>
-                        <p class="repo-line">
-                            <a class="repo-link" href="https://github.com/Harsheys18/TerraROVER_Summer_of_Robotics" target="_blank" rel="noopener noreferrer">
-                                github.com/Harsheys18/TerraROVER_Summer_of_Robotics
-                            </a>
-                        </p>
-                    </div>
-                </article>
-
-                <article class="project">
-                    <figure class="project-figure"><img src="assets/viz/quadcopter.svg" alt="Illustration of a quadcopter hovering with spinning rotors, alongside the pitch, roll and yaw control axes and a phone acting as the transmitter." loading="lazy"></figure>
-                    <div>
-                        <h3 class="project-title">Quadcopter &mdash; UAV Development</h3>
-                        <p class="project-meta">Makerspace Course Project <span class="sep">&middot;</span> Guides: Prof. Kushal Tuekley, Prof. Siddini Venkatesh Prabhu <span class="sep">&middot;</span> Spring 2024</p>
-                        <p class="project-body">
-                            A 500&nbsp;mm quadcopter built from scratch, with Arduino-based flight control reading the
-                            IMU and mixing pitch, roll, and yaw corrections into four motor commands. Rather than a
-                            dedicated transmitter, a smartphone app sends setpoints over a serial link. Most of the
-                            learning was in the gap between a controller that works on paper and one that keeps a
-                            physical frame stable in air.
-                        </p>
-                        <div class="tag-row"><span class="tag">embedded control</span><span class="tag">IMU fusion</span><span class="tag">Arduino</span></div>
-                        <p class="repo-line"><span class="repo-none">No public repository &mdash; the work was hardware and firmware on the bench.</span></p>
-                    </div>
-                </article>
-
-                <article class="project">
-                    <figure class="project-figure"><img src="assets/viz/combat-bot.svg" alt="Illustration of a 3D-printed combat robot with a wedge chassis and spinning weapon driving into an opponent, with the print layers shown beside it." loading="lazy"></figure>
-                    <div>
-                        <h3 class="project-title">Printed Combat Bot</h3>
-                        <p class="project-meta">Battlebot Challenge, Tinkerer's Lab, IIT Bombay <span class="sep">&middot;</span> Summer 2024</p>
-                        <p class="project-body">
-                            Designed and 3D-printed a combat robot in Fusion360. Most of the effort went into the
-                            attack-and-defence mechanism and getting motor control precise enough to hold position
-                            under impact &mdash; a bot that looks right on screen and stalls on contact loses anyway.
-                        </p>
-                        <div class="tag-row"><span class="tag">CAD</span><span class="tag">mechanism design</span><span class="tag">motor control</span></div>
-                        <p class="repo-line"><span class="repo-none">No public repository &mdash; CAD and hardware only.</span></p>
-                    </div>
-                </article>
             </div>
         </section>
 
-        <!-- ================= SAFE RL ================= -->
-        <section id="safe-rl">
-            <p class="section-label">Safe &amp; Sequential Decision-Making</p>
+        <section id="safety">
+            <p class="section-label">Safety &amp; Verification</p>
             <div class="project-list">
 
                 <article class="project">
@@ -188,34 +130,6 @@
                         <p class="repo-line"><span class="repo-none">No public repository &mdash; competition submission held by the team.</span></p>
                     </div>
                 </article>
-
-                <article class="project">
-                    <figure class="project-figure"><img src="assets/viz/flappy-rl.svg" alt="Diagram of a reinforcement learning agent learning Flappy Bird: the gap geometry as state, action values for flap versus do-nothing, and a rising score-per-episode curve." loading="lazy"></figure>
-                    <div>
-                        <h3 class="project-title">Flappy Learner &mdash; RL from First Principles</h3>
-                        <p class="project-meta">Mentor, Seasons of Code <span class="sep">&middot;</span> Web and Coding Club, IIT Bombay <span class="sep">&middot;</span> May&ndash;Jul 2025</p>
-                        <p class="project-body">
-                            An RL agent that learns to play Flappy Bird, built as a teaching scaffold for the students
-                            I was mentoring &mdash; MDPs, Bellman equations, Q-learning, SARSA, and TD learning, each
-                            introduced against an environment simple enough that the effect of every design choice is
-                            visible. Writing it also forced me to be precise about the parts of RL I had been
-                            comfortable hand-waving through.
-                        </p>
-                        <div class="tag-row"><span class="tag">Q-learning</span><span class="tag">SARSA</span><span class="tag">mentoring</span></div>
-                        <p class="repo-line">
-                            <a class="repo-link" href="https://github.com/Harsheys18/Flappy_Learner_RL" target="_blank" rel="noopener noreferrer">
-                                github.com/Harsheys18/Flappy_Learner_RL
-                            </a>
-                        </p>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <!-- ================= VERIFICATION ================= -->
-        <section id="verification">
-            <p class="section-label">Verification &amp; Reasoning</p>
-            <div class="project-list">
 
                 <article class="project">
                     <figure class="project-figure"><img src="assets/viz/closure-certificate.svg" alt="Diagram of a neural closure certificate: level sets growing outward from the initial set to contain all reachable states while never touching the unsafe region, with the certificate network beside it." loading="lazy"></figure>
@@ -276,9 +190,8 @@
             </div>
         </section>
 
-        <!-- ================= GENERATIVE ================= -->
-        <section id="generative">
-            <p class="section-label">Generative &amp; Probabilistic Modeling</p>
+        <section id="ml">
+            <p class="section-label">Machine Learning</p>
             <div class="project-list">
 
                 <article class="project">
@@ -342,13 +255,22 @@
                         <p class="repo-line"><span class="repo-none">No public repository &mdash; course project.</span></p>
                     </div>
                 </article>
-            </div>
-        </section>
 
-        <!-- ================= APPLIED ================= -->
-        <section id="applied">
-            <p class="section-label">Applied ML &amp; Perception</p>
-            <div class="project-list">
+                <article class="project">
+                    <figure class="project-figure"><img src="assets/viz/hmm-tagging.svg" alt="Diagram of a Viterbi trellis: hidden tag states for determiner, noun and verb across four words, with the highest-probability path traced through the lattice." loading="lazy"></figure>
+                    <div>
+                        <h3 class="project-title">Markov Models for Word Tagging</h3>
+                        <p class="project-meta">AI &amp; Machine Learning <span class="sep">&middot;</span> Instructor: Prof. Pushpak Bhattacharya, IIT Bombay <span class="sep">&middot;</span> Jan&ndash;Apr 2025</p>
+                        <p class="project-body">
+                            A hidden Markov model part-of-speech tagger trained on the Brown Corpus, with Laplace
+                            smoothing and 5-fold cross-validation for stability, and the Viterbi algorithm decoding
+                            the most likely tag sequence at inference. The useful intuition here is that the label is
+                            never observed &mdash; only the word it produced.
+                        </p>
+                        <div class="tag-row"><span class="tag">HMMs</span><span class="tag">Viterbi decoding</span><span class="tag">NLP</span></div>
+                        <p class="repo-line"><span class="repo-none">No public repository &mdash; course project.</span></p>
+                    </div>
+                </article>
 
                 <article class="project">
                     <figure class="project-figure"><img src="assets/viz/siamese-face.svg" alt="Diagram of a Siamese network: two face images passing through one shared-weight encoder into an embedding space, where a small distance between the two embeddings indicates a match." loading="lazy"></figure>
@@ -392,22 +314,6 @@
                 </article>
 
                 <article class="project">
-                    <figure class="project-figure"><img src="assets/viz/hmm-tagging.svg" alt="Diagram of a Viterbi trellis: hidden tag states for determiner, noun and verb across four words, with the highest-probability path traced through the lattice." loading="lazy"></figure>
-                    <div>
-                        <h3 class="project-title">Markov Models for Word Tagging</h3>
-                        <p class="project-meta">AI &amp; Machine Learning <span class="sep">&middot;</span> Instructor: Prof. Pushpak Bhattacharya, IIT Bombay <span class="sep">&middot;</span> Jan&ndash;Apr 2025</p>
-                        <p class="project-body">
-                            A hidden Markov model part-of-speech tagger trained on the Brown Corpus, with Laplace
-                            smoothing and 5-fold cross-validation for stability, and the Viterbi algorithm decoding
-                            the most likely tag sequence at inference. The useful intuition here is that the label is
-                            never observed &mdash; only the word it produced.
-                        </p>
-                        <div class="tag-row"><span class="tag">HMMs</span><span class="tag">Viterbi decoding</span><span class="tag">NLP</span></div>
-                        <p class="repo-line"><span class="repo-none">No public repository &mdash; course project.</span></p>
-                    </div>
-                </article>
-
-                <article class="project">
                     <figure class="project-figure"><img src="assets/viz/sudoku.svg" alt="Diagram of an end-to-end Sudoku solver: a photographed grid detected and warped, digits classified by a CNN, and the remaining cells filled by A-star guided backtracking." loading="lazy"></figure>
                     <div>
                         <h3 class="project-title">Sudoku Solver using Machine Learning</h3>
@@ -422,13 +328,27 @@
                         <p class="repo-line"><span class="repo-none">No public repository &mdash; project files not published.</span></p>
                     </div>
                 </article>
-            </div>
-        </section>
 
-        <!-- ================= QUANT ================= -->
-        <section id="quant">
-            <p class="section-label">ML for Quantitative Research</p>
-            <div class="project-list">
+                <article class="project">
+                    <figure class="project-figure"><img src="assets/viz/flappy-rl.svg" alt="Diagram of a reinforcement learning agent learning Flappy Bird: the gap geometry as state, action values for flap versus do-nothing, and a rising score-per-episode curve." loading="lazy"></figure>
+                    <div>
+                        <h3 class="project-title">Flappy Learner &mdash; RL from First Principles</h3>
+                        <p class="project-meta">Mentor, Seasons of Code <span class="sep">&middot;</span> Web and Coding Club, IIT Bombay <span class="sep">&middot;</span> May&ndash;Jul 2025</p>
+                        <p class="project-body">
+                            An RL agent that learns to play Flappy Bird, built as a teaching scaffold for the students
+                            I was mentoring &mdash; MDPs, Bellman equations, Q-learning, SARSA, and TD learning, each
+                            introduced against an environment simple enough that the effect of every design choice is
+                            visible. Writing it also forced me to be precise about the parts of RL I had been
+                            comfortable hand-waving through.
+                        </p>
+                        <div class="tag-row"><span class="tag">Q-learning</span><span class="tag">SARSA</span><span class="tag">mentoring</span></div>
+                        <p class="repo-line">
+                            <a class="repo-link" href="https://github.com/Harsheys18/Flappy_Learner_RL" target="_blank" rel="noopener noreferrer">
+                                github.com/Harsheys18/Flappy_Learner_RL
+                            </a>
+                        </p>
+                    </div>
+                </article>
 
                 <article class="project">
                     <figure class="project-figure"><img src="assets/viz/double-xgboost.svg" alt="Diagram of depth-wise boosting: a tree in which every node carries its own predictor and passes a residual correction further down, contrasted with standard XGBoost adding more trees." loading="lazy"></figure>
@@ -471,6 +391,68 @@
                 </article>
             </div>
         </section>
+
+        <section id="hardware">
+            <p class="section-label">Hardware &amp; Robotics Systems</p>
+            <div class="project-list">
+
+                <article class="project">
+                    <figure class="project-figure"><img src="assets/viz/terrarover.svg" alt="Illustration of a six-wheeled rocker-bogie rover on Martian terrain with frontier exploration goals and the ROS 2 control, EKF and navigation stack beneath it." loading="lazy"></figure>
+                    <div>
+                        <h3 class="project-title">TerraROVER &mdash; Planetary Exploration Rover</h3>
+                        <p class="project-meta">Summer of Robotics <span class="sep">&middot;</span> Electronics and Robotics Club, IIT Bombay <span class="sep">&middot;</span> May&ndash;Jul 2026</p>
+                        <p class="project-body">
+                            A complete ROS 2 simulation framework for a six-wheeled rocker-bogie Mars rover, taking
+                            the whole pipeline from velocity command to wheel-level control: a custom C++ controller
+                            implementing Ackermann kinematics for six wheels, an extended Kalman filter fusing wheel
+                            odometry with IMU for pose estimation, and Nav2 with a tuned pure-pursuit controller for
+                            navigation. On top of the required work I added two exploration modes &mdash; random goal
+                            generation, and frontier-based exploration using DBSCAN clustering with three different
+                            frontier-selection strategies.
+                        </p>
+                        <div class="tag-row"><span class="tag">ROS 2</span><span class="tag">Gazebo</span><span class="tag">EKF localisation</span><span class="tag">frontier exploration</span></div>
+                        <p class="repo-line">
+                            <a class="repo-link" href="https://github.com/Harsheys18/TerraROVER_Summer_of_Robotics" target="_blank" rel="noopener noreferrer">
+                                github.com/Harsheys18/TerraROVER_Summer_of_Robotics
+                            </a>
+                        </p>
+                    </div>
+                </article>
+
+                <article class="project">
+                    <figure class="project-figure"><img src="assets/viz/quadcopter.svg" alt="Illustration of a quadcopter hovering with spinning rotors, alongside the pitch, roll and yaw control axes and a phone acting as the transmitter." loading="lazy"></figure>
+                    <div>
+                        <h3 class="project-title">Quadcopter &mdash; UAV Development</h3>
+                        <p class="project-meta">Makerspace Course Project <span class="sep">&middot;</span> Guides: Prof. Kushal Tuekley, Prof. Siddini Venkatesh Prabhu <span class="sep">&middot;</span> Spring 2024</p>
+                        <p class="project-body">
+                            A 500&nbsp;mm quadcopter built from scratch, with Arduino-based flight control reading the
+                            IMU and mixing pitch, roll, and yaw corrections into four motor commands. Rather than a
+                            dedicated transmitter, a smartphone app sends setpoints over a serial link. Most of the
+                            learning was in the gap between a controller that works on paper and one that keeps a
+                            physical frame stable in air.
+                        </p>
+                        <div class="tag-row"><span class="tag">embedded control</span><span class="tag">IMU fusion</span><span class="tag">Arduino</span></div>
+                        <p class="repo-line"><span class="repo-none">No public repository &mdash; the work was hardware and firmware on the bench.</span></p>
+                    </div>
+                </article>
+
+                <article class="project">
+                    <figure class="project-figure"><img src="assets/viz/combat-bot.svg" alt="Illustration of a 3D-printed combat robot with a wedge chassis and spinning weapon driving into an opponent, with the print layers shown beside it." loading="lazy"></figure>
+                    <div>
+                        <h3 class="project-title">Printed Combat Bot</h3>
+                        <p class="project-meta">Battlebot Challenge, Tinkerer's Lab, IIT Bombay <span class="sep">&middot;</span> Summer 2024</p>
+                        <p class="project-body">
+                            Designed and 3D-printed a combat robot in Fusion360. Most of the effort went into the
+                            attack-and-defence mechanism and getting motor control precise enough to hold position
+                            under impact &mdash; a bot that looks right on screen and stalls on contact loses anyway.
+                        </p>
+                        <div class="tag-row"><span class="tag">CAD</span><span class="tag">mechanism design</span><span class="tag">motor control</span></div>
+                        <p class="repo-line"><span class="repo-none">No public repository &mdash; CAD and hardware only.</span></p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
     </main>
 
     <footer class="site-footer">
