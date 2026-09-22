@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 340" width="520" height="340" role="img" aria-label="Timed automata: locations connected by guarded transitions on a real-valued clock, with the infinite clock space partitioned into finitely many regions so that reachability stays decidable.">
+  <style>
+    .bg { fill: #f2f8fd; }
+    .panel { fill: #ffffff; stroke: #bcdcf2; stroke-width: 1.5; }
+    .loc { fill: #ffffff; stroke: #10305c; stroke-width: 2; }
+    .lbl { font: 600 12px Inter, system-ui, sans-serif; fill: #10305c; }
+    .mono { font: 600 11px "JetBrains Mono", ui-monospace, monospace; fill: #1878b8; }
+    .sub { font: 500 10px Inter, system-ui, sans-serif; fill: #6e7d96; }
+    .cap { font: 600 11px Inter, system-ui, sans-serif; fill: #1878b8; letter-spacing: .08em; }
+    .edge { fill: none; stroke: #2b95d6; stroke-width: 2; marker-end: url(#a1); }
+    .hand { transform-box: view-box; transform-origin: 402px 130px; animation: tick 4s linear infinite; }
+    @keyframes tick { to { transform: rotate(360deg); } }
+    .act1 { animation: act 4s ease-in-out infinite; }
+    .act2 { animation: act 4s ease-in-out infinite; animation-delay: 2s; }
+    @keyframes act { 0%,44%,100% { fill: #ffffff; } 6%,38% { fill: #dcecf9; } }
+    .region { animation: reg 4s ease-in-out infinite; }
+    .r2 { animation-delay: .5s; } .r3 { animation-delay: 1s; } .r4 { animation-delay: 1.5s; }
+    @keyframes reg { 0%,100% { opacity: .2; } 50% { opacity: .75; } }
+    .dot { animation: slide 4s linear infinite; }
+    @keyframes slide { 0% { transform: translateX(0); } 100% { transform: translateX(104px); } }
+  </style>
+  <defs><marker id="a1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#2b95d6"/></marker></defs>
+
+  <rect class="bg" width="520" height="340" rx="10"/>
+  <text class="cap" x="24" y="30">GUARDS, RESETS, AND A FINITE QUOTIENT</text>
+
+  <!-- automaton -->
+  <rect class="panel" x="24" y="48" width="306" height="140" rx="10"/>
+  <circle class="loc act1" cx="84" cy="118" r="26"/>
+  <text class="lbl" x="75" y="123">q0</text>
+  <circle class="loc act2" cx="266" cy="118" r="26"/>
+  <circle cx="266" cy="118" r="21" fill="none" stroke="#10305c" stroke-width="1"/>
+  <text class="lbl" x="257" y="123">q1</text>
+
+  <path class="edge" d="M112 108 q62 -26 126 0"/>
+  <text class="mono" x="136" y="82">x &lt; 5, a</text>
+  <path class="edge" d="M240 136 q-62 26 -126 0"/>
+  <text class="mono" x="140" y="168">x := 0</text>
+  <path class="edge" d="M36 106 L54 112"/>
+  <text class="sub" x="36" y="172">a clock advances with real time</text>
+
+  <!-- clock -->
+  <rect class="panel" x="348" y="48" width="148" height="140" rx="10"/>
+  <circle cx="402" cy="130" r="34" fill="#eef7fd" stroke="#8ec7e9" stroke-width="1.5"/>
+  <g class="hand"><path d="M402 130 V106" stroke="#10305c" stroke-width="2.5" stroke-linecap="round"/></g>
+  <circle cx="402" cy="130" r="3" fill="#10305c"/>
+  <text class="lbl" x="444" y="126">x</text>
+  <text class="sub" x="360" y="80">clock valuation</text>
+
+  <!-- region / zone graph -->
+  <rect class="panel" x="24" y="206" width="472" height="104" rx="10"/>
+  <text class="lbl" x="40" y="230">region graph &#8212; infinitely many valuations, finitely many classes</text>
+  <g transform="translate(40,242)">
+    <rect class="region" x="0" y="0" width="52" height="30" rx="4" fill="#2b95d6"/>
+    <rect class="region r2" x="58" y="0" width="52" height="30" rx="4" fill="#2b95d6"/>
+    <rect class="region r3" x="116" y="0" width="52" height="30" rx="4" fill="#2b95d6"/>
+    <rect class="region r4" x="174" y="0" width="52" height="30" rx="4" fill="#2b95d6"/>
+    <rect x="232" y="0" width="52" height="30" rx="4" fill="#dcecf9"/>
+    <g class="dot"><circle cx="26" cy="15" r="5" fill="#10305c"/></g>
+    <text class="sub" x="300" y="19">event-clock &#183; updatable &#183; one-clock variants</text>
+  </g>
+</svg>

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 340" width="520" height="340" role="img" aria-label="Machine unlearning: extra layers are fine-tuned with an entropy and logit-suppression objective so the model stays confident on retained data while its confidence collapses on the forget set, and a small classifier over the softmax outputs tells the two apart.">
+  <style>
+    .bg { fill: #f2f8fd; }
+    .panel { fill: #ffffff; stroke: #bcdcf2; stroke-width: 1.5; }
+    .lbl { font: 600 12px Inter, system-ui, sans-serif; fill: #10305c; }
+    .sub { font: 500 10px Inter, system-ui, sans-serif; fill: #6e7d96; }
+    .cap { font: 600 11px Inter, system-ui, sans-serif; fill: #1878b8; letter-spacing: .08em; }
+    .fade { animation: fade 4.5s ease-in-out infinite; }
+    .f2 { animation-delay: .2s; } .f3 { animation-delay: .4s; } .f4 { animation-delay: .6s; }
+    @keyframes fade { 0%,10% { opacity: 1; } 55%,100% { opacity: .14; } }
+    .keep { animation: keep 4.5s ease-in-out infinite; }
+    @keyframes keep { 0%,100% { opacity: 1; } }
+    .barR { transform-box: view-box; transform-origin: left center; animation: none; }
+    .barF { transform-box: view-box; transform-origin: left center; animation: shrink 4.5s ease-in-out infinite; }
+    @keyframes shrink { 0%,10% { transform: scaleX(1); } 55%,100% { transform: scaleX(.22); } }
+    .ent { animation: ent 4.5s ease-in-out infinite; }
+    @keyframes ent { 0%,15%,100% { opacity: 0; } 35%,80% { opacity: 1; } }
+  </style>
+
+  <rect class="bg" width="520" height="340" rx="10"/>
+  <text class="cap" x="24" y="30">SELECTIVE FORGETTING</text>
+
+  <!-- training set -->
+  <rect class="panel" x="24" y="46" width="200" height="176" rx="10"/>
+  <text class="lbl" x="40" y="70">training data</text>
+  <g transform="translate(40,82)">
+    <rect class="keep" x="0" y="0" width="24" height="24" rx="4" fill="#2b95d6"/>
+    <rect class="keep" x="30" y="0" width="24" height="24" rx="4" fill="#2b95d6"/>
+    <rect class="fade" x="60" y="0" width="24" height="24" rx="4" fill="#e8705a"/>
+    <rect class="keep" x="90" y="0" width="24" height="24" rx="4" fill="#2b95d6"/>
+    <rect class="keep" x="120" y="0" width="24" height="24" rx="4" fill="#2b95d6"/>
+    <rect class="keep" x="0" y="30" width="24" height="24" rx="4" fill="#2b95d6"/>
+    <rect class="fade f2" x="30" y="30" width="24" height="24" rx="4" fill="#e8705a"/>
+    <rect class="keep" x="60" y="30" width="24" height="24" rx="4" fill="#2b95d6"/>
+    <rect class="fade f3" x="90" y="30" width="24" height="24" rx="4" fill="#e8705a"/>
+    <rect class="keep" x="120" y="30" width="24" height="24" rx="4" fill="#2b95d6"/>
+    <rect class="keep" x="0" y="60" width="24" height="24" rx="4" fill="#2b95d6"/>
+    <rect class="keep" x="30" y="60" width="24" height="24" rx="4" fill="#2b95d6"/>
+    <rect class="keep" x="60" y="60" width="24" height="24" rx="4" fill="#2b95d6"/>
+    <rect class="fade f4" x="90" y="60" width="24" height="24" rx="4" fill="#e8705a"/>
+    <rect class="keep" x="120" y="60" width="24" height="24" rx="4" fill="#2b95d6"/>
+  </g>
+  <text class="sub" x="40" y="200"><tspan fill="#1878b8">retain</tspan> &#183; <tspan fill="#c0503a">forget</tspan></text>
+
+  <!-- model -->
+  <rect class="panel" x="244" y="46" width="252" height="176" rx="10"/>
+  <text class="lbl" x="260" y="70">frozen backbone + tuned head</text>
+  <g transform="translate(262,84)">
+    <rect x="0" y="0" width="30" height="82" rx="5" fill="#dcecf9"/>
+    <rect x="36" y="0" width="30" height="82" rx="5" fill="#dcecf9"/>
+    <rect x="72" y="0" width="30" height="82" rx="5" fill="#dcecf9"/>
+    <rect x="112" y="0" width="30" height="82" rx="5" fill="#2b95d6" opacity=".8"/>
+    <rect x="148" y="0" width="30" height="82" rx="5" fill="#2b95d6"/>
+    <text class="sub" x="0" y="98">frozen</text>
+    <text class="sub" x="112" y="98">fine-tuned</text>
+  </g>
+  <g class="ent"><text class="sub" x="260" y="206" fill="#1878b8">objective: entropy + logit suppression on forget set</text></g>
+
+  <!-- confidence -->
+  <rect class="panel" x="24" y="238" width="472" height="80" rx="10"/>
+  <text class="sub" x="40" y="262">confidence on retained data</text>
+  <rect x="40" y="270" width="180" height="12" rx="6" fill="#eef7fd" stroke="#bcdcf2"/>
+  <rect class="barR" x="40" y="270" width="168" height="12" rx="6" fill="#2b95d6"/>
+  <text class="sub" x="270" y="262">confidence on forgotten data</text>
+  <rect x="270" y="270" width="180" height="12" rx="6" fill="#eef7fd" stroke="#bcdcf2"/>
+  <rect class="barF" x="270" y="270" width="168" height="12" rx="6" fill="#e8705a"/>
+  <text class="sub" x="40" y="304">a binary probe over the softmax outputs separates the two &#8212; with confidence-based selective prediction</text>
+</svg>

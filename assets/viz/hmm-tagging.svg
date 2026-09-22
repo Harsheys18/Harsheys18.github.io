@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 340" width="520" height="340" role="img" aria-label="A hidden Markov model part-of-speech tagger: each word emits from a hidden tag state, and the Viterbi algorithm traces the single highest-probability tag sequence through the trellis.">
+  <style>
+    .bg { fill: #f2f8fd; }
+    .panel { fill: #ffffff; stroke: #bcdcf2; stroke-width: 1.5; }
+    .lbl { font: 600 12px Inter, system-ui, sans-serif; fill: #10305c; }
+    .sub { font: 500 10px Inter, system-ui, sans-serif; fill: #6e7d96; }
+    .cap { font: 600 11px Inter, system-ui, sans-serif; fill: #1878b8; letter-spacing: .08em; }
+    .word { font: 600 12px "JetBrains Mono", ui-monospace, monospace; fill: #10305c; }
+    .tag { font: 500 10px Inter, system-ui, sans-serif; fill: #1878b8; }
+    .node { fill: #ffffff; stroke: #bcdcf2; stroke-width: 1.5; }
+    .path { fill: none; stroke: #2b95d6; stroke-width: 3; stroke-linecap: round; stroke-dasharray: 340; stroke-dashoffset: 340; animation: trace 4.5s ease-in-out infinite; }
+    @keyframes trace { 0% { stroke-dashoffset: 340; } 60%,100% { stroke-dashoffset: 0; } }
+    .hit { animation: hit 4.5s ease-in-out infinite; }
+    .h2 { animation-delay: .5s; } .h3 { animation-delay: 1s; } .h4 { animation-delay: 1.5s; }
+    @keyframes hit { 0%,8% { fill: #ffffff; } 20%,100% { fill: #2b95d6; } }
+  </style>
+
+  <rect class="bg" width="520" height="340" rx="10"/>
+  <text class="cap" x="24" y="30">VITERBI THROUGH THE TRELLIS</text>
+
+  <rect class="panel" x="24" y="46" width="472" height="212" rx="10"/>
+
+  <!-- tag rows -->
+  <text class="tag" x="42" y="92">DET</text>
+  <text class="tag" x="42" y="146">NOUN</text>
+  <text class="tag" x="42" y="200">VERB</text>
+
+  <!-- columns of states -->
+  <g>
+    <circle class="node hit" cx="128" cy="86" r="13"/>
+    <circle class="node" cx="128" cy="140" r="13"/>
+    <circle class="node" cx="128" cy="194" r="13"/>
+
+    <circle class="node" cx="236" cy="86" r="13"/>
+    <circle class="node hit h2" cx="236" cy="140" r="13"/>
+    <circle class="node" cx="236" cy="194" r="13"/>
+
+    <circle class="node" cx="344" cy="86" r="13"/>
+    <circle class="node" cx="344" cy="140" r="13"/>
+    <circle class="node hit h3" cx="344" cy="194" r="13"/>
+
+    <circle class="node" cx="452" cy="86" r="13"/>
+    <circle class="node hit h4" cx="452" cy="140" r="13"/>
+    <circle class="node" cx="452" cy="194" r="13"/>
+  </g>
+
+  <!-- faint lattice -->
+  <g stroke="#e9f2fa" stroke-width="1">
+    <path d="M141 86 L223 86 M141 86 L223 140 M141 86 L223 194 M141 140 L223 86 M141 140 L223 140 M141 140 L223 194 M141 194 L223 86 M141 194 L223 140 M141 194 L223 194"/>
+    <path d="M249 86 L331 86 M249 86 L331 140 M249 86 L331 194 M249 140 L331 86 M249 140 L331 140 M249 140 L331 194 M249 194 L331 86 M249 194 L331 140 M249 194 L331 194"/>
+    <path d="M357 86 L439 86 M357 86 L439 140 M357 86 L439 194 M357 140 L439 86 M357 140 L439 140 M357 140 L439 194 M357 194 L439 86 M357 194 L439 140 M357 194 L439 194"/>
+  </g>
+
+  <!-- best path -->
+  <path class="path" d="M128 86 L236 140 L344 194 L452 140"/>
+
+  <!-- words -->
+  <text class="word" x="110" y="238">the</text>
+  <text class="word" x="212" y="238">robot</text>
+  <text class="word" x="322" y="238">reads</text>
+  <text class="word" x="426" y="238">maps</text>
+
+  <text class="sub" x="24" y="286">Brown Corpus &#183; Laplace smoothing &#183; 5-fold cross-validation</text>
+  <text class="sub" x="24" y="306">the tag is never observed &#8212; only the word it produced</text>
+</svg>

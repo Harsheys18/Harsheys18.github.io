@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 340" width="520" height="340" role="img" aria-label="A reinforcement learning agent learning Flappy Bird: the state is the gap geometry ahead, the action is flap or fall, and the Q-value estimate for each action sharpens as episodes accumulate.">
+  <style>
+    .bg { fill: #f2f8fd; }
+    .panel { fill: #ffffff; stroke: #bcdcf2; stroke-width: 1.5; }
+    .lbl { font: 600 12px Inter, system-ui, sans-serif; fill: #10305c; }
+    .sub { font: 500 10px Inter, system-ui, sans-serif; fill: #6e7d96; }
+    .cap { font: 600 11px Inter, system-ui, sans-serif; fill: #1878b8; letter-spacing: .08em; }
+    .mono { font: 600 10px "JetBrains Mono", ui-monospace, monospace; fill: #1878b8; }
+    .bird { animation: flap 2.4s ease-in-out infinite; }
+    @keyframes flap { 0% { transform: translateY(24px); } 18% { transform: translateY(-8px); } 50% { transform: translateY(18px); } 68% { transform: translateY(-12px); } 100% { transform: translateY(24px); } }
+    .wing { animation: wing .5s ease-in-out infinite; transform-box: fill-box; transform-origin: right center; }
+    @keyframes wing { 0%,100% { transform: rotate(-16deg); } 50% { transform: rotate(18deg); } }
+    .pipes { animation: scroll 4s linear infinite; }
+    @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-132px); } }
+    .qa { transform-box: view-box; transform-origin: left center; animation: qa 4s ease-in-out infinite; }
+    .qb { transform-box: view-box; transform-origin: left center; animation: qb 4s ease-in-out infinite; }
+    @keyframes qa { 0%,100% { transform: scaleX(.42); } 50% { transform: scaleX(.95); } }
+    @keyframes qb { 0%,100% { transform: scaleX(.8); } 50% { transform: scaleX(.3); } }
+    .rise { stroke-dasharray: 190; stroke-dashoffset: 190; animation: rise 5s ease-out infinite; }
+    @keyframes rise { 0% { stroke-dashoffset: 190; } 70%,100% { stroke-dashoffset: 0; } }
+  </style>
+
+  <rect class="bg" width="520" height="340" rx="10"/>
+  <text class="cap" x="24" y="30">STATE, ACTION, REWARD &#8212; ON A GAME</text>
+
+  <!-- game -->
+  <rect class="panel" x="24" y="46" width="296" height="180" rx="10"/>
+  <g clip-path="inset(0 round 10px)">
+    <rect x="25" y="47" width="294" height="178" fill="#dcecf9"/>
+    <g class="pipes">
+      <rect x="150" y="47" width="34" height="62" fill="#4d9970"/>
+      <rect x="146" y="103" width="42" height="12" rx="3" fill="#3f7f5e"/>
+      <rect x="150" y="160" width="34" height="66" fill="#4d9970"/>
+      <rect x="146" y="154" width="42" height="12" rx="3" fill="#3f7f5e"/>
+
+      <rect x="282" y="47" width="34" height="88" fill="#4d9970"/>
+      <rect x="278" y="129" width="42" height="12" rx="3" fill="#3f7f5e"/>
+      <rect x="282" y="186" width="34" height="40" fill="#4d9970"/>
+      <rect x="278" y="180" width="42" height="12" rx="3" fill="#3f7f5e"/>
+
+      <rect x="414" y="47" width="34" height="54" fill="#4d9970"/>
+      <rect x="410" y="95" width="42" height="12" rx="3" fill="#3f7f5e"/>
+      <rect x="414" y="152" width="34" height="74" fill="#4d9970"/>
+      <rect x="410" y="146" width="42" height="12" rx="3" fill="#3f7f5e"/>
+    </g>
+    <!-- gap measurement -->
+    <path d="M167 115 V154" stroke="#1878b8" stroke-width="1.5" stroke-dasharray="3 3"/>
+  </g>
+
+  <g class="bird">
+    <ellipse cx="78" cy="136" rx="16" ry="13" fill="#e0a12b"/>
+    <g class="wing"><ellipse cx="72" cy="138" rx="9" ry="6" fill="#c9862033"/><ellipse cx="72" cy="138" rx="9" ry="6" fill="#c98620"/></g>
+    <circle cx="87" cy="131" r="3.5" fill="#ffffff"/>
+    <circle cx="88" cy="131" r="1.8" fill="#10305c"/>
+    <path d="M93 137 l10 3 l-10 3 z" fill="#e8705a"/>
+  </g>
+  <text class="sub" x="40" y="214">state: gap position, gap size, velocity</text>
+
+  <!-- Q values -->
+  <rect class="panel" x="336" y="46" width="160" height="180" rx="10"/>
+  <text class="lbl" x="352" y="70">action values</text>
+  <text class="sub" x="352" y="96">flap</text>
+  <rect x="352" y="102" width="124" height="14" rx="7" fill="#eef7fd" stroke="#bcdcf2"/>
+  <rect class="qa" x="352" y="102" width="124" height="14" rx="7" fill="#2b95d6"/>
+  <text class="sub" x="352" y="140">do nothing</text>
+  <rect x="352" y="146" width="124" height="14" rx="7" fill="#eef7fd" stroke="#bcdcf2"/>
+  <rect class="qb" x="352" y="146" width="124" height="14" rx="7" fill="#10305c"/>
+  <text class="mono" x="352" y="186">argmax &#8594; act</text>
+  <text class="sub" x="352" y="206">greedy, with exploration</text>
+
+  <!-- learning curve -->
+  <rect class="panel" x="24" y="242" width="472" height="76" rx="10"/>
+  <text class="lbl" x="40" y="266">score per episode</text>
+  <g transform="translate(220,254)">
+    <path d="M0 52 H250" stroke="#dcecf9" stroke-width="1.5"/>
+    <path class="rise" d="M0 50 q30 -2 54 -6 t52 -14 t56 -18 t88 -8" fill="none" stroke="#2b95d6" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+  <text class="sub" x="40" y="286">built as a mentorship guide &#8212; MDPs,</text>
+  <text class="sub" x="40" y="302">Bellman equations, Q-learning, SARSA, TD</text>
+</svg>

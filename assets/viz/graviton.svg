@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 340" width="520" height="340" role="img" aria-label="Quantitative research at Graviton: systematic weight allocation for long-short portfolios, machine-learning alpha signals compared across model configurations, and a reusable Python library plus interactive interface so the team can run training and backtesting without rebuilding the pipeline.">
+  <style>
+    .bg { fill: #f2f8fd; }
+    .panel { fill: #ffffff; stroke: #bcdcf2; stroke-width: 1.5; }
+    .lbl { font: 600 12px Inter, system-ui, sans-serif; fill: #10305c; }
+    .sub { font: 500 10px Inter, system-ui, sans-serif; fill: #6e7d96; }
+    .cap { font: 600 11px Inter, system-ui, sans-serif; fill: #1878b8; letter-spacing: .08em; }
+    .mono { font: 600 10px "JetBrains Mono", ui-monospace, monospace; fill: #1878b8; }
+    .lg { transform-box: view-box; transform-origin: left center; animation: lg 5s ease-in-out infinite; }
+    .lg2 { animation-delay: .3s; } .lg3 { animation-delay: .6s; }
+    @keyframes lg { 0%,100% { transform: scaleX(.55); } 50% { transform: scaleX(1); } }
+    .sh { transform-box: view-box; transform-origin: right center; animation: sh 5s ease-in-out infinite; }
+    .sh2 { animation-delay: .3s; } .sh3 { animation-delay: .6s; }
+    @keyframes sh { 0%,100% { transform: scaleX(1); } 50% { transform: scaleX(.5); } }
+    .cw { stroke-dasharray: 230; stroke-dashoffset: 230; animation: dr 5s ease-in-out infinite; }
+    .cw2 { animation-delay: .5s; } .cw3 { animation-delay: 1s; }
+    @keyframes dr { 0% { stroke-dashoffset: 230; } 55%,100% { stroke-dashoffset: 0; } }
+    .run { animation: run 2.4s ease-in-out infinite; }
+    @keyframes run { 0%,100% { opacity: .3; } 50% { opacity: 1; } }
+  </style>
+
+  <rect class="bg" width="520" height="340" rx="10"/>
+  <text class="cap" x="24" y="30">LONG-SHORT ALLOCATION &amp; ALPHA EVALUATION</text>
+
+  <!-- long / short book -->
+  <rect class="panel" x="24" y="46" width="234" height="176" rx="10"/>
+  <text class="lbl" x="40" y="70">systematic weights</text>
+  <path d="M141 82 V200" stroke="#bcdcf2" stroke-width="1.5"/>
+  <text class="sub" x="150" y="94" fill="#17857a">long</text>
+  <text class="sub" x="106" y="94" fill="#c0503a">short</text>
+  <g>
+    <rect class="lg" x="141" y="104" width="94" height="16" rx="4" fill="#24a89b"/>
+    <rect class="sh" x="56" y="104" width="85" height="16" rx="4" fill="#e8705a" opacity=".55"/>
+    <rect class="lg lg2" x="141" y="128" width="94" height="16" rx="4" fill="#24a89b" opacity=".75"/>
+    <rect class="sh sh2" x="56" y="128" width="85" height="16" rx="4" fill="#e8705a" opacity=".4"/>
+    <rect class="lg lg3" x="141" y="152" width="94" height="16" rx="4" fill="#24a89b" opacity=".55"/>
+    <rect class="sh sh3" x="56" y="152" width="85" height="16" rx="4" fill="#e8705a" opacity=".62"/>
+  </g>
+  <text class="sub" x="40" y="196">net exposure held near zero</text>
+
+  <!-- alpha comparison -->
+  <rect class="panel" x="274" y="46" width="222" height="176" rx="10"/>
+  <text class="lbl" x="290" y="70">alpha signals compared</text>
+  <g transform="translate(292,84)">
+    <path d="M0 96 H186 M0 96 V8" stroke="#dcecf9" stroke-width="1.5"/>
+    <path class="cw" d="M0 92 q30 -10 56 -20 t52 -22 t70 -30" fill="none" stroke="#2b95d6" stroke-width="2.5" stroke-linecap="round"/>
+    <path class="cw cw2" d="M0 92 q32 -4 58 -12 t54 -10 t66 -16" fill="none" stroke="#10305c" stroke-width="2.5" stroke-linecap="round"/>
+    <path class="cw cw3" d="M0 92 q30 4 56 -4 t52 2 t70 -8" fill="none" stroke="#8ec7e9" stroke-width="2.5" stroke-linecap="round"/>
+    <text class="sub" x="0" y="112">one config per curve</text>
+  </g>
+
+  <!-- the library / UI -->
+  <rect class="panel" x="24" y="238" width="472" height="80" rx="10"/>
+  <text class="lbl" x="40" y="262">a pipeline the rest of the team can drive</text>
+  <g transform="translate(40,272)">
+    <rect x="0" y="0" width="80" height="24" rx="5" fill="#eef7fd" stroke="#bcdcf2"/><text class="sub" x="14" y="16">load data</text>
+    <rect x="90" y="0" width="80" height="24" rx="5" fill="#eef7fd" stroke="#bcdcf2"/><text class="sub" x="106" y="16">train</text>
+    <rect x="180" y="0" width="80" height="24" rx="5" fill="#eef7fd" stroke="#bcdcf2"/><text class="sub" x="194" y="16">backtest</text>
+    <rect class="run" x="270" y="0" width="80" height="24" rx="5" fill="#2b95d6"/><text class="sub" x="284" y="16" fill="#ffffff">compare</text>
+    <path d="M80 12 h10 M170 12 h10 M260 12 h10" stroke="#8ec7e9" stroke-width="2"/>
+    <text class="mono" x="368" y="16">reusable, not rebuilt</text>
+  </g>
+</svg>

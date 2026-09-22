@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Musings by Harshitha Inampudi: short, informal notes on research ideas, robotics, and machine learning.">
+    <meta name="description" content="Musings by Harshitha Inampudi - places travelled to, pictures taken, and the notes that came with them.">
     <title>Musings | Harshitha Inampudi</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -15,46 +15,152 @@
         <div class="page header-row">
             <a href="index.html" class="site-title">Harshitha Inampudi</a>
             <nav class="site-nav">
-                <a href="index.html">About</a>
+                <a href="index.html">Home</a>
                 <a href="research.html">Research</a>
-                <a href="projects.html">Projects</a>
+                <a href="experience.html">Experience</a>
+                <a href="blogs.html">Blogs</a>
                 <a class="active" href="musings.html">Musings</a>
-                <a href="cv.html">CV</a>
-                <a href="contact.html">Contact</a>
             </nav>
         </div>
     </header>
 
     <main class="page main">
-        <div class="page-head">
+        <div class="musings-hero">
             <h1 class="page-title">Musings</h1>
             <p class="page-intro">
-                A running notebook, not a blog &mdash; short, informal notes on research ideas, papers I'm
-                reading, things I'm learning, or questions I haven't resolved yet. This page is new, so the two
-                entries below are examples showing the format rather than real posts. Actual notes will replace
-                them over time.
+                Not research. This is the other half &mdash; the places I have ended up because of the work,
+                and a few I went to for no reason at all. Trains, hostel corridors, unfamiliar skylines at
+                three in the morning, and the strange fact that almost every city I have loved I first arrived
+                in for something entirely unromantic, like a competition or an internship.
             </p>
         </div>
 
-        <div class="entry-list">
-            <article class="note">
-                <p class="note-tag">Example entry &middot; 13 Aug 2026</p>
-                <h3 class="note-title">Why does reinforcement learning feel different from supervised learning?</h3>
-                <p class="note-body"><em>Placeholder text. A real entry here would be a short, informal note on a question or intuition I'm working through &mdash; not a polished essay.</em></p>
-            </article>
-            <article class="note">
-                <p class="note-tag">Example entry &middot; 5 Aug 2026</p>
-                <h3 class="note-title">Notes on perception and control</h3>
-                <p class="note-body"><em>Placeholder text. A real entry here might work through a paper, an experiment, or a half-formed idea related to the B.Tech project or Sakhi.</em></p>
-            </article>
-            <article class="note">
-                <p class="note-more">More entries will be added here as they happen.</p>
-            </article>
-        </div>
+        <section style="margin-top: 0;">
+            <p class="section-label">Places</p>
+            <div class="travel-grid">
+
+                <article class="postcard t-sky">
+                    <div class="postcard-img">
+                        <img src="assets/viz/place-mumbai.svg" alt="Illustration of Mumbai at dusk: the cable-stayed sea link over the water, towers behind it, and palms along the shore." loading="lazy">
+                        <span class="postcard-stamp">2023&ndash;present</span>
+                    </div>
+                    <div class="postcard-body">
+                        <h3 class="postcard-place">Mumbai</h3>
+                        <p class="postcard-where">Powai &middot; home for four years now</p>
+                        <p>
+                            The city I did not choose and ended up belonging to. Powai has its own weather,
+                            somehow &mdash; monsoon arrives over the lake before it reaches anywhere else.
+                            Most of what is on the rest of this site was built within about two kilometres of
+                            one hostel room.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="postcard t-teal">
+                    <div class="postcard-img">
+                        <img src="assets/viz/place-singapore.svg" alt="Illustration of Singapore after dark: lit supertree structures, glass towers around a bay, and their reflection in the water." loading="lazy">
+                        <span class="postcard-stamp">Summer 2025</span>
+                    </div>
+                    <div class="postcard-body">
+                        <h3 class="postcard-place">Singapore</h3>
+                        <p class="postcard-where">NTU &middot; first time living abroad</p>
+                        <p>
+                            I went for a research internship and stayed curious about the city the whole time.
+                            Everything works, which is disorienting if you have grown up somewhere that
+                            improvises. The first place I lived where I knew nobody on arrival, which turned
+                            out to be its own kind of education.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="postcard t-amber">
+                    <div class="postcard-img">
+                        <img src="assets/viz/place-delhi.svg" alt="Illustration of Delhi: a sandstone minaret and domed pavilions under a warm afternoon sky, with glass office towers rising behind them." loading="lazy">
+                        <span class="postcard-stamp">Summer 2026</span>
+                    </div>
+                    <div class="postcard-body">
+                        <h3 class="postcard-place">Delhi &amp; Gurugram</h3>
+                        <p class="postcard-where">the Graviton summer</p>
+                        <p>
+                            Glass towers on one side of the highway and something six hundred years old on the
+                            other, and nobody finding this remarkable. Worked long days and spent the weekends
+                            walking through whichever ruin was nearest.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="postcard t-coral">
+                    <div class="postcard-img">
+                        <img src="assets/viz/place-patna.svg" alt="Illustration of a river town at sunrise: stepped ghats down to a wide river, small boats, and a temple spire catching first light." loading="lazy">
+                        <span class="postcard-stamp">Dec 2025</span>
+                    </div>
+                    <div class="postcard-body">
+                        <h3 class="postcard-place">Patna</h3>
+                        <p class="postcard-where">Inter-IIT Tech Meet 14.0</p>
+                        <p>
+                            Arrived for a competition, sleep-deprived, carrying a half-finished safe-RL
+                            framework. Left having seen the Ganga at sunrise, which is not what I had planned
+                            for and is the part I remember.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="postcard t-violet">
+                    <div class="postcard-img">
+                        <img src="assets/viz/place-hyderabad.svg" alt="Illustration of an old Deccan city at golden hour: a four-arched monument with tall minarets at a crossroads, granite boulders and a dome behind it." loading="lazy">
+                        <span class="postcard-stamp">always</span>
+                    </div>
+                    <div class="postcard-body">
+                        <h3 class="postcard-place">The Deccan</h3>
+                        <p class="postcard-where">where I am from</p>
+                        <p>
+                            Granite boulders that look balanced by hand, heat that has opinions, and food I
+                            have not found a substitute for anywhere else. The place I measure other places
+                            against, slightly unfairly.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="postcard t-navy">
+                    <div class="postcard-img">
+                        <img src="assets/viz/place-next.svg" alt="Illustration of a folded map with a compass rose, a dotted route and a pin marking a destination not yet chosen." loading="lazy">
+                        <span class="postcard-stamp">soon</span>
+                    </div>
+                    <div class="postcard-body">
+                        <h3 class="postcard-place">Somewhere next</h3>
+                        <p class="postcard-where">undecided, on purpose</p>
+                        <p>
+                            A PhD means moving somewhere I have not been, and I have decided to be pleased
+                            about that rather than anxious. This card gets replaced when I know.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section>
+            <p class="callout">
+                <strong>These illustrations are placeholders.</strong> They were drawn for this site rather
+                than taken from anywhere, so nothing here is borrowed &mdash; but they are meant to be
+                replaced by your own photographs. Drop a picture into <code>images/</code> and point the
+                card's <code>&lt;img src&gt;</code> at it; the layout and cropping already handle the rest.
+                The place list and the notes are a starting set based on where the rest of the site says you
+                have been &mdash; edit freely.
+            </p>
+        </section>
     </main>
 
     <footer class="site-footer">
-        <p class="page">&copy; <span id="year"></span> Harshitha Inampudi &middot; <a href="https://github.com/Harsheys18/Harsheys18.github.io" target="_blank" rel="noopener noreferrer">view source</a></p>
+        <div class="page footer-row">
+            <span>&copy; <span id="year"></span> Harshitha Inampudi</span>
+            <nav class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="research.html">Research</a>
+                <a href="experience.html">Experience</a>
+                <a href="blogs.html">Blogs</a>
+                <a href="https://github.com/Harsheys18" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </nav>
+        </div>
     </footer>
 
     <script src="script.js"></script>

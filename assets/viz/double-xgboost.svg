@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 340" width="520" height="340" role="img" aria-label="Double XGBoost: instead of only adding more trees, each internal node carries its own predictor and the residual is corrected depth-wise down the tree, with node-level predictors solved in closed form from a second-order Taylor expansion.">
+  <style>
+    .bg { fill: #f2f8fd; }
+    .panel { fill: #ffffff; stroke: #bcdcf2; stroke-width: 1.5; }
+    .lbl { font: 600 12px Inter, system-ui, sans-serif; fill: #10305c; }
+    .sub { font: 500 10px Inter, system-ui, sans-serif; fill: #6e7d96; }
+    .cap { font: 600 11px Inter, system-ui, sans-serif; fill: #1878b8; letter-spacing: .08em; }
+    .mono { font: 600 11px "JetBrains Mono", ui-monospace, monospace; fill: #1878b8; }
+    .branch { stroke: #bcdcf2; stroke-width: 2; fill: none; }
+    .nd { fill: #ffffff; stroke: #2b95d6; stroke-width: 2; }
+    .d1 { animation: lvl 3.6s ease-in-out infinite; }
+    .d2 { animation: lvl 3.6s ease-in-out infinite; animation-delay: .8s; }
+    .d3 { animation: lvl 3.6s ease-in-out infinite; animation-delay: 1.6s; }
+    @keyframes lvl { 0%,100% { fill: #ffffff; } 22%,44% { fill: #2b95d6; } }
+    .res { animation: res 3.6s ease-in-out infinite; }
+    .res2 { animation-delay: .8s; } .res3 { animation-delay: 1.6s; }
+    @keyframes res { 0%,100% { opacity: 0; transform: translateY(-4px); } 25%,45% { opacity: 1; transform: translateY(0); } }
+    .curve-new { stroke-dasharray: 160; stroke-dashoffset: 160; animation: draw 3.6s ease-in-out infinite; }
+    @keyframes draw { 0% { stroke-dashoffset: 160; } 55%,100% { stroke-dashoffset: 0; } }
+  </style>
+
+  <rect class="bg" width="520" height="340" rx="10"/>
+  <text class="cap" x="24" y="30">DEPTH-WISE BOOSTING</text>
+
+  <!-- tree -->
+  <rect class="panel" x="24" y="46" width="300" height="200" rx="10"/>
+  <g transform="translate(24,46)">
+    <path class="branch" d="M150 44 L94 100 M150 44 L206 100 M94 100 L60 152 M94 100 L128 152 M206 100 L172 152 M206 100 L240 152"/>
+    <circle class="nd d1" cx="150" cy="44" r="15"/>
+    <circle class="nd d2" cx="94" cy="100" r="14"/>
+    <circle class="nd d2" cx="206" cy="100" r="14"/>
+    <circle class="nd d3" cx="60" cy="152" r="12"/>
+    <circle class="nd d3" cx="128" cy="152" r="12"/>
+    <circle class="nd d3" cx="172" cy="152" r="12"/>
+    <circle class="nd d3" cx="240" cy="152" r="12"/>
+
+    <g class="res"><text class="mono" x="172" y="40">+ r&#8321;</text></g>
+    <g class="res res2"><text class="mono" x="20" y="98">+ r&#8322;</text></g>
+    <g class="res res3"><text class="mono" x="252" y="150">+ r&#8323;</text></g>
+  </g>
+  <text class="sub" x="40" y="232">every node predicts, then passes its residual down</text>
+
+  <!-- contrast -->
+  <rect class="panel" x="342" y="46" width="154" height="200" rx="10"/>
+  <text class="lbl" x="356" y="70">standard XGBoost</text>
+  <g transform="translate(356,84)">
+    <rect x="0" y="0" width="16" height="22" rx="3" fill="#dcecf9"/>
+    <rect x="22" y="0" width="16" height="22" rx="3" fill="#dcecf9"/>
+    <rect x="44" y="0" width="16" height="22" rx="3" fill="#dcecf9"/>
+    <rect x="66" y="0" width="16" height="22" rx="3" fill="#dcecf9"/>
+    <rect x="88" y="0" width="16" height="22" rx="3" fill="#dcecf9"/>
+    <text class="sub" x="0" y="40">wider &#8212; more trees</text>
+  </g>
+  <text class="lbl" x="356" y="158">Double XGBoost</text>
+  <g transform="translate(356,170)">
+    <rect x="0" y="0" width="16" height="22" rx="3" fill="#2b95d6"/>
+    <rect x="0" y="26" width="16" height="22" rx="3" fill="#2b95d6" opacity=".7"/>
+    <rect x="0" y="52" width="16" height="22" rx="3" fill="#2b95d6" opacity=".45"/>
+    <text class="sub" x="26" y="16">deeper &#8212; more</text>
+    <text class="sub" x="26" y="30">expressive per tree</text>
+  </g>
+
+  <!-- second order -->
+  <rect class="panel" x="24" y="262" width="472" height="56" rx="10"/>
+  <text class="mono" x="40" y="286">L &#8776; L&#8320; + g&#183;&#916; + &#189; h&#183;&#916;&#178;</text>
+  <text class="sub" x="40" y="304">second-order Taylor expansion &#8594; node predictors in closed form</text>
+  <g transform="translate(330,272)">
+    <path d="M0 34 q22 -6 42 -14 t44 -16" fill="none" stroke="#dcecf9" stroke-width="2.5" stroke-linecap="round"/>
+    <path class="curve-new" d="M0 34 q26 -20 48 -24 t38 -4" fill="none" stroke="#2b95d6" stroke-width="2.5" stroke-linecap="round"/>
+    <text class="sub" x="96" y="26">faster</text>
+    <text class="sub" x="96" y="40">convergence</text>
+  </g>
+</svg>

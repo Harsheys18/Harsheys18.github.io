@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 340" width="520" height="340" role="img" aria-label="Neural closure certificates: a network is trained to learn a certificate function whose level set contains every reachable state from the initial set and is closed under the system dynamics, while never intersecting the unsafe region.">
+  <style>
+    .bg { fill: #f2f8fd; }
+    .panel { fill: #ffffff; stroke: #bcdcf2; stroke-width: 1.5; }
+    .lbl { font: 600 12px Inter, system-ui, sans-serif; fill: #10305c; }
+    .sub { font: 500 10px Inter, system-ui, sans-serif; fill: #6e7d96; }
+    .cap { font: 600 11px Inter, system-ui, sans-serif; fill: #1878b8; letter-spacing: .08em; }
+    .grow { transform-box: view-box; transform-origin: 148px 182px; animation: grow 5s ease-in-out infinite; }
+    @keyframes grow { 0% { transform: scale(.34); opacity: .15; } 55%,100% { transform: scale(1); opacity: 1; } }
+    .g2 { animation-delay: .35s; } .g3 { animation-delay: .7s; }
+    .trace { stroke-dasharray: 210; stroke-dashoffset: 210; animation: draw 5s ease-in-out infinite; }
+    @keyframes draw { 0% { stroke-dashoffset: 210; } 60%,100% { stroke-dashoffset: 0; } }
+    .ok { animation: ok 5s ease-in-out infinite; }
+    @keyframes ok { 0%,62%,100% { opacity: 0; } 74%,94% { opacity: 1; } }
+    .netpulse { animation: np 2.2s ease-in-out infinite; }
+    .n2 { animation-delay: .25s; } .n3 { animation-delay: .5s; }
+    @keyframes np { 0%,100% { opacity: .3; } 50% { opacity: 1; } }
+  </style>
+
+  <rect class="bg" width="520" height="340" rx="10"/>
+  <text class="cap" x="24" y="30">LEARNED CERTIFICATE, NOT A HAND PROOF</text>
+
+  <!-- state space -->
+  <rect class="panel" x="24" y="48" width="286" height="262" rx="10"/>
+  <text class="sub" x="36" y="68">state space</text>
+
+  <!-- unsafe region -->
+  <path d="M232 84 h64 v62 h-64 z" fill="#e8705a" opacity=".15"/>
+  <path d="M232 84 h64 v62 h-64 z" fill="none" stroke="#e8705a" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <text class="sub" x="240" y="118" fill="#c0503a">unsafe</text>
+
+  <!-- certificate level sets -->
+  <ellipse class="grow g3" cx="148" cy="182" rx="98" ry="76" fill="none" stroke="#8ec7e9" stroke-width="1.5"/>
+  <ellipse class="grow g2" cx="148" cy="182" rx="72" ry="55" fill="none" stroke="#2b95d6" stroke-width="1.5"/>
+  <ellipse class="grow" cx="148" cy="182" rx="46" ry="34" fill="#2b95d6" opacity=".12" stroke="#2b95d6" stroke-width="1.5"/>
+
+  <!-- initial set -->
+  <circle cx="148" cy="182" r="15" fill="#10305c"/>
+  <text class="sub" x="122" y="216" fill="#10305c">init</text>
+
+  <!-- a trajectory staying inside -->
+  <path class="trace" d="M148 182 q42 -28 66 6 t-18 62 q-40 26 -74 -6" fill="none" stroke="#1878b8" stroke-width="2" stroke-linecap="round"/>
+
+  <text class="sub" x="36" y="294">every reachable state stays inside the level set</text>
+
+  <!-- right: the network -->
+  <rect class="panel" x="330" y="48" width="166" height="140" rx="10"/>
+  <text class="lbl" x="344" y="72">certificate net</text>
+  <g>
+    <circle class="netpulse" cx="358" cy="104" r="6" fill="#2b95d6"/>
+    <circle class="netpulse n2" cx="358" cy="132" r="6" fill="#2b95d6"/>
+    <circle class="netpulse n3" cx="358" cy="160" r="6" fill="#2b95d6"/>
+    <circle class="netpulse n2" cx="412" cy="118" r="6" fill="#10305c"/>
+    <circle class="netpulse n3" cx="412" cy="146" r="6" fill="#10305c"/>
+    <circle class="netpulse" cx="466" cy="132" r="7" fill="#1878b8"/>
+    <path d="M364 104 L406 118 M364 104 L406 146 M364 132 L406 118 M364 132 L406 146 M364 160 L406 118 M364 160 L406 146 M418 118 L460 132 M418 146 L460 132" stroke="#bcdcf2" stroke-width="1"/>
+  </g>
+  <text class="sub" x="344" y="182">template-based, trained to be valid</text>
+
+  <!-- verdict -->
+  <rect class="panel" x="330" y="204" width="166" height="106" rx="10"/>
+  <text class="lbl" x="344" y="228">checked on</text>
+  <text class="sub" x="344" y="248">two-room temperature model</text>
+  <text class="sub" x="344" y="266">+ benchmark dynamical systems</text>
+  <g class="ok">
+    <rect x="344" y="278" width="118" height="22" rx="7" fill="#e9f7f4" stroke="#24a89b"/>
+    <path d="M356 289 l5 5 l9 -11" fill="none" stroke="#17857a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text class="sub" x="376" y="293" fill="#17857a">safety certified</text>
+  </g>
+</svg>

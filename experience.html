@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Experience of Harshitha Inampudi: quantitative research at Graviton, algorithm research at Juspay, safe reinforcement learning at NTU Singapore, and technical lead of the Sakhi companion robot.">
+    <title>Experience | Harshitha Inampudi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="page header-row">
+            <a href="index.html" class="site-title">Harshitha Inampudi</a>
+            <nav class="site-nav">
+                <a href="index.html">Home</a>
+                <a href="research.html">Research</a>
+                <a class="active" href="experience.html">Experience</a>
+                <a href="blogs.html">Blogs</a>
+                <a href="musings.html">Musings</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page main">
+        <div class="page-head">
+            <h1 class="page-title">Experience</h1>
+            <p class="page-intro">
+                Where I have worked and what I actually built there. The research content of these roles is
+                written up in more detail on the <a href="research.html">Research</a> page.
+            </p>
+            <p class="project-meta edu-line">
+                <strong>B.Tech, Computer Science &amp; Engineering (Honors)</strong>
+                <span class="sep">&middot;</span> Minor in Machine Intelligence &amp; Data Science
+                <span class="sep">&middot;</span> IIT Bombay <span class="sep">&middot;</span> 2023&ndash;2027
+            </p>
+        </div>
+
+        <section>
+            <p class="section-label">Positions</p>
+            <div class="project-list">
+
+                <article class="project role">
+                    <figure class="project-figure"><img src="assets/viz/graviton.svg" alt="Diagram of long-short portfolio construction with systematic weights, several alpha signal curves compared across model configurations, and a reusable load-train-backtest-compare pipeline." loading="lazy"></figure>
+                    <div>
+                        <p class="role-org">Graviton</p>
+                        <h3 class="project-title">Quantitative Researcher</h3>
+                        <p class="project-meta">Gurugram, India <span class="sep">&middot;</span> May&ndash;Jul 2026</p>
+                        <p class="project-body">
+                            I worked on portfolio optimisation for long-short strategies, focusing on systematic
+                            weight allocation, and on evaluating machine-learning alpha signals across different
+                            model configurations &mdash; the question being less "does this signal work" than "under
+                            which configurations does it stop working". A large part of the role was infrastructure
+                            rather than research: I built a reusable Python library and an interactive interface so
+                            the rest of the team could run training and backtesting experiments and compare alpha
+                            performance without rebuilding the pipeline each time.
+                        </p>
+                        <div class="tag-row"><span class="tag">portfolio optimisation</span><span class="tag">alpha research</span><span class="tag">Python tooling</span></div>
+                        <p class="repo-line"><span class="repo-none">Proprietary &mdash; no public repository.</span></p>
+                    </div>
+                </article>
+
+                <article class="project role">
+                    <figure class="project-figure"><img src="assets/viz/double-xgboost.svg" alt="Diagram of depth-wise boosting: a tree in which every node carries its own predictor and passes a residual correction further down, contrasted with standard XGBoost adding more trees." loading="lazy"></figure>
+                    <div>
+                        <p class="role-org">Juspay</p>
+                        <h3 class="project-title">Software Engineer &mdash; Research Problem Statement</h3>
+                        <p class="project-meta">Mumbai, India <span class="sep">&middot;</span> Dec 2025&ndash;Jan 2026</p>
+                        <p class="project-body">
+                            I was given an open research question rather than a ticket: could a boosted-tree model
+                            gain expressivity by going deeper rather than simply adding more trees? I proposed Double
+                            XGBoost, introducing depth-wise boosting, and derived a second-order optimisation
+                            formulation via Taylor expansion so node-level predictors could be trained in closed form.
+                            Early results showed faster convergence and improved accuracy from the residual-correction
+                            step, and the work is in progress toward publication.
+                        </p>
+                        <div class="tag-row"><span class="tag">gradient boosting</span><span class="tag">algorithm design</span><span class="tag">toward publication</span></div>
+                        <p class="repo-line"><span class="repo-none">Proprietary &mdash; no public repository.</span></p>
+                    </div>
+                </article>
+
+                <article class="project role">
+                    <figure class="project-figure"><img src="assets/viz/safe-rl.svg" alt="Diagram of constrained policy gradient: an agent sweeping LIDAR rays through an arena with hazards, and a cost budget bar that clips the update when the safety limit is reached." loading="lazy"></figure>
+                    <div>
+                        <p class="role-org">Nanyang Technological University, Singapore</p>
+                        <h3 class="project-title">Research Intern &mdash; Ong's Group</h3>
+                        <p class="project-meta">Advisor: Prof. Luke Ong <span class="sep">&middot;</span> May&ndash;Jul 2025</p>
+                        <p class="project-body">
+                            A summer spent on safe reinforcement learning: adapting policy-gradient methods such as
+                            PPO and TRPO to incorporate LIDAR feedback and hazard heuristics in continuous-control
+                            settings, working inside Safety Gymnasium with 60-dimensional state spaces. The most
+                            useful part was not building something new but mapping where existing safe-RL approaches
+                            fail, and comparing them honestly against ideas from control theory that predate them.
+                        </p>
+                        <div class="tag-row"><span class="tag">safe RL</span><span class="tag">PPO / TRPO</span><span class="tag">constrained MDPs</span></div>
+                        <p class="repo-line">
+                            <a class="repo-link" href="https://github.com/Harsheys18/openai-safety-gym" target="_blank" rel="noopener noreferrer">
+                                benchmark environment fork
+                            </a>
+                        </p>
+                    </div>
+                </article>
+
+                <article class="project role">
+                    <figure class="project-figure"><img src="assets/viz/sakhi.svg" alt="Diagram of Sakhi's closed perception-to-dialogue loop: speech to text, facial emotion detection, LLM reasoning and expressive text to speech cycling around a single real-time loop." loading="lazy"></figure>
+                    <div>
+                        <p class="role-org">Sakhi &middot; IDEAS Program, IIT Bombay</p>
+                        <h3 class="project-title">Technical Lead &amp; Founding Member</h3>
+                        <p class="project-meta">2025&ndash;present <span class="sep">&middot;</span> selected for IDEAS Level 1, advanced to Level 2, funded</p>
+                        <p class="project-body">
+                            Sakhi is an AI companion robot, and my job is the part where everything has to work at
+                            once: the perception-to-dialogue pipeline tying speech-to-text, facial emotion detection,
+                            LLM-based reasoning, and expressive text-to-speech into a single real-time loop. Beyond
+                            the engineering, being a founding member has meant owning the technical direction &mdash;
+                            deciding what to build, what to cut, and how to present the work well enough to get it
+                            funded.
+                        </p>
+                        <div class="tag-row"><span class="tag">technical leadership</span><span class="tag">multimodal systems</span><span class="tag">startup</span></div>
+                        <p class="repo-line"><span class="repo-none">Repository not public yet &mdash; development is ongoing.</span></p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ============ OTHER RELEVANT PROJECTS ============ -->
+        <section>
+            <p class="section-label">Other Relevant Projects</p>
+            <p class="section-note">
+                Systems, algorithms, optimisation, and earlier builds. The machine learning and robotics work
+                lives on the <a href="research.html">Research</a> page.
+            </p>
+
+            <h3 class="subsection-title">Systems &amp; Algorithms</h3>
+            <div class="compact-grid">
+                <article class="compact-card">
+                    <h3>xv6 Kernel Extensions</h3>
+                    <p class="project-meta">Operating Systems &middot; Prof. Mythili Vutukuru &middot; May&ndash;Jul 2025</p>
+                    <p>Extended the xv6 kernel with copy-on-write fork, mmap, scheduling changes, and thread and synchronisation support. Separately built a Linux shell with job control, signal handling, and IPC over POSIX shared memory, Unix sockets, and pthread locks.</p>
+                    <p class="repo-line"><a class="repo-link" href="https://github.com/Harsheys18/xv6-public" target="_blank" rel="noopener noreferrer">view code</a></p>
+                </article>
+
+                <article class="compact-card">
+                    <h3>PostgreSQL Query Processor</h3>
+                    <p class="project-meta">Database &amp; Information Systems &middot; Prof. S. Sudarshan &middot; Oct&ndash;Dec 2025</p>
+                    <p>Implemented parts of a query-processing pipeline &mdash; scanning, parsing, logical planning &mdash; with cost-based optimisation to select execution plans, and traced where the optimiser's cost estimates went wrong on real queries.</p>
+                    <p class="repo-line"><a class="repo-link" href="https://github.com/Harsheys18/DBIS-Project" target="_blank" rel="noopener noreferrer">view code</a></p>
+                </article>
+
+                <article class="compact-card">
+                    <h3>SAT Solver in C++</h3>
+                    <p class="project-meta">Logic &amp; Automata Theory &middot; Dec 2024&ndash;Jan 2025</p>
+                    <p>A DPLL-based SAT solver with unit propagation, pure literal elimination, and backtracking, tested for correctness across a range of CNF inputs including adversarial edge cases.</p>
+                    <p class="repo-line"><a class="repo-link" href="https://github.com/Harsheys18/SAT-Solver" target="_blank" rel="noopener noreferrer">view code</a></p>
+                </article>
+
+                <article class="compact-card">
+                    <h3>Plagiarism Detection Engine</h3>
+                    <p class="project-meta">Data Structures &amp; Algorithms &middot; Prof. Ashutosh Gupta &middot; top 5 of all submissions &middot; Nov&ndash;Dec 2024</p>
+                    <p>A token-based plagiarism checker in C++, built to catch paraphrasing and patchwork plagiarism as well as direct copying, with a multithreaded design so it could handle submissions close to real time.</p>
+                    <p class="repo-line"><span class="repo-none">No public repository.</span></p>
+                </article>
+
+                <article class="compact-card">
+                    <h3>Algorithmic Problem Solving Labs</h3>
+                    <p class="project-meta">Data Structures &amp; Algorithms &middot; Prof. Ashutosh Gupta &middot; Aug&ndash;Nov 2024</p>
+                    <p>Trie-based autocomplete, compression algorithms (RLE, Huffman, an LZ77-style scheme as part of DEFLATE), polymorphic encoding for variable and fixed N-ary trees, and classical graph algorithms including MSTs, A* search, and union-find.</p>
+                    <p class="repo-line"><span class="repo-none">No public repository.</span></p>
+                </article>
+
+                <article class="compact-card">
+                    <h3>Architecting Efficient Digital Systems</h3>
+                    <p class="project-meta">DLDCA Lab &middot; Prof. Sayandeep Saha, Prof. Bhaskaran Raman &middot; Autumn 2024</p>
+                    <p>Verilog lab work on Karatsuba and iterative-Karatsuba multipliers, ripple-carry and carry-lookahead adders, and a single-cycle MIPS 32/64 design, with cache-analysis exercises alongside.</p>
+                    <p class="repo-line"><span class="repo-none">No public repository.</span></p>
+                </article>
+            </div>
+
+            <h3 class="subsection-title">Optimisation &amp; Data Analysis</h3>
+            <div class="compact-grid">
+                <article class="compact-card">
+                    <h3>Move Wise &mdash; Supply Chain Dispatch Model</h3>
+                    <p class="project-meta">Optimisation Models &middot; Prof. Avinash Bharadwaj &middot; Nov&ndash;Dec 2024</p>
+                    <p>A dispatch optimisation model in the spirit of ride-hailing, assigning drivers to customers to minimise waiting time while maximising revenue, formulated and solved as a constrained optimisation problem in CVXPY.</p>
+                    <p class="repo-line"><a class="repo-link" href="https://github.com/Harsheys18/Uber-like-Optimization-Model" target="_blank" rel="noopener noreferrer">view code</a></p>
+                </article>
+
+                <article class="compact-card">
+                    <h3>Applied Data Analysis &amp; Statistics</h3>
+                    <p class="project-meta">Data Analysis &amp; Interpretation &middot; Prof. Sunita Sarawagi &middot; Aug&ndash;Nov 2024</p>
+                    <p>A Galton-board simulation demonstrating the Central Limit Theorem, dimensionality reduction with PCA, t-SNE and SNE, and parameter estimation via MLE and Bayesian methods for binomial, gamma, and Gaussian-mixture distributions.</p>
+                    <p class="repo-line"><span class="repo-none">No public repository.</span></p>
+                </article>
+
+                <article class="compact-card">
+                    <h3>Clustering &amp; Data Selection Assignment</h3>
+                    <p class="project-meta">Maths and Physics Club, IIT Bombay &middot; 2024</p>
+                    <p>k-means clustering over spatial location data and record cleaning, written up as a selection assignment for the club's computational programme.</p>
+                    <p class="repo-line"><a class="repo-link" href="https://github.com/Harsheys18/MnP-CPP24" target="_blank" rel="noopener noreferrer">view code</a></p>
+                </article>
+
+                <article class="compact-card">
+                    <h3>Quantitative Finance &amp; Derivatives</h3>
+                    <p class="project-meta">Self-paced coursework &middot; May&ndash;Jul 2025</p>
+                    <p>Time-series models (ARIMA, GARCH), the mechanics of futures, options and swaps, portfolio theory (Markowitz, CAPM), and an introduction to Monte Carlo methods and volatility estimation.</p>
+                    <p class="repo-line"><span class="repo-none">Coursework &mdash; no repository.</span></p>
+                </article>
+            </div>
+
+            <h3 class="subsection-title">Applications &amp; Early Builds</h3>
+            <div class="compact-grid">
+                <article class="compact-card">
+                    <h3>Dynamic GUI Chat Application</h3>
+                    <p class="project-meta">Self Project &middot; Summer 2024</p>
+                    <p>A multithreaded client-server group chat built on Python sockets with a Tkinter front end &mdash; concurrency and network programming learned by breaking it repeatedly.</p>
+                    <p class="repo-line"><a class="repo-link" href="https://github.com/Harsheys18/GUI-Group-chat-design-using-Python" target="_blank" rel="noopener noreferrer">view code</a></p>
+                </article>
+
+                <article class="compact-card">
+                    <h3>Code Canvas &mdash; Text Editor</h3>
+                    <p class="project-meta">Seasons of Code, Web and Coding Club &middot; Summer 2024</p>
+                    <p>A nano-inspired text editor with KMP-based search, written to understand what an editor is actually doing between a keystroke and a rendered buffer.</p>
+                    <p class="repo-line"><a class="repo-link" href="https://github.com/Harsheys18/SOC-Codecanvas" target="_blank" rel="noopener noreferrer">view code</a></p>
+                </article>
+
+                <article class="compact-card">
+                    <h3>Interest-Based Matching Website</h3>
+                    <p class="project-meta">Software Systems Lab &middot; Spring 2024</p>
+                    <p>A web application for interest-based matching, with secure login and a JavaScript matching algorithm over user-declared preferences.</p>
+                    <p class="repo-line"><a class="repo-link" href="https://github.com/Harsheys18/CS108_Social_Matching_Website" target="_blank" rel="noopener noreferrer">view code</a></p>
+                </article>
+
+                <article class="compact-card">
+                    <h3>Interactive Maze Game</h3>
+                    <p class="project-meta">Software Systems Lab &middot; Apr&ndash;May 2024</p>
+                    <p>Randomly generated mazes with graph-based pathfinding, built around NumPy &mdash; an early excuse to treat a game as a graph problem.</p>
+                    <p class="repo-line"><a class="repo-link" href="https://github.com/Harsheys18/CS-Project-Maze-Game" target="_blank" rel="noopener noreferrer">view code</a></p>
+                </article>
+
+                <article class="compact-card">
+                    <h3>Yogastha Club Website</h3>
+                    <p class="project-meta">Web Coordinator, Yogastha Club, IIT Bombay &middot; Summer 2024</p>
+                    <p>Maintained and updated the club's website as web coordinator, alongside managing social media and organising camps and workshops.</p>
+                    <p class="repo-line"><a class="repo-link" href="https://github.com/Harsheys18/Yogastha_myversion" target="_blank" rel="noopener noreferrer">view code</a></p>
+                </article>
+
+                <article class="compact-card">
+                    <h3>Innovatix</h3>
+                    <p class="project-meta">EnB Buzz Competition &middot; finalist, top 10 of 100+ &middot; Autumn 2023</p>
+                    <p>A startup concept aimed at cutting out middlemen in Global South supply chains. It reached the finals, and it is where a lot of my thinking about who technology is actually built for started.</p>
+                    <p class="repo-line"><span class="repo-none">Concept and pitch &mdash; no repository.</span></p>
+                </article>
+            </div>
+        </section>
+
+        <section>
+            <p class="section-label">Positions of Responsibility</p>
+            <div class="compact-grid">
+                <article class="compact-card">
+                    <h3>Institute Student Mentor</h3>
+                    <p class="project-meta">Student Mentorship Program, IIT Bombay &middot; Jul 2026&ndash;present</p>
+                    <p>Mentoring undergraduates through their first years at the institute.</p>
+                </article>
+                <article class="compact-card">
+                    <h3>Mentor, Flappy Learner</h3>
+                    <p class="project-meta">Seasons of Code, Web and Coding Club &middot; May&ndash;Jul 2025</p>
+                    <p>Taught RL fundamentals &mdash; MDPs, Bellman equations, Q-learning, SARSA, TD learning &mdash; through a project students could see working.</p>
+                </article>
+                <article class="compact-card">
+                    <h3>Sports Secretary</h3>
+                    <p class="project-meta">Computer Science and Engineering Association &middot; May 2024&ndash;Apr 2025</p>
+                    <p>Coordinated the Inter-Department Sports Tournament and managed multiple sporting events.</p>
+                </article>
+                <article class="compact-card">
+                    <h3>Core Team Member</h3>
+                    <p class="project-meta">Yogastha Club, IIT Bombay &middot; Jan&ndash;Jun 2024</p>
+                    <p>Managed social media and the club website; organised five-day yoga camps and breakthrough workshops.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="page footer-row">
+            <span>&copy; <span id="year"></span> Harshitha Inampudi</span>
+            <nav class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="research.html">Research</a>
+                <a href="blogs.html">Blogs</a>
+                <a href="musings.html">Musings</a>
+                <a href="https://github.com/Harsheys18" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

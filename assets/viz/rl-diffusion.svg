@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 340" width="520" height="340" role="img" aria-label="RL-guided inference for text-to-image diffusion: a lightweight policy network emits a per-step guidance scale and stochasticity for each denoising step, trained by REINFORCE against a composite CLIP alignment, perceptual quality and diversity reward, with the U-Net fine-tuned through LoRA.">
+  <style>
+    .bg { fill: #f2f8fd; }
+    .panel { fill: #ffffff; stroke: #bcdcf2; stroke-width: 1.5; }
+    .lbl { font: 600 12px Inter, system-ui, sans-serif; fill: #10305c; }
+    .sub { font: 500 10px Inter, system-ui, sans-serif; fill: #6e7d96; }
+    .cap { font: 600 11px Inter, system-ui, sans-serif; fill: #1878b8; letter-spacing: .08em; }
+    .mono { font: 600 11px "JetBrains Mono", ui-monospace, monospace; fill: #1878b8; }
+    .arrow { fill: none; stroke: #8ec7e9; stroke-width: 2; marker-end: url(#a3); }
+    .s1 { animation: clear 5s ease-in-out infinite; }
+    .s2 { animation: clear 5s ease-in-out infinite; animation-delay: .5s; }
+    .s3 { animation: clear 5s ease-in-out infinite; animation-delay: 1s; }
+    .s4 { animation: clear 5s ease-in-out infinite; animation-delay: 1.5s; }
+    @keyframes clear { 0%,100% { opacity: .85; } 50% { opacity: .1; } }
+    .gam { transform-box: view-box; transform-origin: center bottom; animation: gam 5s ease-in-out infinite; }
+    .g2 { animation-delay: .4s; } .g3 { animation-delay: .8s; } .g4 { animation-delay: 1.2s; } .g5 { animation-delay: 1.6s; }
+    @keyframes gam { 0%,100% { transform: scaleY(.4); } 50% { transform: scaleY(1); } }
+    .rw { animation: rw 5s ease-in-out infinite; }
+    @keyframes rw { 0%,55%,100% { opacity: .25; } 75%,90% { opacity: 1; } }
+  </style>
+  <defs>
+    <marker id="a3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#8ec7e9"/></marker>
+    <pattern id="grain" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="2" height="2" fill="#10305c" opacity=".6"/><rect x="2" y="2" width="2" height="2" fill="#10305c" opacity=".35"/></pattern>
+  </defs>
+
+  <rect class="bg" width="520" height="340" rx="10"/>
+  <text class="cap" x="24" y="30">A POLICY THAT STEERS THE DENOISER</text>
+
+  <!-- prompt -->
+  <rect class="panel" x="24" y="46" width="472" height="30" rx="8"/>
+  <text class="mono" x="38" y="66">prompt &#8594; CLIP text embedding</text>
+
+  <!-- denoising chain -->
+  <g transform="translate(24,92)">
+    <rect class="panel" x="0" y="0" width="472" height="106" rx="10"/>
+    <g transform="translate(16,16)">
+      <rect x="0" y="0" width="62" height="62" rx="6" fill="#dcecf9"/>
+      <rect class="s1" x="0" y="0" width="62" height="62" rx="6" fill="url(#grain)"/>
+      <text class="sub" x="14" y="76">x_T</text>
+
+      <path class="arrow" d="M70 31 H96"/>
+      <rect x="100" y="0" width="62" height="62" rx="6" fill="#dcecf9"/>
+      <circle cx="131" cy="31" r="14" fill="#8ec7e9"/>
+      <rect class="s2" x="100" y="0" width="62" height="62" rx="6" fill="url(#grain)"/>
+
+      <path class="arrow" d="M170 31 H196"/>
+      <rect x="200" y="0" width="62" height="62" rx="6" fill="#dcecf9"/>
+      <circle cx="231" cy="28" r="15" fill="#2b95d6"/>
+      <rect x="212" y="42" width="38" height="14" rx="3" fill="#10305c" opacity=".6"/>
+      <rect class="s3" x="200" y="0" width="62" height="62" rx="6" fill="url(#grain)"/>
+
+      <path class="arrow" d="M270 31 H296"/>
+      <rect x="300" y="0" width="62" height="62" rx="6" fill="#dcecf9"/>
+      <circle cx="331" cy="26" r="15" fill="#2b95d6"/>
+      <rect x="312" y="40" width="38" height="16" rx="3" fill="#10305c" opacity=".75"/>
+      <path d="M306 56 q14 -10 28 0 t22 -4" fill="none" stroke="#1878b8" stroke-width="2"/>
+      <rect class="s4" x="300" y="0" width="62" height="62" rx="6" fill="url(#grain)"/>
+      <text class="sub" x="316" y="76">x_0</text>
+
+      <text class="sub" x="382" y="24">U-Net</text>
+      <text class="sub" x="382" y="40">+ LoRA</text>
+      <text class="sub" x="382" y="56">adapters</text>
+    </g>
+  </g>
+
+  <!-- policy controls per step -->
+  <g transform="translate(24,214)">
+    <rect class="panel" x="0" y="0" width="286" height="104" rx="10"/>
+    <text class="lbl" x="16" y="24">policy &#960;&#966;</text>
+    <text class="sub" x="16" y="40">per-step guidance &#947;_t and noise &#951;_t</text>
+    <g transform="translate(16,52)">
+      <rect class="gam" x="0" y="0" width="14" height="36" rx="3" fill="#2b95d6"/>
+      <rect class="gam g2" x="22" y="0" width="14" height="36" rx="3" fill="#2b95d6"/>
+      <rect class="gam g3" x="44" y="0" width="14" height="36" rx="3" fill="#2b95d6"/>
+      <rect class="gam g4" x="66" y="0" width="14" height="36" rx="3" fill="#2b95d6"/>
+      <rect class="gam g5" x="88" y="0" width="14" height="36" rx="3" fill="#2b95d6"/>
+      <text class="sub" x="116" y="24">one control per denoising step</text>
+    </g>
+  </g>
+
+  <!-- reward -->
+  <g transform="translate(326,214)">
+    <rect class="panel" x="0" y="0" width="170" height="104" rx="10"/>
+    <text class="lbl" x="16" y="24">reward</text>
+    <g class="rw">
+      <text class="sub" x="16" y="44">CLIP alignment</text>
+      <text class="sub" x="16" y="62">LPIPS quality</text>
+      <text class="sub" x="16" y="80">feature diversity</text>
+    </g>
+    <text class="mono" x="16" y="96" font-size="10">REINFORCE &#8594; &#966;</text>
+  </g>
+</svg>

@@ -1,57 +1,74 @@
 # Harshitha Inampudi — Personal Site
 
-A static, plain, academic-style personal site for a CSE (Honors) undergrad at IIT Bombay applying to PhD
-programs in Robotics and Machine Learning. Modeled on a researcher's personal homepage — serif type, narrow
-reading column, bibliography-style entries, a real CV page — rather than a marketing/SaaS layout. Content is
-sourced directly from [resume.tex](resume.tex) and rewritten into plain prose; nothing is invented that isn't
-in the resume.
+A static personal site for a CSE (Honors) undergrad at IIT Bombay applying to PhD programs in Robotics and
+Machine Learning. Light theme built on a sky blue / dark blue / black / white palette, with a figure beside
+every research project so the work is understandable at a glance.
 
 ## Pages
 
-- `index.html` (**About**): a short bio — who I am, academic background, and the ML/robotics problems I work on
-- `research.html` (**Research**): formal research and work experience, grouped by theme, written as short
-  essay-style entries (problem &rarr; approach &rarr; outcome) rather than resume bullets
-- `projects.html` (**Projects**): coursework, competitions, and self-driven builds outside formal research
-  positions, organized by domain — Robotics, Machine Learning, Systems & Algorithms, Optimization & Quant,
-  Miscellaneous — linked to public repos at [github.com/Harsheys18](https://github.com/Harsheys18) where available
-- `musings.html` (**Musings**): an informal notebook for research ideas, papers, and half-formed thoughts.
-  Currently holds two entries clearly marked as design placeholders, not real posts.
-- `cv.html` (**CV**): a summary CV (education, experience, skills, positions, honors) with a Download CV button
-- `contact.html`: plain contact details, no form
+- `index.html` (**Home**) — photo, research interests, achievements, LinkedIn and contact details.
+  Deliberately no CV.
+- `research.html` (**Research**) — all machine learning and robotics work, grouped by theme. Every entry has
+  an animated figure and, where the repository is public, a GitHub link on the last line.
+- `experience.html` (**Experience**) — the four positions (Graviton, Juspay, NTU Singapore, Sakhi), then
+  **Other Relevant Projects** covering systems, algorithms, optimisation and earlier builds, then positions of
+  responsibility.
+- `blogs.html` (**Blogs**) — essay index. Each card shows an abstract; the title links to the full piece in
+  `blog/`.
+- `musings.html` (**Musings**) — travel, places, and pictures. The colourful one.
 
-## Tech Stack
+Blog posts live in `blog/` as standalone pages:
 
-- HTML5, hand-written per page (no templating/build step)
-- CSS3: single stylesheet (`styles.css`), serif typography (Source Serif 4 + JetBrains Mono for labels/dates/
-  nav), no cards, gradients, or box-shadows — hairline rules and whitespace do the layout work
-- `script.js`: one job, sets the footer year. No scroll effects, no JS-driven nav.
+- `blog/working-is-not-right.html`
+- `blog/what-benchmarks-decide.html`
+- `blog/built-for-whom.html`
+- `blog/doing-it-badly-first.html`
 
-## Run Locally
+## Figures
 
-Open [index.html](index.html) directly in a browser, or serve the folder (e.g. `python -m http.server`) and
-visit `http://localhost:8000`.
+`assets/viz/*.svg` — every project figure and travel illustration. These are hand-authored animated SVGs, not
+GIFs or stock images: nothing is copied from anywhere, each one is drawn from what the project's code actually
+does, and they stay sharp at any size while costing a few kilobytes each.
 
-## Publish to GitHub Pages (github.io)
+Each file is self-contained (styles and animation live inside the SVG), so they can be reused anywhere by
+pointing an `<img>` at them. Animation is suppressed automatically for visitors with
+`prefers-reduced-motion` set.
 
-### Option A: User Site (recommended)
+## Adding things
 
-1. Create a new repository named exactly: your-username.github.io
-2. Copy all files from this project into that repository root.
-3. Commit and push to the main branch.
-4. Wait 1 to 3 minutes and open https://your-username.github.io/
+**A new research project** — copy an existing `<article class="project">` block in `research.html`, swap the
+figure, title, meta line and body. The last line of every entry is the repo link; if there is no public
+repository, use `<span class="repo-none">` with a short reason instead of linking.
 
-### Option B: Project Site
+**A new blog post** — copy any file in `blog/`, replace the head/title/body, then add a matching
+`<article class="blog-card">` to `blogs.html` with its abstract.
 
-1. Push this code to any repository (for example, portfolio).
-2. On GitHub, open Settings > Pages.
-3. Under Build and deployment, set Source: Deploy from a branch, Branch: main, folder: /(root).
-4. Save and wait for deployment.
+**A photo** — `images/profile.jpg` is the home page portrait (600×600, cropped from a HEIC original).
+Browsers cannot display HEIC, so convert any replacement to JPEG first. Travel cards in `musings.html` point
+at `assets/viz/place-*.svg`; swap a card's `src` to a photo in `images/` and the card handles the cropping.
 
-## Keeping Content Accurate
+## Tech
 
-- Edit `resume.tex` first, then propagate factual changes into the corresponding HTML page — Research and
-  Projects entries should stay in prose, not resume-bullet fragments.
-- The Download CV button on `cv.html` currently links straight to `resume.tex` (browsers will download the raw
-  LaTeX source). Compile a `resume.pdf`, add it to the repo, and swap that link's `href` when one exists.
-- Musings entries should be added as new `<article class="note">` blocks at the top of the list in
-  `musings.html`; remove the two example entries once real notes replace them.
+Hand-written HTML, one stylesheet (`styles.css`), one small script (`script.js`) for the footer year and nav
+highlighting. No build step, no dependencies. Type is Source Serif 4 for prose and Inter for UI, loaded from
+Google Fonts.
+
+## Run locally
+
+Open `index.html` directly, or serve the folder and visit `http://localhost:8000`:
+
+```
+python -m http.server
+```
+
+## Publish to GitHub Pages
+
+1. Push to a repository named `your-username.github.io` (user site) or any repo with
+   **Settings → Pages → Deploy from a branch → main → /(root)** (project site).
+2. Wait a minute or two, then open the published URL.
+
+## Note on the CV
+
+The site intentionally does not link a CV. `resume.tex` is still present in the repository root, which means
+it remains downloadable from the published site. Run `git rm resume.tex` (keeping a copy elsewhere) if it
+should not be reachable at all.

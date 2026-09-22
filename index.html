@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Harshitha Inampudi — undergraduate researcher at IIT Bombay working on robotics, reinforcement learning, and formal verification.">
+    <meta name="description" content="Harshitha Inampudi - undergraduate researcher at IIT Bombay working on robotics, safe reinforcement learning, and formal verification of learned systems.">
     <title>Harshitha Inampudi</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -15,64 +15,164 @@
         <div class="page header-row">
             <a href="index.html" class="site-title">Harshitha Inampudi</a>
             <nav class="site-nav">
-                <a class="active" href="index.html">About</a>
+                <a class="active" href="index.html">Home</a>
                 <a href="research.html">Research</a>
-                <a href="projects.html">Projects</a>
+                <a href="experience.html">Experience</a>
+                <a href="blogs.html">Blogs</a>
                 <a href="musings.html">Musings</a>
-                <a href="cv.html">CV</a>
-                <a href="contact.html">Contact</a>
             </nav>
         </div>
     </header>
 
     <main class="page main">
-        <h1 class="sr-only">Harshitha Inampudi — About</h1>
+        <h1 class="sr-only">Harshitha Inampudi</h1>
 
-        <section class="intro">
-            <p class="lede">
-                I'm an undergraduate in Computer Science &amp; Engineering (Honors), with a minor in Machine
-                Intelligence &amp; Data Science, at IIT Bombay. My work sits at the intersection of machine
-                learning and robotics &mdash; I'm interested in how a system can perceive its surroundings,
-                reason about them, and act reliably, especially when the environment is uncertain or only
-                partially observable.
-            </p>
-            <p>
-                Most of what I've worked on so far centers on reinforcement learning under safety constraints,
-                formal verification of learned systems, and perception-driven control for physical robots.
-                I've adapted policy-gradient methods to respect safety constraints in continuous-control
-                settings, looked at whether neural networks can certify their own safety guarantees, and &mdash;
-                currently, through Sakhi and my B.Tech project &mdash; I'm working on robots where perception,
-                reasoning, and language function as one coherent system rather than separate modules bolted
-                together.
-            </p>
-            <p>
-                I'm applying to PhD programs in robotics and machine learning, hoping to keep working on
-                problems where the goal isn't just performing well on average, but behaving correctly and
-                predictably when it actually matters.
-            </p>
-            <p class="contact-line">
-                <a href="mailto:23b1071@iitb.ac.in">23b1071@iitb.ac.in</a>
-                <span class="sep">&middot;</span>
-                <a href="https://github.com/Harsheys18" target="_blank" rel="noopener noreferrer">github</a>
-                <span class="sep">&middot;</span>
-                <a href="https://www.linkedin.com/in/harshitha-inampudi-69a831293/" target="_blank" rel="noopener noreferrer">linkedin</a>
-                <span class="sep">&middot;</span>
-                <a href="cv.html">cv</a>
+        <section class="hero">
+            <div class="hero-photo">
+                <img src="images/profile.jpg" alt="Harshitha Inampudi">
+            </div>
+            <div>
+                <p class="hero-name">Harshitha Inampudi</p>
+                <p class="hero-role">B.Tech Computer Science &amp; Engineering (Honors) &middot; IIT Bombay</p>
+                <p class="hero-lede">
+                    I work at the intersection of machine learning and robotics. What holds my attention is
+                    how a system can perceive its surroundings, reason about them, and act reliably &mdash;
+                    especially when the environment is uncertain or only partially observable, and when
+                    performing well on average is not good enough.
+                </p>
+                <div class="link-row">
+                    <a class="btn btn-primary" href="https://www.linkedin.com/in/harshitha-inampudi-69a831293/" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95C20.4 8.75 21 11 21 14.1V21h-4v-6.1c0-1.45-.03-3.3-2.02-3.3-2.02 0-2.33 1.57-2.33 3.2V21H9z"/></svg>
+                        LinkedIn
+                    </a>
+                    <a class="btn" href="https://github.com/Harsheys18" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                        GitHub
+                    </a>
+                    <a class="btn" href="mailto:23b1071@iitb.ac.in">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+                        Email
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <p class="section-label">Research Interests</p>
+            <div class="interest-grid">
+                <article class="interest-card">
+                    <h3>Robotics &amp; Embodied AI</h3>
+                    <p>Control policies built directly on learned visual representations, and robots where
+                    perception, reasoning, and language behave as one system rather than separate modules
+                    bolted together.</p>
+                </article>
+                <article class="interest-card">
+                    <h3>Safe Reinforcement Learning</h3>
+                    <p>How policy-gradient methods hold up once hard safety constraints enter the picture,
+                    and where the existing safe-RL toolkit quietly breaks down in continuous control.</p>
+                </article>
+                <article class="interest-card">
+                    <h3>Formal Verification of Learned Systems</h3>
+                    <p>Whether a network can be trained not only to control a system but to certify that the
+                    system stays safe &mdash; learned certificates that carry something close to the weight
+                    of a proof.</p>
+                </article>
+                <article class="interest-card">
+                    <h3>Probabilistic &amp; Generative Modeling</h3>
+                    <p>Diffusion models, approximate inference, and sequential decision-making under
+                    uncertainty &mdash; the machinery underneath most of the above.</p>
+                </article>
+            </div>
+            <p class="section-note" style="margin-top: 1.3rem; margin-bottom: 0;">
+                These threads are converging into the direction I want to pursue as a PhD: systems that
+                combine learning with some form of guarantee about how they will behave.
             </p>
         </section>
 
-        <section class="quick-links">
-            <p class="section-label">Elsewhere on this site</p>
-            <p>
-                <a href="research.html">Research</a>, on the problems I've spent the most time thinking about
-                &middot; <a href="projects.html">Projects</a>, technical work outside formal research
-                &middot; <a href="musings.html">Musings</a>, informal notes as they come up
+        <section>
+            <p class="section-label">Achievements</p>
+            <ul class="achieve-list">
+                <li class="is-highlight">
+                    <span class="achieve-rank">1st</span>
+                    <span>Top score among all participating IITs, <strong>Inter-IIT Tech Meet 14.0</strong> &mdash; safe-RL framework for Wi-Fi radio resource management, on a problem statement set by Arista Networks.
+                        <span class="achieve-detail">IIT Patna, 2025</span></span>
+                </li>
+                <li class="is-highlight">
+                    <span class="achieve-rank">Funded</span>
+                    <span><strong>Sakhi</strong> selected for the IDEAS program at IIT Bombay, advanced from Level 1 to Level 2, and secured funding for continued development.
+                        <span class="achieve-detail">2025&ndash;present</span></span>
+                </li>
+                <li>
+                    <span class="achieve-rank">AIR 336</span>
+                    <span><strong>JEE Advanced</strong>, among 180,000+ candidates.
+                        <span class="achieve-detail">2023</span></span>
+                </li>
+                <li>
+                    <span class="achieve-rank">AIR 636</span>
+                    <span><strong>JEE Main</strong>, among 1,000,000+ candidates.
+                        <span class="achieve-detail">2023</span></span>
+                </li>
+                <li>
+                    <span class="achieve-rank">Rank 37</span>
+                    <span><strong>TS EAMCET</strong>, among 200,000+ candidates &middot; Rank 46 in EAPCET, among 330,000+.
+                        <span class="achieve-detail">2023</span></span>
+                </li>
+                <li>
+                    <span class="achieve-rank">Top 5</span>
+                    <span>Of all submissions for the <strong>plagiarism detection engine</strong> in Data Structures and Algorithms.
+                        <span class="achieve-detail">IIT Bombay, 2024</span></span>
+                </li>
+                <li>
+                    <span class="achieve-rank">Finalist</span>
+                    <span>Top 10 of 100+ teams at the <strong>EnB Buzz</strong> startup competition, for a supply-chain concept aimed at the Global South.
+                        <span class="achieve-detail">2023</span></span>
+                </li>
+                <li>
+                    <span class="achieve-rank">Gold</span>
+                    <span><strong>Table Tennis</strong>, Freshie-sta &middot; Silver, Inter-Hostel General Championship.
+                        <span class="achieve-detail">2023, 2024</span></span>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <p class="section-label">Contact</p>
+            <div class="contact-grid">
+                <dl class="contact-item">
+                    <dt>Email</dt>
+                    <dd><a href="mailto:23b1071@iitb.ac.in">23b1071@iitb.ac.in</a></dd>
+                </dl>
+                <dl class="contact-item">
+                    <dt>LinkedIn</dt>
+                    <dd><a href="https://www.linkedin.com/in/harshitha-inampudi-69a831293/" target="_blank" rel="noopener noreferrer">harshitha-inampudi</a></dd>
+                </dl>
+                <dl class="contact-item">
+                    <dt>GitHub</dt>
+                    <dd><a href="https://github.com/Harsheys18" target="_blank" rel="noopener noreferrer">github.com/Harsheys18</a></dd>
+                </dl>
+                <dl class="contact-item">
+                    <dt>Location</dt>
+                    <dd>Mumbai, India</dd>
+                </dl>
+            </div>
+            <p class="section-note" style="margin-top: 1.2rem; margin-bottom: 0;">
+                Open to PhD conversations, research collaborations, and anything at the intersection of
+                robotics and machine learning.
             </p>
         </section>
     </main>
 
     <footer class="site-footer">
-        <p class="page">&copy; <span id="year"></span> Harshitha Inampudi &middot; <a href="https://github.com/Harsheys18/Harsheys18.github.io" target="_blank" rel="noopener noreferrer">view source</a></p>
+        <div class="page footer-row">
+            <span>&copy; <span id="year"></span> Harshitha Inampudi</span>
+            <nav class="footer-links">
+                <a href="research.html">Research</a>
+                <a href="experience.html">Experience</a>
+                <a href="blogs.html">Blogs</a>
+                <a href="musings.html">Musings</a>
+                <a href="https://github.com/Harsheys18" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </nav>
+        </div>
     </footer>
 
     <script src="script.js"></script>

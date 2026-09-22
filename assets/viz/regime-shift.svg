@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 340" width="520" height="340" role="img" aria-label="RegimeShift: a three-state Gaussian hidden Markov model labels each period of the market as bull, bear or crisis, and a mean-variance optimiser with regime-specific risk aversion rebalances equity, gold and bonds accordingly.">
+  <style>
+    .bg { fill: #f2f8fd; }
+    .panel { fill: #ffffff; stroke: #bcdcf2; stroke-width: 1.5; }
+    .lbl { font: 600 12px Inter, system-ui, sans-serif; fill: #10305c; }
+    .sub { font: 500 10px Inter, system-ui, sans-serif; fill: #6e7d96; }
+    .cap { font: 600 11px Inter, system-ui, sans-serif; fill: #1878b8; letter-spacing: .08em; }
+    .mono { font: 600 10px "JetBrains Mono", ui-monospace, monospace; fill: #1878b8; }
+    .band { animation: band 6s ease-in-out infinite; }
+    .b1 { animation-delay: 0s; } .b2 { animation-delay: 2s; } .b3 { animation-delay: 4s; }
+    @keyframes band { 0%,22%,100% { opacity: .12; } 6%,18% { opacity: .38; } }
+    .px { stroke-dasharray: 460; stroke-dashoffset: 460; animation: draw 6s linear infinite; }
+    @keyframes draw { 0% { stroke-dashoffset: 460; } 85%,100% { stroke-dashoffset: 0; } }
+    .cursor { animation: cur 6s linear infinite; }
+    @keyframes cur { 0% { transform: translateX(0); } 85%,100% { transform: translateX(404px); } }
+    .wEq { transform-box: view-box; transform-origin: center bottom; animation: wEq 6s ease-in-out infinite; }
+    .wGo { transform-box: view-box; transform-origin: center bottom; animation: wGo 6s ease-in-out infinite; }
+    .wBo { transform-box: view-box; transform-origin: center bottom; animation: wBo 6s ease-in-out infinite; }
+    @keyframes wEq { 0%,20% { transform: scaleY(1); } 45%,60% { transform: scaleY(.55); } 80%,100% { transform: scaleY(.22); } }
+    @keyframes wGo { 0%,20% { transform: scaleY(.3); } 45%,60% { transform: scaleY(.6); } 80%,100% { transform: scaleY(.9); } }
+    @keyframes wBo { 0%,20% { transform: scaleY(.25); } 45%,60% { transform: scaleY(.7); } 80%,100% { transform: scaleY(1); } }
+    .rgLbl { animation: rg 6s ease-in-out infinite; }
+    @keyframes rg { 0%,20% { opacity: 1; } 24%,100% { opacity: 0; } }
+    .rgLbl2 { animation: rg2 6s ease-in-out infinite; }
+    @keyframes rg2 { 0%,40%,72%,100% { opacity: 0; } 46%,66% { opacity: 1; } }
+    .rgLbl3 { animation: rg3 6s ease-in-out infinite; }
+    @keyframes rg3 { 0%,78% { opacity: 0; } 84%,100% { opacity: 1; } }
+  </style>
+
+  <rect class="bg" width="520" height="340" rx="10"/>
+  <text class="cap" x="24" y="30">REGIME IN, ALLOCATION OUT</text>
+
+  <!-- price chart with regime bands -->
+  <rect class="panel" x="24" y="46" width="472" height="150" rx="10"/>
+  <g clip-path="inset(0 round 10px)">
+    <rect class="band b1" x="40" y="58" width="132" height="120" fill="#24a89b"/>
+    <rect class="band b2" x="172" y="58" width="128" height="120" fill="#e0a12b"/>
+    <rect class="band b3" x="300" y="58" width="180" height="120" fill="#e8705a"/>
+  </g>
+  <path class="px" d="M40 148 q22 -18 40 -26 t42 -14 t46 6 q24 12 40 -4 t44 22 q26 18 42 -6 t46 34 q26 14 44 -8 t52 26" fill="none" stroke="#10305c" stroke-width="2.5" stroke-linecap="round"/>
+  <g class="cursor"><path d="M40 58 V178" stroke="#1878b8" stroke-width="1.5" stroke-dasharray="3 3"/></g>
+
+  <text class="sub" x="40" y="192" fill="#17857a">bull</text>
+  <text class="sub" x="180" y="192" fill="#b57f14">bear</text>
+  <text class="sub" x="308" y="192" fill="#c0503a">crisis</text>
+
+  <!-- HMM -->
+  <rect class="panel" x="24" y="212" width="216" height="106" rx="10"/>
+  <text class="lbl" x="40" y="236">3-state Gaussian HMM</text>
+  <g transform="translate(46,248)">
+    <circle cx="20" cy="26" r="16" fill="#e9f7f4" stroke="#24a89b" stroke-width="1.5"/>
+    <circle cx="86" cy="26" r="16" fill="#fdf6e8" stroke="#e0a12b" stroke-width="1.5"/>
+    <circle cx="152" cy="26" r="16" fill="#fdeeea" stroke="#e8705a" stroke-width="1.5"/>
+    <path d="M36 20 q25 -14 50 0 M102 20 q25 -14 50 0 M136 34 q-25 14 -50 0 M70 34 q-25 14 -50 0" fill="none" stroke="#bcdcf2" stroke-width="1.5"/>
+  </g>
+  <text class="sub" x="40" y="310">features: return, 21d vol, 63d momentum</text>
+
+  <!-- allocation -->
+  <rect class="panel" x="256" y="212" width="240" height="106" rx="10"/>
+  <text class="lbl" x="272" y="236">mean-variance weights</text>
+  <g transform="translate(276,246)">
+    <rect x="0" y="0" width="140" height="48" fill="none"/>
+    <rect class="wEq" x="6" y="8" width="22" height="40" rx="3" fill="#2b95d6"/>
+    <rect class="wGo" x="46" y="8" width="22" height="40" rx="3" fill="#e0a12b"/>
+    <rect class="wBo" x="86" y="8" width="22" height="40" rx="3" fill="#10305c"/>
+    <text class="sub" x="2" y="62">equity</text>
+    <text class="sub" x="46" y="62">gold</text>
+    <text class="sub" x="86" y="62">bonds</text>
+    <g class="rgLbl"><text class="mono" x="130" y="22">&#947; = 1</text></g>
+    <g class="rgLbl2"><text class="mono" x="130" y="22">&#947; = 3</text></g>
+    <g class="rgLbl3"><text class="mono" x="130" y="22">&#947; = 8</text></g>
+    <text class="sub" x="130" y="40">risk aversion</text>
+    <text class="sub" x="130" y="54">by regime</text>
+  </g>
+</svg>

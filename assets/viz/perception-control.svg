@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 340" width="520" height="340" role="img" aria-label="A control policy built directly on learned visual representations: camera frames are encoded into a latent state, a policy maps that latent to an action, and the resulting observation feeds back into the encoder.">
+  <style>
+    .bg { fill: #f2f8fd; }
+    .box { fill: #ffffff; stroke: #8ec7e9; stroke-width: 1.5; }
+    .lbl { font: 600 12px Inter, system-ui, sans-serif; fill: #10305c; }
+    .sub { font: 500 10px Inter, system-ui, sans-serif; fill: #6e7d96; }
+    .cap { font: 600 11px Inter, system-ui, sans-serif; fill: #1878b8; letter-spacing: .08em; }
+    .arrow { fill: none; stroke: #2b95d6; stroke-width: 2; marker-end: url(#ah); }
+    .feedback { fill: none; stroke: #8ec7e9; stroke-width: 2; stroke-dasharray: 5 5; marker-end: url(#ah2); }
+    .flow { stroke-dasharray: 4 8; animation: dash 1.2s linear infinite; }
+    @keyframes dash { to { stroke-dashoffset: -12; } }
+    .lat { fill: #2b95d6; animation: pulse 2.4s ease-in-out infinite; }
+    .l2 { animation-delay: .2s; } .l3 { animation-delay: .4s; } .l4 { animation-delay: .6s; }
+    @keyframes pulse { 0%,100% { opacity: .35; } 50% { opacity: 1; } }
+    .noise { animation: flick 2s steps(3) infinite; }
+    @keyframes flick { 0%,100% { opacity: .25; } 50% { opacity: .6; } }
+    .rover { animation: rove 3s ease-in-out infinite; }
+    @keyframes rove { 0%,100% { transform: translateX(0); } 50% { transform: translateX(8px); } }
+  </style>
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#2b95d6"/></marker>
+    <marker id="ah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#8ec7e9"/></marker>
+  </defs>
+
+  <rect class="bg" width="520" height="340" rx="10"/>
+  <text class="cap" x="24" y="30">PIXELS &#8594; LATENT &#8594; ACTION</text>
+
+  <!-- camera frame -->
+  <g>
+    <rect class="box" x="24" y="88" width="104" height="82" rx="8"/>
+    <rect x="34" y="98" width="84" height="62" rx="4" fill="#dcecf9"/>
+    <circle cx="60" cy="126" r="11" fill="#10305c" opacity=".8"/>
+    <rect x="80" y="132" width="28" height="20" rx="3" fill="#2b95d6" opacity=".75"/>
+    <g class="noise"><rect x="34" y="98" width="84" height="62" rx="4" fill="url(#hatch)"/></g>
+    <text class="sub" x="34" y="186">noisy / partial view</text>
+  </g>
+  <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse"><path d="M0 6 L6 0" stroke="#10305c" stroke-width="1" opacity=".5"/></pattern>
+
+  <path class="arrow flow" d="M132 129 H168"/>
+
+  <!-- encoder -->
+  <g>
+    <path class="box" d="M172 92 h44 v74 h-44 l14 -37 z"/>
+    <text class="lbl" x="178" y="134" font-size="10">enc</text>
+    <text class="sub" x="166" y="186">visual encoder</text>
+  </g>
+
+  <path class="arrow flow" d="M222 129 H252"/>
+
+  <!-- latent -->
+  <g>
+    <rect class="box" x="256" y="96" width="34" height="66" rx="6"/>
+    <circle class="lat" cx="273" cy="110" r="5"/>
+    <circle class="lat l2" cx="273" cy="124" r="5"/>
+    <circle class="lat l3" cx="273" cy="138" r="5"/>
+    <circle class="lat l4" cx="273" cy="152" r="5"/>
+    <text class="sub" x="252" y="186">latent state z</text>
+  </g>
+
+  <path class="arrow flow" d="M294 129 H326"/>
+
+  <!-- policy -->
+  <g>
+    <rect class="box" x="330" y="92" width="76" height="74" rx="10"/>
+    <text class="lbl" x="346" y="124">policy</text>
+    <text class="lbl" x="356" y="146" font-style="italic">&#960;</text>
+    <text class="sub" x="330" y="186">learned control</text>
+  </g>
+
+  <path class="arrow flow" d="M410 129 H442"/>
+
+  <!-- robot -->
+  <g class="rover">
+    <rect class="box" x="446" y="104" width="50" height="30" rx="6"/>
+    <circle cx="459" cy="140" r="8" fill="#10305c"/>
+    <circle cx="483" cy="140" r="8" fill="#10305c"/>
+    <path d="M471 104 v-12 h10" fill="none" stroke="#2b95d6" stroke-width="2" stroke-linecap="round"/>
+    <text class="sub" x="446" y="186">action</text>
+  </g>
+
+  <!-- closed loop -->
+  <path class="feedback" d="M470 200 V236 H76 V180"/>
+  <rect x="200" y="222" width="150" height="28" rx="8" fill="#eef7fd" stroke="#bcdcf2"/>
+  <text class="sub" x="214" y="240" fill="#1878b8">perception and control co-adapt</text>
+
+  <text class="sub" x="24" y="300">structured task constraints shape the policy over long horizons</text>
+</svg>

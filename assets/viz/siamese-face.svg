@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 340" width="520" height="340" role="img" aria-label="Facial recognition with a Siamese network: two images pass through the same shared-weight encoder, and the distance between their embeddings decides whether they are the same person.">
+  <style>
+    .bg { fill: #f2f8fd; }
+    .panel { fill: #ffffff; stroke: #bcdcf2; stroke-width: 1.5; }
+    .lbl { font: 600 12px Inter, system-ui, sans-serif; fill: #10305c; }
+    .sub { font: 500 10px Inter, system-ui, sans-serif; fill: #6e7d96; }
+    .cap { font: 600 11px Inter, system-ui, sans-serif; fill: #1878b8; letter-spacing: .08em; }
+    .mono { font: 600 11px "JetBrains Mono", ui-monospace, monospace; fill: #1878b8; }
+    .fc { fill: none; stroke: #10305c; stroke-width: 2; stroke-linecap: round; }
+    .ptA { animation: near 5s ease-in-out infinite; }
+    @keyframes near { 0%,45% { transform: translate(0,0); } 60%,100% { transform: translate(18px,14px); } }
+    .ptB { animation: nearB 5s ease-in-out infinite; }
+    @keyframes nearB { 0%,45% { transform: translate(0,0); } 60%,100% { transform: translate(-16px,-12px); } }
+    .dline { animation: dl 5s ease-in-out infinite; }
+    @keyframes dl { 0%,45% { opacity: .35; } 60%,100% { opacity: 1; } }
+    .verdict { animation: vd 5s ease-in-out infinite; }
+    @keyframes vd { 0%,58%,100% { opacity: 0; } 70%,94% { opacity: 1; } }
+    .scan { animation: scan 2.6s ease-in-out infinite; }
+    @keyframes scan { 0%,100% { transform: translateY(0); } 50% { transform: translateY(48px); } }
+  </style>
+
+  <rect class="bg" width="520" height="340" rx="10"/>
+  <text class="cap" x="24" y="30">SHARED WEIGHTS, COMPARED EMBEDDINGS</text>
+
+  <!-- two inputs -->
+  <g transform="translate(24,52)">
+    <rect class="panel" x="0" y="0" width="86" height="86" rx="8"/>
+    <circle class="fc" cx="43" cy="36" r="17"/>
+    <path class="fc" d="M22 74 q21 -20 42 0"/>
+    <g class="scan"><path d="M6 14 H80" stroke="#2b95d6" stroke-width="1.5" opacity=".7"/></g>
+  </g>
+  <g transform="translate(24,168)">
+    <rect class="panel" x="0" y="0" width="86" height="86" rx="8"/>
+    <circle class="fc" cx="43" cy="36" r="17"/>
+    <path class="fc" d="M22 74 q21 -20 42 0"/>
+    <g class="scan"><path d="M6 14 H80" stroke="#2b95d6" stroke-width="1.5" opacity=".7"/></g>
+  </g>
+
+  <!-- shared encoder -->
+  <path d="M116 95 H148 M116 211 H148" stroke="#8ec7e9" stroke-width="2"/>
+  <rect class="panel" x="152" y="76" width="70" height="154" rx="10"/>
+  <text class="lbl" x="166" y="146" transform="rotate(-90 166 146)">encoder</text>
+  <rect x="228" y="120" width="8" height="66" rx="4" fill="#dcecf9"/>
+  <text class="sub" x="150" y="252">same weights, both branches</text>
+
+  <!-- embedding space -->
+  <rect class="panel" x="252" y="52" width="244" height="202" rx="10"/>
+  <text class="lbl" x="268" y="76">embedding space</text>
+  <g stroke="#e9f2fa" stroke-width="1">
+    <path d="M268 96 H480 M268 136 H480 M268 176 H480 M268 216 H480 M300 88 V224 M348 88 V224 M396 88 V224 M444 88 V224"/>
+  </g>
+  <circle cx="306" cy="122" r="4" fill="#bcdcf2"/>
+  <circle cx="428" cy="200" r="4" fill="#bcdcf2"/>
+  <circle cx="338" cy="204" r="4" fill="#bcdcf2"/>
+  <g class="ptA"><circle cx="330" cy="148" r="7" fill="#2b95d6"/></g>
+  <g class="ptB"><circle cx="410" cy="182" r="7" fill="#10305c"/></g>
+  <path class="dline" d="M330 148 L410 182" stroke="#8ec7e9" stroke-width="2" stroke-dasharray="4 4"/>
+  <g class="verdict">
+    <rect x="336" y="222" width="126" height="22" rx="7" fill="#e9f7f4" stroke="#24a89b"/>
+    <text class="sub" x="350" y="237" fill="#17857a">distance small &#8594; match</text>
+  </g>
+
+  <text class="sub" x="24" y="288">OpenCV preprocessing &#183; YOLOv8 evaluated as detector and classifier alongside</text>
+</svg>

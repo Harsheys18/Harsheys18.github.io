@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Essays by Harshitha Inampudi on artificial intelligence, evaluation, access to technology, and how research actually gets done.">
+    <title>Blogs | Harshitha Inampudi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="page header-row">
+            <a href="index.html" class="site-title">Harshitha Inampudi</a>
+            <nav class="site-nav">
+                <a href="index.html">Home</a>
+                <a href="research.html">Research</a>
+                <a href="experience.html">Experience</a>
+                <a class="active" href="blogs.html">Blogs</a>
+                <a href="musings.html">Musings</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page main">
+        <div class="page-head">
+            <h1 class="page-title">Blogs</h1>
+            <p class="page-intro">
+                Longer pieces on what I think about artificial intelligence and about the world it is being
+                built into &mdash; written to work out a position, not to defend one I already hold. Each entry
+                opens with an abstract; click the title for the full essay.
+            </p>
+        </div>
+
+        <div class="blog-list">
+
+            <article class="blog-card">
+                <p class="blog-kicker"><span class="topic">AI &amp; Safety</span><span class="dot">&bull;</span><span>12 Sept 2026</span><span class="dot">&bull;</span><span>9 min read</span></p>
+                <h2><a href="blog/working-is-not-right.html">Working Is Not the Same as Being Right</a></h2>
+                <div class="blog-abstract">
+                    <span class="label">Abstract</span>
+                    In most labs, "it works" means a number went up. But scoring well on average and behaving
+                    correctly every time are two different claims, and we have quietly started treating them
+                    as one. I look at where that gap actually bites &mdash; rare, expensive failures in
+                    robotics &mdash; and at what I found during a summer on safe RL: nearly every method turns
+                    a hard safety constraint into a soft one somewhere in the maths. Verification is hard and
+                    does not scale yet. That is a research problem, not a reason to change what we are aiming
+                    at.
+                </div>
+                <a class="read-more" href="blog/working-is-not-right.html">Read the full essay</a>
+            </article>
+
+            <article class="blog-card">
+                <p class="blog-kicker"><span class="topic">Evaluation</span><span class="dot">&bull;</span><span>28 Aug 2026</span><span class="dot">&bull;</span><span>8 min read</span></p>
+                <h2><a href="blog/what-benchmarks-decide.html">What Benchmarks Quietly Decide</a></h2>
+                <div class="blog-abstract">
+                    <span class="label">Abstract</span>
+                    Somebody picks the number a field competes on, and that choice quietly decides which
+                    problems get worked on and which failures are even visible. I walk through three cases I
+                    have watched up close: safety benchmarks that can only add costs up, image metrics that
+                    confuse "realistic" with "good", and a robotics field that knows about the sim-to-real gap
+                    and keeps testing in simulation anyway. Plus four habits that make benchmarks less
+                    misleading without throwing them out.
+                </div>
+                <a class="read-more" href="blog/what-benchmarks-decide.html">Read the full essay</a>
+            </article>
+
+            <article class="blog-card">
+                <p class="blog-kicker"><span class="topic">Technology &amp; Society</span><span class="dot">&bull;</span><span>19 Jul 2026</span><span class="dot">&bull;</span><span>10 min read</span></p>
+                <h2><a href="blog/built-for-whom.html">Built for Whom?</a></h2>
+                <div class="blog-abstract">
+                    <span class="label">Abstract</span>
+                    Software assumes things about you before you ever open it: your bandwidth, your language,
+                    your device, whether your power stays on. Those assumptions are invisible to anyone they
+                    happen to be true for. Starting from a first-year startup idea that went nowhere, I argue
+                    that building for the harder case is not charity &mdash; it makes better software for
+                    everyone &mdash; and that large models make this worse than earlier technology did,
+                    because you can no longer work around a bad assumption locally.
+                </div>
+                <a class="read-more" href="blog/built-for-whom.html">Read the full essay</a>
+            </article>
+
+            <article class="blog-card">
+                <p class="blog-kicker"><span class="topic">Research Practice</span><span class="dot">&bull;</span><span>3 Jun 2026</span><span class="dot">&bull;</span><span>7 min read</span></p>
+                <h2><a href="blog/doing-it-badly-first.html">In Praise of Doing It Badly First</a></h2>
+                <div class="blog-abstract">
+                    <span class="label">Abstract</span>
+                    I have read papers I was sure I understood, then failed to write the first twenty lines of
+                    code. Reading gives you a convincing feeling of understanding that is not the same as
+                    understanding. Using an HMM tagger, a diffusion model, and a Flappy Bird agent I built for
+                    students I was mentoring, I make the case for deliberately bad first versions &mdash; and
+                    for why "one more paper before I start" is almost always avoidance wearing a responsible
+                    face.
+                </div>
+                <a class="read-more" href="blog/doing-it-badly-first.html">Read the full essay</a>
+            </article>
+        </div>
+
+        <p class="callout" style="margin-top: 2rem;">
+            <strong>More coming.</strong> These are the pieces I have finished so far &mdash; new essays get
+            added as I work them out.
+        </p>
+    </main>
+
+    <footer class="site-footer">
+        <div class="page footer-row">
+            <span>&copy; <span id="year"></span> Harshitha Inampudi</span>
+            <nav class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="research.html">Research</a>
+                <a href="experience.html">Experience</a>
+                <a href="musings.html">Musings</a>
+                <a href="https://github.com/Harsheys18" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

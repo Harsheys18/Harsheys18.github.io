@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 340" width="520" height="340" role="img" aria-label="Real-time face mask detection: a convolutional detector runs on each frame of a live video stream, locking a bounding box onto faces and labelling them masked or unmasked while keeping up with the frame rate.">
+  <style>
+    .bg { fill: #f2f8fd; }
+    .panel { fill: #ffffff; stroke: #bcdcf2; stroke-width: 1.5; }
+    .lbl { font: 600 12px Inter, system-ui, sans-serif; fill: #10305c; }
+    .sub { font: 500 10px Inter, system-ui, sans-serif; fill: #6e7d96; }
+    .cap { font: 600 11px Inter, system-ui, sans-serif; fill: #1878b8; letter-spacing: .08em; }
+    .mono { font: 600 10px "JetBrains Mono", ui-monospace, monospace; fill: #1878b8; }
+    .fc { fill: none; stroke: #10305c; stroke-width: 2; stroke-linecap: round; }
+    .bbox { fill: none; stroke-width: 2.5; animation: lock 4s ease-in-out infinite; }
+    @keyframes lock { 0% { opacity: 0; transform: scale(1.22); } 22%,100% { opacity: 1; transform: scale(1); } }
+    .bx1 { transform-box: view-box; transform-origin: 126px 150px; }
+    .bx2 { transform-box: view-box; transform-origin: 278px 168px; animation-delay: .6s; }
+    .tagin { animation: tagin 4s ease-in-out infinite; }
+    .t2 { animation-delay: .6s; }
+    @keyframes tagin { 0%,18% { opacity: 0; } 30%,100% { opacity: 1; } }
+    .fps { animation: fps 1.2s steps(2) infinite; }
+    @keyframes fps { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
+    .strip { animation: strip 3s linear infinite; }
+    @keyframes strip { 0% { transform: translateX(0); } 100% { transform: translateX(-84px); } }
+  </style>
+
+  <rect class="bg" width="520" height="340" rx="10"/>
+  <text class="cap" x="24" y="30">LIVE STREAM, NOT STILL IMAGES</text>
+
+  <!-- video frame -->
+  <rect class="panel" x="24" y="46" width="352" height="216" rx="10"/>
+  <rect x="34" y="56" width="332" height="196" rx="6" fill="#dcecf9"/>
+
+  <!-- person 1 - masked -->
+  <g>
+    <circle class="fc" cx="126" cy="140" r="26"/>
+    <path d="M102 144 q24 22 48 0 l-4 16 q-20 12 -40 0 z" fill="#2b95d6" opacity=".85"/>
+    <path class="fc" d="M92 196 q34 -28 68 0"/>
+    <rect class="bbox bx1" x="88" y="104" width="76" height="98" rx="4" stroke="#24a89b"/>
+    <g class="tagin"><rect x="88" y="88" width="56" height="16" rx="4" fill="#24a89b"/><text class="sub" x="95" y="100" fill="#ffffff">mask</text></g>
+  </g>
+
+  <!-- person 2 - unmasked -->
+  <g>
+    <circle class="fc" cx="278" cy="158" r="24"/>
+    <path class="fc" d="M268 164 q10 8 20 0"/>
+    <path class="fc" d="M246 212 q32 -26 64 0"/>
+    <rect class="bbox bx2" x="242" y="124" width="72" height="94" rx="4" stroke="#e8705a"/>
+    <g class="tagin t2"><rect x="242" y="108" width="74" height="16" rx="4" fill="#e8705a"/><text class="sub" x="249" y="120" fill="#ffffff">no mask</text></g>
+  </g>
+
+  <text class="mono fps" x="336" y="72">REC</text>
+  <circle class="fps" cx="328" cy="68" r="4" fill="#e8705a"/>
+
+  <!-- pipeline -->
+  <rect class="panel" x="392" y="46" width="104" height="216" rx="10"/>
+  <text class="lbl" x="406" y="70">pipeline</text>
+  <g transform="translate(406,84)">
+    <rect x="0" y="0" width="76" height="26" rx="5" fill="#eef7fd" stroke="#bcdcf2"/><text class="sub" x="10" y="17">frame grab</text>
+    <rect x="0" y="34" width="76" height="26" rx="5" fill="#eef7fd" stroke="#bcdcf2"/><text class="sub" x="10" y="51">face detect</text>
+    <rect x="0" y="68" width="76" height="26" rx="5" fill="#2b95d6"/><text class="sub" x="10" y="85" fill="#ffffff">CNN classify</text>
+    <rect x="0" y="102" width="76" height="26" rx="5" fill="#eef7fd" stroke="#bcdcf2"/><text class="sub" x="10" y="119">draw + alert</text>
+    <path d="M38 26 V34 M38 60 V68 M38 94 V102" stroke="#8ec7e9" stroke-width="2"/>
+  </g>
+  <text class="sub" x="406" y="244">OpenCV</text>
+
+  <!-- frame strip -->
+  <rect class="panel" x="24" y="278" width="472" height="44" rx="10"/>
+  <g clip-path="inset(0 round 10px)">
+    <g class="strip" transform="translate(34,286)">
+      <rect x="0" y="0" width="76" height="28" rx="4" fill="#dcecf9"/>
+      <rect x="84" y="0" width="76" height="28" rx="4" fill="#dcecf9"/>
+      <rect x="168" y="0" width="76" height="28" rx="4" fill="#dcecf9"/>
+      <rect x="252" y="0" width="76" height="28" rx="4" fill="#dcecf9"/>
+      <rect x="336" y="0" width="76" height="28" rx="4" fill="#dcecf9"/>
+      <rect x="420" y="0" width="76" height="28" rx="4" fill="#dcecf9"/>
+    </g>
+  </g>
+</svg>

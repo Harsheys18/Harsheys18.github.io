@@ -1,3 +1,11 @@
-resume.tex
 .claude/*
 
+# CV source - the site intentionally does not link a CV.
+# Note: resume.tex is already tracked, so this line has no effect until you
+# run `git rm --cached resume.tex`.
+resume.tex
+
+# Camera originals. HEIC does not render in Chrome/Firefox/Edge.
+# The web-ready crop is images/profile.jpg.
+*.HEIC
+*.heic

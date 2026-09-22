@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 340" width="520" height="340" role="img" aria-label="AI for logical thinking: a proof search tree is expanded from a goal formula, with a learned heuristic scoring which branch to expand next so the prover reaches a closed proof instead of exhausting the search space.">
+  <style>
+    .bg { fill: #f2f8fd; }
+    .panel { fill: #ffffff; stroke: #bcdcf2; stroke-width: 1.5; }
+    .lbl { font: 600 12px Inter, system-ui, sans-serif; fill: #10305c; }
+    .sub { font: 500 10px Inter, system-ui, sans-serif; fill: #6e7d96; }
+    .cap { font: 600 11px Inter, system-ui, sans-serif; fill: #1878b8; letter-spacing: .08em; }
+    .mono { font: 600 11px "JetBrains Mono", ui-monospace, monospace; fill: #10305c; }
+    .step { animation: st 5s ease-in-out infinite; }
+    .s2 { animation-delay: .8s; } .s3 { animation-delay: 1.6s; } .s4 { animation-delay: 2.4s; }
+    @keyframes st { 0%,8% { opacity: .15; } 20%,100% { opacity: 1; } }
+    .dead { animation: dd 5s ease-in-out infinite; }
+    @keyframes dd { 0%,40% { opacity: .15; } 52%,100% { opacity: 1; } }
+    .score { transform-box: view-box; transform-origin: left center; animation: sc 5s ease-in-out infinite; }
+    .sc2 { animation-delay: .3s; } .sc3 { animation-delay: .6s; }
+    @keyframes sc { 0% { transform: scaleX(.12); } 45%,100% { transform: scaleX(1); } }
+    .qed { animation: qed 5s ease-in-out infinite; }
+    @keyframes qed { 0%,66%,100% { opacity: 0; } 78%,96% { opacity: 1; } }
+  </style>
+
+  <rect class="bg" width="520" height="340" rx="10"/>
+  <text class="cap" x="24" y="30">HEURISTIC-GUIDED PROOF SEARCH</text>
+
+  <!-- goal -->
+  <rect class="panel" x="24" y="46" width="472" height="34" rx="8"/>
+  <text class="mono" x="40" y="68">goal: &#8704;x. P(x) &#8594; Q(x)</text>
+
+  <!-- search tree -->
+  <rect class="panel" x="24" y="94" width="306" height="224" rx="10"/>
+  <g transform="translate(24,94)">
+    <path d="M152 36 L86 92 M152 36 L218 92 M86 92 L48 154 M86 92 L118 154 M218 92 L188 154 M218 92 L254 154" stroke="#dcecf9" stroke-width="2"/>
+    <circle class="step" cx="152" cy="36" r="14" fill="#10305c"/>
+    <circle class="step s2" cx="86" cy="92" r="12" fill="#2b95d6"/>
+    <circle class="step s2" cx="218" cy="92" r="12" fill="#bcdcf2"/>
+    <circle class="step s3" cx="48" cy="154" r="10" fill="#bcdcf2"/>
+    <circle class="step s3" cx="118" cy="154" r="10" fill="#2b95d6"/>
+    <circle class="dead" cx="188" cy="154" r="10" fill="#f6ded8"/>
+    <circle class="dead" cx="254" cy="154" r="10" fill="#f6ded8"/>
+    <g class="dead">
+      <path d="M183 149 l10 10 m0 -10 l-10 10" stroke="#e8705a" stroke-width="2" stroke-linecap="round"/>
+      <path d="M249 149 l10 10 m0 -10 l-10 10" stroke="#e8705a" stroke-width="2" stroke-linecap="round"/>
+    </g>
+    <circle class="step s4" cx="118" cy="196" r="10" fill="#24a89b"/>
+    <path d="M118 164 V186" stroke="#dcecf9" stroke-width="2"/>
+    <g class="qed"><text class="mono" x="138" y="200" fill="#17857a">&#8718;</text></g>
+    <text class="sub" x="16" y="190" fill="#c0503a">closed branches</text>
+  </g>
+
+  <!-- heuristic -->
+  <rect class="panel" x="346" y="94" width="150" height="224" rx="10"/>
+  <text class="lbl" x="362" y="118">learned heuristic</text>
+  <text class="sub" x="362" y="136">which branch first?</text>
+  <g transform="translate(362,150)">
+    <text class="sub" x="0" y="10">rule A</text>
+    <rect x="0" y="14" width="112" height="11" rx="5.5" fill="#eef7fd" stroke="#bcdcf2"/>
+    <rect class="score" x="0" y="14" width="92" height="11" rx="5.5" fill="#2b95d6"/>
+    <text class="sub" x="0" y="48">rule B</text>
+    <rect x="0" y="52" width="112" height="11" rx="5.5" fill="#eef7fd" stroke="#bcdcf2"/>
+    <rect class="score sc2" x="0" y="52" width="48" height="11" rx="5.5" fill="#8ec7e9"/>
+    <text class="sub" x="0" y="86">rule C</text>
+    <rect x="0" y="90" width="112" height="11" rx="5.5" fill="#eef7fd" stroke="#bcdcf2"/>
+    <rect class="score sc3" x="0" y="90" width="26" height="11" rx="5.5" fill="#bcdcf2"/>
+    <text class="sub" x="0" y="130">search alone blows up;</text>
+    <text class="sub" x="0" y="146">the heuristic decides</text>
+    <text class="sub" x="0" y="162">where to spend it</text>
+  </g>
+</svg>

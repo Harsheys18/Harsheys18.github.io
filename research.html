@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Research by Harshitha Inampudi on robotics, safe reinforcement learning, formal verification, and quantitative research.">
+    <meta name="description" content="Machine learning and robotics research by Harshitha Inampudi: embodied AI, safe reinforcement learning, formal verification of learned systems, and generative modeling.">
     <title>Research | Harshitha Inampudi</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -15,12 +15,11 @@
         <div class="page header-row">
             <a href="index.html" class="site-title">Harshitha Inampudi</a>
             <nav class="site-nav">
-                <a href="index.html">About</a>
+                <a href="index.html">Home</a>
                 <a class="active" href="research.html">Research</a>
-                <a href="projects.html">Projects</a>
+                <a href="experience.html">Experience</a>
+                <a href="blogs.html">Blogs</a>
                 <a href="musings.html">Musings</a>
-                <a href="cv.html">CV</a>
-                <a href="contact.html">Contact</a>
             </nav>
         </div>
     </header>
@@ -29,132 +28,462 @@
         <div class="page-head">
             <h1 class="page-title">Research</h1>
             <p class="page-intro">
-                Research positions and self-directed research work, grouped by theme. Formal, course-graded
-                projects that aren't tied to a research position live on the <a href="projects.html">Projects</a>
-                page instead.
+                Machine learning and robotics work &mdash; research positions, course-based research projects,
+                and self-directed builds. Each entry has a figure showing what the system actually does, and a
+                link to the code where the repository is public.
             </p>
+            <nav class="jump-nav" aria-label="Jump to a theme">
+                <a href="#robotics">Robotics &amp; Embodied AI</a>
+                <a href="#safe-rl">Safe &amp; Sequential Decision-Making</a>
+                <a href="#verification">Verification &amp; Reasoning</a>
+                <a href="#generative">Generative &amp; Probabilistic</a>
+                <a href="#applied">Applied ML &amp; Perception</a>
+                <a href="#quant">ML for Quantitative Research</a>
+            </nav>
         </div>
 
-        <section>
+        <!-- ================= ROBOTICS ================= -->
+        <section id="robotics">
             <p class="section-label">Robotics &amp; Embodied AI</p>
-            <div class="entry-list">
-                <article class="entry">
-                    <h3 class="entry-title">Sakhi &mdash; AI Companion Robot</h3>
-                    <p class="entry-meta">Technical Lead &amp; Founding Member &middot; IDEAS Program, IIT Bombay &middot; 2025&ndash;current</p>
-                    <p class="entry-body">
-                        Sakhi is an attempt to build a companion robot that behaves like one coherent agent
-                        rather than a set of independently built modules stitched together. As technical lead,
-                        I work on the perception-to-dialogue pipeline that ties speech-to-text, facial emotion
-                        detection, LLM-based reasoning, and expressive text-to-speech into a single real-time
-                        loop, so the robot can hold a conversation while staying responsive to who it's talking
-                        to and how they're reacting. The project was selected for IDEAS Level 1, has since
-                        advanced to Level 2, and has secured funding to continue development and validation.
-                    </p>
-                    <p class="entry-links"><a href="https://github.com/Harsheys18/Sakhi-end-to-end" target="_blank" rel="noopener noreferrer">code</a></p>
+            <div class="project-list">
+
+                <article class="project">
+                    <figure class="project-figure"><img src="assets/viz/sakhi.svg" alt="Diagram of Sakhi's closed perception-to-dialogue loop: speech to text, facial emotion detection, LLM reasoning and expressive text to speech cycling around a single real-time loop." loading="lazy"></figure>
+                    <div>
+                        <h3 class="project-title">Sakhi &mdash; AI Companion Robot</h3>
+                        <p class="project-meta">Technical Lead &amp; Founding Member <span class="sep">&middot;</span> IDEAS Program, IIT Bombay <span class="sep">&middot;</span> 2025&ndash;present</p>
+                        <p class="project-body">
+                            Sakhi is an attempt to build a companion robot that behaves like one coherent agent
+                            rather than a set of independently built modules stitched together. I work on the
+                            perception-to-dialogue pipeline that ties speech-to-text, facial emotion detection,
+                            LLM-based reasoning, and expressive text-to-speech into a single real-time loop, so
+                            the robot can hold a conversation while staying responsive to who it is talking to and
+                            how they are reacting. The hard part is not any one module &mdash; it is latency and
+                            state shared across all four.
+                        </p>
+                        <div class="tag-row"><span class="tag">multimodal perception</span><span class="tag">LLM reasoning</span><span class="tag">real-time systems</span></div>
+                        <p class="repo-line"><span class="repo-none">Repository not public yet &mdash; development is ongoing under the IDEAS program.</span></p>
+                    </div>
                 </article>
-                <article class="entry">
-                    <h3 class="entry-title">Perception and RL-Based Robot Control</h3>
-                    <p class="entry-meta">B.Tech Project &middot; Advisor: Prof. Nived Chebrolu, IIT Bombay &middot; Jul '26&ndash;current</p>
-                    <p class="entry-body">
-                        For my B.Tech project, I'm looking at how a robot's control policy can be built directly
-                        on learned visual representations rather than hand-designed state estimates, aiming for
-                        decision-making that stays robust when observations are incomplete or noisy. Alongside
-                        this, I'm exploring neuro-symbolic and hierarchical approaches that let structured task
-                        constraints shape the learned policy over long horizons, and studying closed-loop setups
-                        where perception and control adapt to each other instead of being trained and deployed
-                        separately.
-                    </p>
+
+                <article class="project">
+                    <figure class="project-figure"><img src="assets/viz/perception-control.svg" alt="Diagram of a control policy built on learned visual representations: camera frames encoded to a latent state, a policy mapping that latent to an action, and the resulting observation feeding back." loading="lazy"></figure>
+                    <div>
+                        <h3 class="project-title">Perception and RL-Based Robot Control</h3>
+                        <p class="project-meta">B.Tech Project <span class="sep">&middot;</span> Advisor: Prof. Nived Chebrolu, IIT Bombay <span class="sep">&middot;</span> Jul 2026&ndash;present</p>
+                        <p class="project-body">
+                            I am looking at how a robot's control policy can be built directly on learned visual
+                            representations rather than hand-designed state estimates, aiming for decision-making
+                            that stays robust when observations are incomplete or noisy. Alongside this, I am
+                            exploring neuro-symbolic and hierarchical approaches that let structured task
+                            constraints shape the learned policy over long horizons, and studying closed-loop
+                            setups where perception and control adapt to each other instead of being trained once
+                            and deployed separately.
+                        </p>
+                        <div class="tag-row"><span class="tag">visuomotor policies</span><span class="tag">neuro-symbolic</span><span class="tag">hierarchical RL</span></div>
+                        <p class="repo-line"><span class="repo-none">Repository not public yet &mdash; project in progress.</span></p>
+                    </div>
+                </article>
+
+                <article class="project">
+                    <figure class="project-figure"><img src="assets/viz/terrarover.svg" alt="Illustration of a six-wheeled rocker-bogie rover on Martian terrain with frontier exploration goals and the ROS 2 control, EKF and navigation stack beneath it." loading="lazy"></figure>
+                    <div>
+                        <h3 class="project-title">TerraROVER &mdash; Planetary Exploration Rover</h3>
+                        <p class="project-meta">Summer of Robotics <span class="sep">&middot;</span> Electronics and Robotics Club, IIT Bombay <span class="sep">&middot;</span> May&ndash;Jul 2026</p>
+                        <p class="project-body">
+                            A complete ROS 2 simulation framework for a six-wheeled rocker-bogie Mars rover, taking
+                            the whole pipeline from velocity command to wheel-level control: a custom C++ controller
+                            implementing Ackermann kinematics for six wheels, an extended Kalman filter fusing wheel
+                            odometry with IMU for pose estimation, and Nav2 with a tuned pure-pursuit controller for
+                            navigation. On top of the required work I added two exploration modes &mdash; random goal
+                            generation, and frontier-based exploration using DBSCAN clustering with three different
+                            frontier-selection strategies.
+                        </p>
+                        <div class="tag-row"><span class="tag">ROS 2</span><span class="tag">Gazebo</span><span class="tag">EKF localisation</span><span class="tag">frontier exploration</span></div>
+                        <p class="repo-line">
+                            <a class="repo-link" href="https://github.com/Harsheys18/TerraROVER_Summer_of_Robotics" target="_blank" rel="noopener noreferrer">
+                                github.com/Harsheys18/TerraROVER_Summer_of_Robotics
+                            </a>
+                        </p>
+                    </div>
+                </article>
+
+                <article class="project">
+                    <figure class="project-figure"><img src="assets/viz/quadcopter.svg" alt="Illustration of a quadcopter hovering with spinning rotors, alongside the pitch, roll and yaw control axes and a phone acting as the transmitter." loading="lazy"></figure>
+                    <div>
+                        <h3 class="project-title">Quadcopter &mdash; UAV Development</h3>
+                        <p class="project-meta">Makerspace Course Project <span class="sep">&middot;</span> Guides: Prof. Kushal Tuekley, Prof. Siddini Venkatesh Prabhu <span class="sep">&middot;</span> Spring 2024</p>
+                        <p class="project-body">
+                            A 500&nbsp;mm quadcopter built from scratch, with Arduino-based flight control reading the
+                            IMU and mixing pitch, roll, and yaw corrections into four motor commands. Rather than a
+                            dedicated transmitter, a smartphone app sends setpoints over a serial link. Most of the
+                            learning was in the gap between a controller that works on paper and one that keeps a
+                            physical frame stable in air.
+                        </p>
+                        <div class="tag-row"><span class="tag">embedded control</span><span class="tag">IMU fusion</span><span class="tag">Arduino</span></div>
+                        <p class="repo-line"><span class="repo-none">No public repository &mdash; the work was hardware and firmware on the bench.</span></p>
+                    </div>
+                </article>
+
+                <article class="project">
+                    <figure class="project-figure"><img src="assets/viz/combat-bot.svg" alt="Illustration of a 3D-printed combat robot with a wedge chassis and spinning weapon driving into an opponent, with the print layers shown beside it." loading="lazy"></figure>
+                    <div>
+                        <h3 class="project-title">Printed Combat Bot</h3>
+                        <p class="project-meta">Battlebot Challenge, Tinkerer's Lab, IIT Bombay <span class="sep">&middot;</span> Summer 2024</p>
+                        <p class="project-body">
+                            Designed and 3D-printed a combat robot in Fusion360. Most of the effort went into the
+                            attack-and-defence mechanism and getting motor control precise enough to hold position
+                            under impact &mdash; a bot that looks right on screen and stalls on contact loses anyway.
+                        </p>
+                        <div class="tag-row"><span class="tag">CAD</span><span class="tag">mechanism design</span><span class="tag">motor control</span></div>
+                        <p class="repo-line"><span class="repo-none">No public repository &mdash; CAD and hardware only.</span></p>
+                    </div>
                 </article>
             </div>
         </section>
 
-        <section>
-            <p class="section-label">Safe Reinforcement Learning</p>
-            <div class="entry-list">
-                <article class="entry">
-                    <h3 class="entry-title">Safety in Reinforcement Learning</h3>
-                    <p class="entry-meta">Research Internship, Ong's Group &middot; Advisor: Prof. Luke Ong, Nanyang Technological University, Singapore &middot; May&ndash;Jul '25</p>
-                    <p class="entry-body">
-                        This internship examined how standard reinforcement-learning algorithms hold up once
-                        safety constraints enter the picture &mdash; specifically, how policy-gradient methods
-                        like PPO and TRPO can be adapted to incorporate feedback from LIDAR and hazard heuristics
-                        in continuous-control settings. I worked within Safety Gymnasium, a model-free benchmark
-                        with 60-dimensional state spaces, and spent time understanding where existing safe-RL
-                        approaches break down, including how they compare against ideas drawn from control theory.
-                    </p>
+        <!-- ================= SAFE RL ================= -->
+        <section id="safe-rl">
+            <p class="section-label">Safe &amp; Sequential Decision-Making</p>
+            <div class="project-list">
+
+                <article class="project">
+                    <figure class="project-figure"><img src="assets/viz/safe-rl.svg" alt="Diagram of constrained policy gradient: an agent sweeping LIDAR rays through an arena with hazards, and a cost budget bar that clips the update when the safety limit is reached." loading="lazy"></figure>
+                    <div>
+                        <h3 class="project-title">Safety in Reinforcement Learning</h3>
+                        <p class="project-meta">Research Internship, Ong's Group <span class="sep">&middot;</span> Advisor: Prof. Luke Ong, Nanyang Technological University, Singapore <span class="sep">&middot;</span> May&ndash;Jul 2025</p>
+                        <p class="project-body">
+                            This internship examined how standard reinforcement-learning algorithms hold up once
+                            safety constraints enter the picture &mdash; specifically, how policy-gradient methods
+                            like PPO and TRPO can be adapted to incorporate feedback from LIDAR and hazard
+                            heuristics in continuous control. I worked inside Safety Gymnasium, a model-free
+                            benchmark with 60-dimensional state spaces, and spent most of the time understanding
+                            where existing safe-RL approaches break down, including how they compare against ideas
+                            drawn from control theory.
+                        </p>
+                        <div class="tag-row"><span class="tag">PPO / TRPO</span><span class="tag">constrained MDPs</span><span class="tag">continuous control</span></div>
+                        <p class="repo-line">
+                            <a class="repo-link" href="https://github.com/Harsheys18/openai-safety-gym" target="_blank" rel="noopener noreferrer">
+                                benchmark environment fork
+                            </a>
+                        </p>
+                    </div>
+                </article>
+
+                <article class="project">
+                    <figure class="project-figure"><img src="assets/viz/wifi-rrm.svg" alt="Diagram of client-centric Wi-Fi radio resource management: two access points with overlapping coverage, transmit power and bandwidth controls, and a fast interference loop paired with a slower constrained TD3 loop." loading="lazy"></figure>
+                    <div>
+                        <h3 class="project-title">Client-Centric Wi-Fi RRM using Safe RL</h3>
+                        <p class="project-meta">Inter-IIT Tech Meet 14.0, IIT Patna <span class="sep">&middot;</span> Problem statement by Arista Networks <span class="sep">&middot;</span> top score among all IITs <span class="sep">&middot;</span> Oct&ndash;Dec 2025</p>
+                        <p class="project-body">
+                            As part of Team IIT Bombay, I helped build a safe-RL framework for Wi-Fi radio resource
+                            management: a multi-timescale system pairing fast interference mitigation with a slower,
+                            Lagrangian-constrained TD3 loop that optimises transmit power and bandwidth for quality
+                            of experience under safety constraints. The framing that mattered was making the
+                            objective client-centric &mdash; optimising what users actually experience rather than
+                            what the access point can report. The team's submission took the top score among all
+                            participating IITs.
+                        </p>
+                        <div class="tag-row"><span class="tag">TD3</span><span class="tag">Lagrangian constraints</span><span class="tag">multi-timescale control</span></div>
+                        <p class="repo-line"><span class="repo-none">No public repository &mdash; competition submission held by the team.</span></p>
+                    </div>
+                </article>
+
+                <article class="project">
+                    <figure class="project-figure"><img src="assets/viz/flappy-rl.svg" alt="Diagram of a reinforcement learning agent learning Flappy Bird: the gap geometry as state, action values for flap versus do-nothing, and a rising score-per-episode curve." loading="lazy"></figure>
+                    <div>
+                        <h3 class="project-title">Flappy Learner &mdash; RL from First Principles</h3>
+                        <p class="project-meta">Mentor, Seasons of Code <span class="sep">&middot;</span> Web and Coding Club, IIT Bombay <span class="sep">&middot;</span> May&ndash;Jul 2025</p>
+                        <p class="project-body">
+                            An RL agent that learns to play Flappy Bird, built as a teaching scaffold for the students
+                            I was mentoring &mdash; MDPs, Bellman equations, Q-learning, SARSA, and TD learning, each
+                            introduced against an environment simple enough that the effect of every design choice is
+                            visible. Writing it also forced me to be precise about the parts of RL I had been
+                            comfortable hand-waving through.
+                        </p>
+                        <div class="tag-row"><span class="tag">Q-learning</span><span class="tag">SARSA</span><span class="tag">mentoring</span></div>
+                        <p class="repo-line">
+                            <a class="repo-link" href="https://github.com/Harsheys18/Flappy_Learner_RL" target="_blank" rel="noopener noreferrer">
+                                github.com/Harsheys18/Flappy_Learner_RL
+                            </a>
+                        </p>
+                    </div>
                 </article>
             </div>
         </section>
 
-        <section>
-            <p class="section-label">Formal Verification</p>
-            <div class="entry-list">
-                <article class="entry">
-                    <h3 class="entry-title">Neural Closure Certificates for Verification</h3>
-                    <p class="entry-meta">R&amp;D Course Project &middot; Advisor: Prof. Akshay S, IIT Bombay &middot; Aug&ndash;Nov '25</p>
-                    <p class="entry-body">
-                        This project asked whether a neural network could be trained not just to control a
-                        system, but to certify that the system stays safe. I formulated template-based closure
-                        certificates and trained networks to learn valid certificate functions, then evaluated
-                        the resulting safety guarantees on benchmark dynamical systems, including a two-room
-                        temperature model &mdash; essentially testing whether a learned certificate can offer
-                        the kind of guarantee usually reserved for a hand-derived proof.
-                    </p>
+        <!-- ================= VERIFICATION ================= -->
+        <section id="verification">
+            <p class="section-label">Verification &amp; Reasoning</p>
+            <div class="project-list">
+
+                <article class="project">
+                    <figure class="project-figure"><img src="assets/viz/closure-certificate.svg" alt="Diagram of a neural closure certificate: level sets growing outward from the initial set to contain all reachable states while never touching the unsafe region, with the certificate network beside it." loading="lazy"></figure>
+                    <div>
+                        <h3 class="project-title">Neural Closure Certificates for Verification</h3>
+                        <p class="project-meta">R&amp;D Course Project <span class="sep">&middot;</span> Advisor: Prof. Akshay S, IIT Bombay <span class="sep">&middot;</span> Aug&ndash;Nov 2025</p>
+                        <p class="project-body">
+                            This project asked whether a neural network could be trained not just to control a
+                            system, but to certify that the system stays safe. I formulated template-based closure
+                            certificates and trained networks to learn valid certificate functions, then evaluated
+                            the resulting safety guarantees on benchmark dynamical systems including a two-room
+                            temperature model &mdash; essentially testing whether a learned certificate can offer the
+                            kind of guarantee usually reserved for a hand-derived proof.
+                        </p>
+                        <div class="tag-row"><span class="tag">closure certificates</span><span class="tag">reachability</span><span class="tag">learned guarantees</span></div>
+                        <p class="repo-line"><span class="repo-none">No public repository &mdash; course project write-up available on request.</span></p>
+                    </div>
                 </article>
-                <article class="entry">
-                    <h3 class="entry-title">Timed Automaton and Its Applications</h3>
-                    <p class="entry-meta">R&amp;D Course Project &middot; Advisor: Prof. Krishna Shankar Narayan, IIT Bombay &middot; Jan&ndash;Apr '25</p>
-                    <p class="entry-body">
-                        A more theoretical detour into formal methods: studying reachability and closure
-                        properties of timed automata through region and zone graph constructions, and comparing
-                        decidability across variants such as event-clock, updatable-timed, and one-clock automata.
-                    </p>
+
+                <article class="project">
+                    <figure class="project-figure"><img src="assets/viz/timed-automata.svg" alt="Diagram of a timed automaton: two locations joined by a guarded transition with a clock reset, and the infinite clock space partitioned into finitely many regions." loading="lazy"></figure>
+                    <div>
+                        <h3 class="project-title">Timed Automata and Their Applications</h3>
+                        <p class="project-meta">R&amp;D Course Project <span class="sep">&middot;</span> Advisor: Prof. Krishna Shankar Narayan, IIT Bombay <span class="sep">&middot;</span> Jan&ndash;Apr 2025</p>
+                        <p class="project-body">
+                            A more theoretical detour into formal methods: studying reachability and closure
+                            properties of timed automata through region and zone graph constructions, and comparing
+                            decidability across variants such as event-clock, updatable-timed, and one-clock automata.
+                            The idea worth carrying forward is the quotient &mdash; an infinite state space made
+                            checkable by collapsing it into finitely many equivalence classes.
+                        </p>
+                        <div class="tag-row"><span class="tag">region graphs</span><span class="tag">decidability</span><span class="tag">model checking</span></div>
+                        <p class="repo-line"><span class="repo-none">No public repository &mdash; theory project.</span></p>
+                    </div>
+                </article>
+
+                <article class="project">
+                    <figure class="project-figure"><img src="assets/viz/theorem-proving.svg" alt="Diagram of heuristic-guided proof search: a search tree expanded from a goal formula, with dead branches closed and a learned heuristic scoring which rule to apply next." loading="lazy"></figure>
+                    <div>
+                        <h3 class="project-title">AI for Logical Thinking &mdash; Automated Theorem Proving</h3>
+                        <p class="project-meta">Winter in Data Science <span class="sep">&middot;</span> Analytics Club, IIT Bombay <span class="sep">&middot;</span> 2025</p>
+                        <p class="project-body">
+                            A project on automated reasoning: starting from logic in computer science and the Logic
+                            Theorist, moving through search-tree and heuristic-based ML methods for guiding proof
+                            search, and ending in a theorem prover built from scratch. What makes this a learning
+                            problem rather than a search problem is the branching factor &mdash; a prover that expands
+                            uniformly never terminates on anything interesting, so the question becomes which rule to
+                            try next.
+                        </p>
+                        <div class="tag-row"><span class="tag">automated reasoning</span><span class="tag">proof search</span><span class="tag">learned heuristics</span></div>
+                        <p class="repo-line">
+                            <a class="repo-link" href="https://github.com/Harsheys18/WiDS5.0_Theorem_Proving" target="_blank" rel="noopener noreferrer">
+                                github.com/Harsheys18/WiDS5.0_Theorem_Proving
+                            </a>
+                        </p>
+                    </div>
                 </article>
             </div>
         </section>
 
-        <section>
-            <p class="section-label">Machine Learning Systems &amp; Quantitative Research</p>
-            <div class="entry-list">
-                <article class="entry">
-                    <h3 class="entry-title">Double XGBoost: Depth-Wise Boosting</h3>
-                    <p class="entry-meta">Software Engineer, Juspay &middot; Research problem statement, Mumbai &middot; Dec '25&ndash;Jan '26 &middot; work in progress toward publication</p>
-                    <p class="entry-body">
-                        This started as an open research question at Juspay: whether a boosted-tree model could
-                        gain expressivity by going deeper rather than simply adding more trees. I proposed
-                        Double XGBoost, which introduces depth-wise boosting, and derived a second-order
-                        optimization formulation via Taylor expansion so that node-level predictors could be
-                        trained in closed form. Early results show faster convergence and improved accuracy from
-                        the residual-correction step; the work is still in progress toward publication.
-                    </p>
+        <!-- ================= GENERATIVE ================= -->
+        <section id="generative">
+            <p class="section-label">Generative &amp; Probabilistic Modeling</p>
+            <div class="project-list">
+
+                <article class="project">
+                    <figure class="project-figure"><img src="assets/viz/rl-diffusion.svg" alt="Diagram of RL-guided diffusion inference: a denoising chain from noise to image, a policy emitting a guidance scale and stochasticity per step, and a composite CLIP, perceptual quality and diversity reward." loading="lazy"></figure>
+                    <div>
+                        <h3 class="project-title">RL-Guided Inference for Text-to-Image Diffusion</h3>
+                        <p class="project-meta">Advanced Reinforcement Learning <span class="sep">&middot;</span> Instructor: Prof. Shivaram Kalyanakrishnan, IIT Bombay <span class="sep">&middot;</span> Oct&ndash;Dec 2025</p>
+                        <p class="project-body">
+                            Most work on improving diffusion models retrains the model. This project asks what can be
+                            gained at inference time instead: a lightweight policy network learns to emit a per-step
+                            guidance scale and stochasticity, trained with REINFORCE against a composite reward
+                            combining CLIP text-image alignment, LPIPS perceptual quality, and a feature-space
+                            diversity term. The U-Net is separately fine-tuned with LoRA, and the two are blended at
+                            generation time. Treating the denoising trajectory as something to be controlled, rather
+                            than a fixed schedule, is the whole idea.
+                        </p>
+                        <div class="tag-row"><span class="tag">diffusion models</span><span class="tag">REINFORCE</span><span class="tag">LoRA</span><span class="tag">CLIP reward</span></div>
+                        <p class="repo-line">
+                            <a class="repo-link" href="https://github.com/Harsheys18/rl-diffusion-project" target="_blank" rel="noopener noreferrer">
+                                github.com/Harsheys18/rl-diffusion-project
+                            </a>
+                        </p>
+                    </div>
                 </article>
-                <article class="entry">
-                    <h3 class="entry-title">Quantitative Research: Portfolio Optimization &amp; Alpha Signals</h3>
-                    <p class="entry-meta">Quantitative Researcher, Graviton &middot; Gurugram, India &middot; May&ndash;Jul '26</p>
-                    <p class="entry-body">
-                        At Graviton, I worked on portfolio optimization for long-short strategies, focusing on
-                        systematic weight allocation, and on evaluating ML-based alpha signals across different
-                        model configurations. Part of the role involved building a reusable Python library and
-                        an interactive UI so the rest of the team could run training and backtesting experiments
-                        and compare alpha performance without rebuilding the pipeline each time.
-                    </p>
-                    <p class="entry-links"><a href="https://github.com/Harsheys18/Regime_Shift" target="_blank" rel="noopener noreferrer">related code</a></p>
+
+                <article class="project">
+                    <figure class="project-figure"><img src="assets/viz/probabilistic-ml.svg" alt="Diagram covering three areas: continuous and discrete diffusion on MNIST digits, a factorial hidden Markov model with messages passing under loopy belief propagation, and a Gaussian process surrogate guiding Bayesian optimisation." loading="lazy"></figure>
+                    <div>
+                        <h3 class="project-title">Probabilistic Modeling &amp; Inference</h3>
+                        <p class="project-meta">Advanced Machine Learning <span class="sep">&middot;</span> Instructor: Prof. Sunita Sarawagi, IIT Bombay <span class="sep">&middot;</span> Oct&ndash;Dec 2025</p>
+                        <p class="project-body">
+                            Three corners of probabilistic ML in one project: implementing DDPM and D3PM diffusion
+                            models on MNIST &mdash; continuous and discrete corruption processes side by side &mdash;
+                            with low FID scores; optimising exact and approximate inference for factorial HMMs via
+                            loopy belief propagation; and running Bayesian optimisation with Gaussian-process
+                            surrogates to tune hyperparameters over a six-dimensional search space.
+                        </p>
+                        <div class="tag-row"><span class="tag">DDPM / D3PM</span><span class="tag">loopy BP</span><span class="tag">Bayesian optimisation</span></div>
+                        <p class="repo-line">
+                            <a class="repo-link" href="https://github.com/Harsheys18/CS791_Assignment_3" target="_blank" rel="noopener noreferrer">
+                                github.com/Harsheys18/CS791_Assignment_3
+                            </a>
+                        </p>
+                    </div>
+                </article>
+
+                <article class="project">
+                    <figure class="project-figure"><img src="assets/viz/unlearning.svg" alt="Diagram of machine unlearning: a training set split into retained and forgotten samples, extra layers fine-tuned on top of a frozen backbone, and confidence collapsing on the forget set while holding on the retain set." loading="lazy"></figure>
+                    <div>
+                        <h3 class="project-title">Learning to Forget &mdash; Machine Unlearning</h3>
+                        <p class="project-meta">AI &amp; Machine Learning <span class="sep">&middot;</span> Instructor: Prof. Pushpak Bhattacharya, IIT Bombay <span class="sep">&middot;</span> Apr 2025</p>
+                        <p class="project-body">
+                            Can a trained model be made to selectively forget? I fine-tuned additional layers with an
+                            entropy and logit-suppression objective so performance on retained data stays intact while
+                            the model grows measurably less confident on the data it is meant to forget. To evaluate
+                            it, I added a binary classifier over the softmax outputs to distinguish retained from
+                            forgotten samples, with confidence-based selective prediction &mdash; because a model that
+                            claims to have forgotten something should not still be leaking it through its confidence.
+                        </p>
+                        <div class="tag-row"><span class="tag">machine unlearning</span><span class="tag">entropy objectives</span><span class="tag">selective prediction</span></div>
+                        <p class="repo-line"><span class="repo-none">No public repository &mdash; course project.</span></p>
+                    </div>
                 </article>
             </div>
         </section>
 
-        <section>
-            <p class="section-label">Research Direction</p>
-            <p class="section-note" style="margin-bottom: 0;">
-                These threads &mdash; safe reinforcement learning, formal verification, and perception-driven
-                robot control &mdash; are converging into the direction I want to pursue as a PhD: systems that
-                combine learning with some form of guarantee about how they'll behave.
-            </p>
+        <!-- ================= APPLIED ================= -->
+        <section id="applied">
+            <p class="section-label">Applied ML &amp; Perception</p>
+            <div class="project-list">
+
+                <article class="project">
+                    <figure class="project-figure"><img src="assets/viz/siamese-face.svg" alt="Diagram of a Siamese network: two face images passing through one shared-weight encoder into an embedding space, where a small distance between the two embeddings indicates a match." loading="lazy"></figure>
+                    <div>
+                        <h3 class="project-title">Facial Recognition using ML</h3>
+                        <p class="project-meta">Self Project <span class="sep">&middot;</span> Learner Space, IIT Bombay <span class="sep">&middot;</span> Autumn 2024</p>
+                        <p class="project-body">
+                            An independent project exploring facial recognition with a Siamese network architecture
+                            &mdash; two images through one shared encoder, with the distance between embeddings
+                            deciding identity, rather than a fixed-class classifier. OpenCV handled preprocessing,
+                            and YOLOv8 was evaluated alongside it as a detector and classifier for comparison.
+                        </p>
+                        <div class="tag-row"><span class="tag">Siamese networks</span><span class="tag">metric learning</span><span class="tag">OpenCV</span><span class="tag">YOLOv8</span></div>
+                        <p class="repo-line">
+                            <a class="repo-link" href="https://github.com/Harsheys18/Facial-Recognition-using-ML" target="_blank" rel="noopener noreferrer">
+                                github.com/Harsheys18/Facial-Recognition-using-ML
+                            </a>
+                        </p>
+                    </div>
+                </article>
+
+                <article class="project">
+                    <figure class="project-figure"><img src="assets/viz/mask-detection.svg" alt="Diagram of real-time mask detection: a video frame with bounding boxes locking onto two faces labelled mask and no mask, beside the frame-grab, detect, classify and alert pipeline." loading="lazy"></figure>
+                    <div>
+                        <h3 class="project-title">Real-Time Face Mask Detection</h3>
+                        <p class="project-meta">Mentor, Winter in Data Science <span class="sep">&middot;</span> Analytics Club, IIT Bombay <span class="sep">&middot;</span> Dec 2024&ndash;Jan 2025</p>
+                        <p class="project-body">
+                            I mentored a group of undergraduates building a face-mask detector, guiding them through
+                            an OpenCV and CNN pipeline and the real-time video-stream processing that makes detection
+                            work live rather than on static images. The gap between the two is where most of the
+                            engineering actually sits &mdash; a model that is accurate but cannot keep up with the
+                            frame rate is not a detector.
+                        </p>
+                        <div class="tag-row"><span class="tag">CNNs</span><span class="tag">OpenCV</span><span class="tag">real-time inference</span><span class="tag">mentoring</span></div>
+                        <p class="repo-line">
+                            <a class="repo-link" href="https://github.com/Harsheys18/Real-time-Face-Mask-Detection" target="_blank" rel="noopener noreferrer">
+                                github.com/Harsheys18/Real-time-Face-Mask-Detection
+                            </a>
+                        </p>
+                    </div>
+                </article>
+
+                <article class="project">
+                    <figure class="project-figure"><img src="assets/viz/hmm-tagging.svg" alt="Diagram of a Viterbi trellis: hidden tag states for determiner, noun and verb across four words, with the highest-probability path traced through the lattice." loading="lazy"></figure>
+                    <div>
+                        <h3 class="project-title">Markov Models for Word Tagging</h3>
+                        <p class="project-meta">AI &amp; Machine Learning <span class="sep">&middot;</span> Instructor: Prof. Pushpak Bhattacharya, IIT Bombay <span class="sep">&middot;</span> Jan&ndash;Apr 2025</p>
+                        <p class="project-body">
+                            A hidden Markov model part-of-speech tagger trained on the Brown Corpus, with Laplace
+                            smoothing and 5-fold cross-validation for stability, and the Viterbi algorithm decoding
+                            the most likely tag sequence at inference. The useful intuition here is that the label is
+                            never observed &mdash; only the word it produced.
+                        </p>
+                        <div class="tag-row"><span class="tag">HMMs</span><span class="tag">Viterbi decoding</span><span class="tag">NLP</span></div>
+                        <p class="repo-line"><span class="repo-none">No public repository &mdash; course project.</span></p>
+                    </div>
+                </article>
+
+                <article class="project">
+                    <figure class="project-figure"><img src="assets/viz/sudoku.svg" alt="Diagram of an end-to-end Sudoku solver: a photographed grid detected and warped, digits classified by a CNN, and the remaining cells filled by A-star guided backtracking." loading="lazy"></figure>
+                    <div>
+                        <h3 class="project-title">Sudoku Solver using Machine Learning</h3>
+                        <p class="project-meta">Winter in Data Science <span class="sep">&middot;</span> Web and Coding Club, IIT Bombay <span class="sep">&middot;</span> Dec 2024&ndash;Jan 2025</p>
+                        <p class="project-body">
+                            An end-to-end pipeline that reads a photographed Sudoku grid, classifies the digits with a
+                            CNN trained on MNIST &mdash; despite the noise OpenCV introduces during grid extraction,
+                            which is a meaningful distribution shift from clean MNIST &mdash; and solves the puzzle
+                            with A*-guided backtracking.
+                        </p>
+                        <div class="tag-row"><span class="tag">CNNs</span><span class="tag">computer vision</span><span class="tag">heuristic search</span></div>
+                        <p class="repo-line"><span class="repo-none">No public repository &mdash; project files not published.</span></p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ================= QUANT ================= -->
+        <section id="quant">
+            <p class="section-label">ML for Quantitative Research</p>
+            <div class="project-list">
+
+                <article class="project">
+                    <figure class="project-figure"><img src="assets/viz/double-xgboost.svg" alt="Diagram of depth-wise boosting: a tree in which every node carries its own predictor and passes a residual correction further down, contrasted with standard XGBoost adding more trees." loading="lazy"></figure>
+                    <div>
+                        <h3 class="project-title">Double XGBoost &mdash; Depth-Wise Boosting</h3>
+                        <p class="project-meta">Research problem statement, Juspay <span class="sep">&middot;</span> Mumbai <span class="sep">&middot;</span> Dec 2025&ndash;Jan 2026 <span class="sep">&middot;</span> in progress toward publication</p>
+                        <p class="project-body">
+                            This started as an open research question at Juspay: whether a boosted-tree model could
+                            gain expressivity by going deeper rather than simply adding more trees. I proposed Double
+                            XGBoost, which introduces depth-wise boosting, and derived a second-order optimisation
+                            formulation via Taylor expansion so that node-level predictors could be trained in closed
+                            form. Early results show faster convergence and improved accuracy from the
+                            residual-correction step.
+                        </p>
+                        <div class="tag-row"><span class="tag">gradient boosting</span><span class="tag">second-order optimisation</span><span class="tag">algorithm design</span></div>
+                        <p class="repo-line"><span class="repo-none">Not public &mdash; work carried out at Juspay and in progress toward publication.</span></p>
+                    </div>
+                </article>
+
+                <article class="project">
+                    <figure class="project-figure"><img src="assets/viz/regime-shift.svg" alt="Diagram of RegimeShift: a price series shaded into bull, bear and crisis regimes by a three-state hidden Markov model, with portfolio weights across equity, gold and bonds shifting as the risk aversion changes per regime." loading="lazy"></figure>
+                    <div>
+                        <h3 class="project-title">RegimeShift &mdash; Macro-Aware Tactical Asset Allocation</h3>
+                        <p class="project-meta">Self-directed quantitative research <span class="sep">&middot;</span> 2026</p>
+                        <p class="project-body">
+                            A system that detects market regimes &mdash; bull, bear, crisis &mdash; with a three-state
+                            Gaussian HMM fitted on rolling return, volatility, and momentum features, then rebalances
+                            a multi-asset portfolio to match the regime instead of holding one allocation through
+                            crashes and recoveries alike. Allocation is solved as a mean-variance problem in CVXPY
+                            with regime-specific risk aversion, validated walk-forward with no lookahead and
+                            transaction costs deducted on turnover, against 60/40 and equal-weight benchmarks.
+                        </p>
+                        <div class="tag-row"><span class="tag">hidden Markov models</span><span class="tag">CVXPY</span><span class="tag">walk-forward validation</span></div>
+                        <p class="repo-line">
+                            <a class="repo-link" href="https://github.com/Harsheys18/Regime_Shift" target="_blank" rel="noopener noreferrer">
+                                github.com/Harsheys18/Regime_Shift
+                            </a>
+                        </p>
+                    </div>
+                </article>
+            </div>
         </section>
     </main>
 
     <footer class="site-footer">
-        <p class="page">&copy; <span id="year"></span> Harshitha Inampudi &middot; <a href="https://github.com/Harsheys18/Harsheys18.github.io" target="_blank" rel="noopener noreferrer">view source</a></p>
+        <div class="page footer-row">
+            <span>&copy; <span id="year"></span> Harshitha Inampudi</span>
+            <nav class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="experience.html">Experience</a>
+                <a href="blogs.html">Blogs</a>
+                <a href="musings.html">Musings</a>
+                <a href="https://github.com/Harsheys18" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </nav>
+        </div>
     </footer>
 
     <script src="script.js"></script>

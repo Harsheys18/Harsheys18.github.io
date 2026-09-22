@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 340" width="520" height="340" role="img" aria-label="TerraROVER: a six-wheeled rocker-bogie rover simulated in ROS 2 and Gazebo, using Ackermann steering control, an extended Kalman filter fusing wheel odometry and IMU, and frontier-based exploration with DBSCAN clustering to pick the next goal.">
+  <style>
+    .bg { fill: #f2f8fd; }
+    .panel { fill: #ffffff; stroke: #bcdcf2; stroke-width: 1.5; }
+    .lbl { font: 600 12px Inter, system-ui, sans-serif; fill: #10305c; }
+    .sub { font: 500 10px Inter, system-ui, sans-serif; fill: #6e7d96; }
+    .cap { font: 600 11px Inter, system-ui, sans-serif; fill: #1878b8; letter-spacing: .08em; }
+    .wheel { animation: roll 1.6s linear infinite; transform-box: fill-box; transform-origin: center; }
+    @keyframes roll { to { transform: rotate(360deg); } }
+    .rover { animation: drive 6s ease-in-out infinite; }
+    @keyframes drive { 0% { transform: translateX(0) translateY(0); } 50% { transform: translateX(126px) translateY(-8px); } 100% { transform: translateX(0) translateY(0); } }
+    .ell { animation: ell 3s ease-in-out infinite; }
+    @keyframes ell { 0%,100% { rx: 26; ry: 14; opacity: .32; } 50% { rx: 15; ry: 8; opacity: .6; } }
+    .frontier { animation: fr 3.2s ease-in-out infinite; }
+    .f2 { animation-delay: .4s; } .f3 { animation-delay: .8s; } .f4 { animation-delay: 1.2s; }
+    @keyframes fr { 0%,100% { opacity: .3; r: 4; } 50% { opacity: 1; r: 6; } }
+  </style>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fdf1e6"/><stop offset="1" stop-color="#f7dfcc"/>
+    </linearGradient>
+  </defs>
+
+  <rect class="bg" width="520" height="340" rx="10"/>
+  <text class="cap" x="24" y="30">ROCKER-BOGIE &#183; ROS 2 &#183; FRONTIER EXPLORATION</text>
+
+  <!-- martian scene -->
+  <rect class="panel" x="24" y="46" width="472" height="176" rx="10"/>
+  <g clip-path="inset(0 round 10px)">
+    <rect x="25" y="47" width="470" height="110" fill="url(#sky)"/>
+    <path d="M25 140 q60 -30 120 -8 t110 -14 t120 16 t120 -6 V222 H25 z" fill="#e3c4a8"/>
+    <path d="M25 166 q80 -18 160 4 t150 -10 t160 12 V222 H25 z" fill="#d4ab8a"/>
+    <circle cx="430" cy="86" r="18" fill="#f2d6b8"/>
+  </g>
+
+  <!-- frontier goals -->
+  <circle class="frontier" cx="300" cy="120" r="4" fill="#2b95d6"/>
+  <circle class="frontier f2" cx="348" cy="136" r="4" fill="#2b95d6"/>
+  <circle class="frontier f3" cx="396" cy="118" r="4" fill="#2b95d6"/>
+  <circle class="frontier f4" cx="438" cy="142" r="4" fill="#2b95d6"/>
+  <text class="sub" x="300" y="106" fill="#1878b8">frontiers</text>
+
+  <!-- rover -->
+  <g class="rover">
+    <ellipse class="ell" cx="120" cy="188" rx="26" ry="14" fill="#2b95d6"/>
+    <path d="M86 168 L104 152 L140 152 L156 168" fill="none" stroke="#10305c" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="98" y="132" width="48" height="24" rx="5" fill="#10305c"/>
+    <rect x="112" y="118" width="20" height="14" rx="3" fill="#2b95d6"/>
+    <path d="M122 118 v-10" stroke="#10305c" stroke-width="2"/>
+    <circle cx="122" cy="105" r="4" fill="#8ec7e9"/>
+    <g class="wheel"><circle cx="86" cy="176" r="11" fill="#071c38"/><path d="M86 167 v18 M77 176 h18" stroke="#8ec7e9" stroke-width="1.5"/></g>
+    <g class="wheel"><circle cx="121" cy="180" r="11" fill="#071c38"/><path d="M121 171 v18 M112 180 h18" stroke="#8ec7e9" stroke-width="1.5"/></g>
+    <g class="wheel"><circle cx="156" cy="176" r="11" fill="#071c38"/><path d="M156 167 v18 M147 176 h18" stroke="#8ec7e9" stroke-width="1.5"/></g>
+  </g>
+  <text class="sub" x="40" y="212">EKF pose estimate</text>
+
+  <!-- stack -->
+  <rect class="panel" x="24" y="238" width="472" height="80" rx="10"/>
+  <g transform="translate(40,252)">
+    <rect x="0" y="0" width="98" height="24" rx="5" fill="#eef7fd" stroke="#bcdcf2"/><text class="sub" x="12" y="16">cmd_vel</text>
+    <rect x="108" y="0" width="112" height="24" rx="5" fill="#2b95d6"/><text class="sub" x="118" y="16" fill="#ffffff">Ackermann ctrl</text>
+    <rect x="230" y="0" width="98" height="24" rx="5" fill="#eef7fd" stroke="#bcdcf2"/><text class="sub" x="242" y="16">EKF fusion</text>
+    <rect x="338" y="0" width="98" height="24" rx="5" fill="#eef7fd" stroke="#bcdcf2"/><text class="sub" x="352" y="16">Nav2 goal</text>
+    <path d="M98 12 h10 M220 12 h10 M328 12 h10" stroke="#8ec7e9" stroke-width="2"/>
+    <text class="sub" x="0" y="44">DBSCAN clusters candidate frontiers &#8212; closest, largest, or combined selection</text>
+  </g>
+</svg>

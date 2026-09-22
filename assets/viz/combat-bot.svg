@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 340" width="520" height="340" role="img" aria-label="A 3D-printed combat robot designed in Fusion 360: a spinning weapon driven through a geared motor, a wedge-shaped armoured chassis for defence, and differential drive for precise positioning in the arena.">
+  <style>
+    .bg { fill: #f2f8fd; }
+    .panel { fill: #ffffff; stroke: #bcdcf2; stroke-width: 1.5; }
+    .lbl { font: 600 12px Inter, system-ui, sans-serif; fill: #10305c; }
+    .sub { font: 500 10px Inter, system-ui, sans-serif; fill: #6e7d96; }
+    .cap { font: 600 11px Inter, system-ui, sans-serif; fill: #1878b8; letter-spacing: .08em; }
+    .spin { animation: sp .42s linear infinite; transform-box: fill-box; transform-origin: center; }
+    @keyframes sp { to { transform: rotate(360deg); } }
+    .wheel { animation: sp2 1.3s linear infinite; transform-box: fill-box; transform-origin: center; }
+    @keyframes sp2 { to { transform: rotate(360deg); } }
+    .shunt { animation: shunt 4s ease-in-out infinite; }
+    @keyframes shunt { 0%,100% { transform: translateX(0); } 42% { transform: translateX(46px); } 58% { transform: translateX(34px); } }
+    .spark { animation: spk 4s ease-in-out infinite; }
+    .sk2 { animation-delay: .08s; } .sk3 { animation-delay: .16s; }
+    @keyframes spk { 0%,38%,100% { opacity: 0; } 44%,54% { opacity: 1; } }
+    .layer { animation: lay 3.6s ease-in-out infinite; }
+    .ly2 { animation-delay: .4s; } .ly3 { animation-delay: .8s; } .ly4 { animation-delay: 1.2s; }
+    @keyframes lay { 0%,100% { opacity: .22; } 50% { opacity: 1; } }
+  </style>
+
+  <rect class="bg" width="520" height="340" rx="10"/>
+  <text class="cap" x="24" y="30">ATTACK, DEFENCE, AND A PRINTER</text>
+
+  <!-- arena -->
+  <rect class="panel" x="24" y="46" width="328" height="196" rx="10"/>
+  <rect x="34" y="56" width="308" height="176" rx="6" fill="#eef7fd"/>
+  <path d="M34 200 H342" stroke="#bcdcf2" stroke-width="2" stroke-dasharray="6 6"/>
+
+  <!-- opponent -->
+  <g>
+    <path d="M286 196 L322 196 L316 168 L292 168 z" fill="#8ec7e9"/>
+    <circle cx="294" cy="200" r="7" fill="#071c38"/>
+    <circle cx="316" cy="200" r="7" fill="#071c38"/>
+  </g>
+
+  <!-- our bot -->
+  <g class="shunt">
+    <!-- wedge chassis -->
+    <path d="M70 200 L168 200 L150 160 L94 160 z" fill="#10305c"/>
+    <path d="M70 200 L60 188 L94 160 z" fill="#2b95d6"/>
+    <text class="sub" x="98" y="186" fill="#ffffff">wedge</text>
+    <!-- spinner -->
+    <g class="spin"><ellipse cx="180" cy="176" rx="34" ry="7" fill="#2b95d6"/></g>
+    <circle cx="180" cy="176" r="7" fill="#071c38"/>
+    <!-- wheels -->
+    <g class="wheel"><circle cx="92" cy="204" r="12" fill="#071c38"/><path d="M92 194 v20 M82 204 h20" stroke="#8ec7e9" stroke-width="1.5"/></g>
+    <g class="wheel"><circle cx="146" cy="204" r="12" fill="#071c38"/><path d="M146 194 v20 M136 204 h20" stroke="#8ec7e9" stroke-width="1.5"/></g>
+  </g>
+
+  <!-- impact sparks -->
+  <g transform="translate(262,172)">
+    <path class="spark" d="M0 0 l12 -8" stroke="#e0a12b" stroke-width="2.5" stroke-linecap="round"/>
+    <path class="spark sk2" d="M2 8 l14 2" stroke="#e8705a" stroke-width="2.5" stroke-linecap="round"/>
+    <path class="spark sk3" d="M0 16 l12 10" stroke="#e0a12b" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+
+  <text class="sub" x="40" y="230">differential drive &#183; precise motor control for positioning</text>
+
+  <!-- print layers -->
+  <rect class="panel" x="368" y="46" width="128" height="196" rx="10"/>
+  <text class="lbl" x="382" y="70">Fusion360 &#8594; print</text>
+  <g transform="translate(386,88)">
+    <rect class="layer ly4" x="0" y="0" width="92" height="14" rx="3" fill="#2b95d6"/>
+    <rect class="layer ly3" x="6" y="18" width="80" height="14" rx="3" fill="#2b95d6"/>
+    <rect class="layer ly2" x="12" y="36" width="68" height="14" rx="3" fill="#2b95d6"/>
+    <rect class="layer" x="18" y="54" width="56" height="14" rx="3" fill="#2b95d6"/>
+    <rect x="0" y="76" width="92" height="8" rx="3" fill="#10305c"/>
+    <text class="sub" x="0" y="106">layer by layer,</text>
+    <text class="sub" x="0" y="122">then tuned until</text>
+    <text class="sub" x="0" y="138">it survived a match</text>
+  </g>
+
+  <!-- notes -->
+  <rect class="panel" x="24" y="258" width="472" height="60" rx="10"/>
+  <text class="sub" x="40" y="282">most of the work went into the attack-and-defence mechanism and motor control,</text>
+  <text class="sub" x="40" y="300">not the shell &#8212; a bot that looks right and stalls on contact loses anyway.</text>
+</svg>
