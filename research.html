@@ -184,7 +184,7 @@
             <div class="project-list">
 
                 <article class="project">
-                    <figure class="project-figure"><img src="assets/viz/rl-diffusion.svg" alt="Diagram of RL-guided diffusion inference: a denoising chain from noise to image, a policy emitting a guidance scale and stochasticity per step, and a composite CLIP, perceptual quality and diversity reward." loading="lazy"></figure>
+                    <figure class="project-figure"><img src="assets/figs/rl-diffusion.jpg" alt="Four pairs of generated images from the project - penguins, a dragon sculpture, a rabbit and a lighthouse - with the baseline classifier-free-guidance result on the left of each pair and the RL-guided result on the right." loading="lazy"></figure>
                     <div>
                         <h3 class="project-title">RL-Guided Inference for Text-to-Image Diffusion</h3>
                         <p class="project-meta">Advanced Reinforcement Learning <span class="sep">&middot;</span> Instructor: Prof. Shivaram Kalyanakrishnan, IIT Bombay <span class="sep">&middot;</span> Oct&ndash;Dec 2025</p>
@@ -195,7 +195,10 @@
                             combining CLIP text-image alignment, LPIPS perceptual quality, and a feature-space
                             diversity term. The U-Net is separately fine-tuned with LoRA, and the two are blended at
                             generation time. Treating the denoising trajectory as something to be controlled, rather
-                            than a fixed schedule, is the whole idea.
+                            than a fixed schedule, is the whole idea. Across the evaluation prompts this
+                            lifted mean CLIP alignment from 0.3430 to 0.3546 &mdash; a 3.4% improvement &mdash;
+                            though not uniformly: some prompts still come out worse than the baseline, and
+                            the RL training itself has high variance.
                         </p>
                         <div class="tag-row"><span class="tag">diffusion models</span><span class="tag">REINFORCE</span><span class="tag">LoRA</span><span class="tag">CLIP reward</span></div>
                         <p class="repo-line">
@@ -358,7 +361,7 @@
                 </article>
 
                 <article class="project">
-                    <figure class="project-figure"><img src="assets/viz/regime-shift.svg" alt="Diagram of RegimeShift: a price series shaded into bull, bear and crisis regimes by a three-state hidden Markov model, with portfolio weights across equity, gold and bonds shifting as the risk aversion changes per regime." loading="lazy"></figure>
+                    <figure class="project-figure"><img src="assets/figs/regime-shift.png" alt="Real output from the project: cumulative return shaded by detected market regime from 2014 to 2021, the fitted HMM state transition matrix, and the target portfolio allocation for each of the bull, bear and crisis regimes." loading="lazy"></figure>
                     <div>
                         <h3 class="project-title">RegimeShift &mdash; Macro-Aware Tactical Asset Allocation</h3>
                         <p class="project-meta">Self-directed quantitative research <span class="sep">&middot;</span> 2026</p>
@@ -386,7 +389,7 @@
             <div class="project-list">
 
                 <article class="project">
-                    <figure class="project-figure"><img src="assets/viz/terrarover.svg" alt="Illustration of a six-wheeled rocker-bogie rover on Martian terrain with frontier exploration goals and the ROS 2 control, EKF and navigation stack beneath it." loading="lazy"></figure>
+                    <figure class="project-figure"><img src="assets/figs/terrarover.png" alt="Four images captured autonomously by the rover during frontier exploration in the Gazebo Martian environment, including one showing the rover's own shadow and one looking back at its chassis and wheels." loading="lazy"></figure>
                     <div>
                         <h3 class="project-title">TerraROVER &mdash; Planetary Exploration Rover</h3>
                         <p class="project-meta">Summer of Robotics <span class="sep">&middot;</span> Electronics and Robotics Club, IIT Bombay <span class="sep">&middot;</span> May&ndash;Jul 2026</p>
